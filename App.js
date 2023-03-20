@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView } from 'react-native';
+import styles from './style/styles'
 
 export default function App() {
   const [data, setData] = useState([]);
@@ -41,23 +42,3 @@ export default function App() {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-  },
-  image: {
-    width: 370,
-    height: 250,
-    alignSelf: 'center',
-    borderRadius: 25,
-    
-  },
-  title: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-});
