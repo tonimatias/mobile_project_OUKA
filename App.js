@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, Image, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView } from 'react-native';
 
 export default function App() {
   const [data, setData] = useState([]);
@@ -12,8 +12,9 @@ export default function App() {
   }, []);
 
   return (
+    <SafeAreaView>
     <ScrollView >
-      {data.map((object) => (
+      {data.slice(0, 10).map((object) => (
         
         <View key={object.id} >
           <Text style={styles.title} >{object.title}</Text>
@@ -37,6 +38,7 @@ export default function App() {
 
       ))}
     </ScrollView>
+    </SafeAreaView>
   );
 }
 
