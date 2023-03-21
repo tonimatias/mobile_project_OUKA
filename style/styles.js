@@ -1,6 +1,6 @@
-import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView } from 'react-native';
+import { StyleSheet } from 'react-native';
 
-const styles = StyleSheet.create({
+export default StyleSheet.create({
     container: {
       flexDirection: 'row',
       alignItems: 'center',
@@ -17,5 +17,19 @@ const styles = StyleSheet.create({
     title: {
       fontSize: 16,
       fontWeight: 'bold',
+    },
+    header: {
+      marginTop: 30,
+      marginBottom: 15,
+      backgroundColor: 'green',
+      flexDirection: 'row',
+    },
+    title: {
+      color: '#fff',
+      fontWeight: 'bold',
+      flex: 1,
+      fontSize: 23,
+      textAlign: 'center',
+      margin: 10,
     },
   });

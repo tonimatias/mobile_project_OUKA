@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView } from 'react-native';
 import styles from './style/styles'
+import Header from './components/Header'
 
 export default function App() {
   const [data, setData] = useState([]);
@@ -14,6 +15,7 @@ export default function App() {
 
   return (
     <SafeAreaView>
+       <Header />
     <ScrollView >
       {data.slice(0, 10).map((object) => (
         
