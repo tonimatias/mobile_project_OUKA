@@ -3,6 +3,8 @@ import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView } from 'react-n
 import styles from './style/styles'
 import Header from './components/Header'
 
+
+
 export default function App() {
   const [data, setData] = useState([]);
 
