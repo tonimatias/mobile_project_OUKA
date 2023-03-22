@@ -3,6 +3,7 @@ import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView } from 'react-n
 import styles from './style/styles'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
+import { Ionicons } from '@expo/vector-icons';
 import Header from './components/Header'
 import Statue from './components/Statue';
 import Fireplace from './components/Fireplace';
@@ -21,9 +22,18 @@ export default function App() {
       <Header />
     
     <Tab.Navigator>
-          <Tab.Screen name='Frontpage' component={Frontpage}/>
-          <Tab.Screen name='Search' component={App}/>
-          <Tab.Screen name='Categories' component={Architecture} />
+          <Tab.Screen name='Koti' component={Frontpage} options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name='ios-home' size={size} color={color} />
+        )}}/>
+          <Tab.Screen name='Haku' component={App} options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name='search' size={size} color={color} />
+        )}}/>
+          <Tab.Screen name='Kategoriat' component={App} options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name='menu' size={size} color={color} />
+        )}}/>
     </Tab.Navigator>
     </NavigationContainer>
   );
