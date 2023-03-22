@@ -9,6 +9,7 @@ import Statue from './components/Statue';
 import Fireplace from './components/Fireplace';
 import Frontpage from './components/Frontpage';
 import Architecture from './components/Architecture';
+import Search from './components/Search';
 
 
 const Tab = createBottomTabNavigator();
@@ -26,7 +27,7 @@ export default function App() {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name='ios-home' size={size} color={color} />
         )}}/>
-          <Tab.Screen name='Haku' component={App} options={{
+          <Tab.Screen name='Haku' component={Search} options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name='search' size={size} color={color} />
         )}}/>
