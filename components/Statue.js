@@ -6,7 +6,7 @@ import Header from './Header';
 
 
 
-export default Statues = () =>  {
+export default Statue = () =>  {
  
     const [data, setData] = useState([]);
 
