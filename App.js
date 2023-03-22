@@ -16,19 +16,14 @@ export default function App() {
 
 
   return (
-    <SafeAreaView>
     <NavigationContainer>
       <Header />
-    <ScrollView >
-      <Frontpage />
-
+    
     <Tab.Navigator>
           <Tab.Screen name='Frontpage' component={Frontpage}/>
           <Tab.Screen name='Search' component={App}/>
           <Tab.Screen name='Categories' component={App} />
     </Tab.Navigator>
-    </ScrollView>
     </NavigationContainer>
-    </SafeAreaView>
   );
 }

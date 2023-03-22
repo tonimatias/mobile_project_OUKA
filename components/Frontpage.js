@@ -11,9 +11,9 @@ import Fireplace from '../components/Fireplace';
 export default Frontpage = () =>  {
 
   return (
-    <View>
+    <ScrollView>
       <Statue/>
       <Fireplace/>
-    </View>
+    </ScrollView>
   );
 }
