@@ -14,9 +14,10 @@ export default StyleSheet.create({
       borderRadius: 25,
       
     },
-    title: {
+    title1: {
       fontSize: 16,
       fontWeight: 'bold',
+      margin: 5,
     },
     header: {
       marginTop: 30,
@@ -25,7 +26,7 @@ export default StyleSheet.create({
       flexDirection: 'row',
     },
     title: {
-      color: '#fff',
+      color: 'black',
       fontWeight: 'bold',
       flex: 1,
       fontSize: 23,
