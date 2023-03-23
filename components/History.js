@@ -20,12 +20,12 @@ export default Histories = () =>  {
     return (
       <ScrollView>
         {data.map((object) => {
-          // Check if the object has the category "Taideteokset"
+          // Check if the object has the category "Historiallinen kohde"
           const History = object.Categories.find(
             (category) => category.title === "Historiallinen kohde"
           );
           if (!History) {
-            // If the object does not have the "Taideteokset" category, skip it
+            // If the object does not have the "THistoriallinen kohde" category, skip it
             return null;
           }
           return (

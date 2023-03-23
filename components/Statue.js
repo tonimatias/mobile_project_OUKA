@@ -20,12 +20,12 @@ export default Statue = () =>  {
     return (
       <ScrollView>
         {data.map((object) => {
-          // Check if the object has the category "Taideteokset"
+          // Check if the object has the category "Patsas"
           const Statues = object.Categories.find(
             (category) => category.title === "Patsas"
           );
           if (!Statues) {
-            // If the object does not have the "Taideteokset" category, skip it
+            // If the object does not have the "Patsas" category, skip it
             return null;
           }
           return (
@@ -35,13 +35,16 @@ export default Statue = () =>  {
               <Text style={styles.title1}>Koordinaatit: {object.geo.coordinates}</Text>
               <View key={object.Categories.id}>
               </View>
-              {object.Media.map((media) => (
-                <Image
-                  key={media.id}
-                  source={{ uri: media.path }}
-                  style={styles.image}
-                />
-              ))}
+              {/* {object.Categories.map((category) => (
+                <Text style={styles.title1} key={category.id}>{category.title}</Text>
+              ))}  */}
+            {object.Media.map((media) => (
+              <Image
+                key={media.id}
+                source={{ uri: media.path }}
+                style={styles.image}
+              />
+            ))}
             </View>
           );
         })}

@@ -20,12 +20,12 @@ export default Art = () =>  {
     return (
       <ScrollView>
         {data.map((object) => {
-          // Check if the object has the category "Taideteokset"
+          // Check if the object has the category "Taideteos"
           const Arts = object.Categories.find(
             (category) => category.title === "Taideteos"
           );
           if (!Arts) {
-            // If the object does not have the "Taideteokset" category, skip it
+            // If the object does not have the "Taideteos" category, skip it
             return null;
           }
           return (
