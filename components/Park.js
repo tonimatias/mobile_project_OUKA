@@ -21,10 +21,10 @@ export default Park = () =>  {
       <ScrollView>
         {data.map((object) => {
           // Check if the object has the category "Taideteokset"
-          const Statues = object.Categories.find(
+          const Parks = object.Categories.find(
             (category) => category.title === "Puisto"
           );
-          if (!Statues) {
+          if (!Parks) {
             // If the object does not have the "Taideteokset" category, skip it
             return null;
           }

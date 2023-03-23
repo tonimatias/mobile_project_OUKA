@@ -6,7 +6,7 @@ import Header from './Header';
 
 
 
-export default Statue = () =>  {
+export default Fireplace = () =>  {
  
     const [data, setData] = useState([]);
 
@@ -21,10 +21,10 @@ export default Statue = () =>  {
       <ScrollView>
         {data.map((object) => {
           // Check if the object has the category "Taideteokset"
-          const Statues = object.Categories.find(
+          const Fireplaces = object.Categories.find(
             (category) => category.title === "Nuotio"
           );
-          if (!Statues) {
+          if (!Fireplaces) {
             // If the object does not have the "Taideteokset" category, skip it
             return null;
           }
