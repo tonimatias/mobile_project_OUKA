@@ -35,9 +35,6 @@ export default Histories = () =>  {
               <Text style={styles.title1}>Koordinaatit: {object.geo.coordinates}</Text>
               <View key={object.Categories.id}>
               </View>
-              {object.Categories.map((category) => (
-                <Text style={styles.title1} key={category.id}>{category.title}</Text>
-              ))}
               {object.Media.map((media) => (
                 <Image
                   key={media.id}
