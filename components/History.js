@@ -6,7 +6,7 @@ import Header from './Header';
 
 
 
-export default Fireplace = () =>  {
+export default Histories = () =>  {
  
     const [data, setData] = useState([]);
 
@@ -21,24 +21,22 @@ export default Fireplace = () =>  {
       <ScrollView>
         {data.map((object) => {
           // Check if the object has the category "Taideteokset"
-          const Fireplaces = object.Categories.find(
-            (category) => category.title === "Nuotio"
+          const History = object.Categories.find(
+            (category) => category.title === "Historiallinen kohde"
           );
-          if (!Fireplaces) {
+          if (!History) {
             // If the object does not have the "Taideteokset" category, skip it
             return null;
           }
           return (
             <View key={object.id}>
               <Text style={styles.title}>{object.title}</Text>
-              <Text>{object.content}</Text>
-              <Text>Koordinaatit: {object.geo.coordinates}</Text>
+              <Text style={styles.title1}>{object.content}</Text>
+              <Text style={styles.title1}>Koordinaatit: {object.geo.coordinates}</Text>
               <View key={object.Categories.id}>
-                <Text>{object.Categories.title}</Text>
-               
               </View>
               {object.Categories.map((category) => (
-                <Text key={category.id}>{category.title}</Text>
+                <Text style={styles.title1} key={category.id}>{category.title}</Text>
               ))}
               {object.Media.map((media) => (
                 <Image

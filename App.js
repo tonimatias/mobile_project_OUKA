@@ -6,7 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import Header from './components/Header'
 import Statue from './components/Statue';
-import Fireplace from './components/Fireplace';
+import Histories from './components/History';
 import Frontpage from './components/Frontpage';
 import Architecture from './components/Architecture';
 import Search from './components/Search';
