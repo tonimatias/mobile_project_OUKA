@@ -8,10 +8,9 @@ export default StyleSheet.create({
       paddingHorizontal: 20,
     },
     image: {
-      width: 370,
-      height: 250,
+      width: 400,
+      height: 300,
       alignSelf: 'center',
-      borderRadius: 25,
       margin: 15,
       
       
