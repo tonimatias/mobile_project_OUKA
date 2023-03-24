@@ -1,14 +1,16 @@
 import React from 'react';
-import { Text, View} from 'react-native';
+import { Text, View, Image} from 'react-native';
 import styles from '../style/styles';
 
 
 export default Header = () => {
     return (
         <View style={styles.header}>
-            <Text style={styles.title}>
-               otsikko?
-            </Text>
+            <Image
+        style={styles.headertitle}
+        source={require('../pictures/ouluawaits_logo.png')}
+        resizeMode='contain'
+      />
         </View>
     )
 }

@@ -22,8 +22,16 @@ export default StyleSheet.create({
     header: {
       marginTop: 30,
       marginBottom: 15,
-      backgroundColor: 'green',
+      backgroundColor: '#78C2D9',
       flexDirection: 'row',
+      height: '10%',
+    },    
+    headertitle: {
+      flex: 1,
+      margin: 10,
+      paddingTop:'5%',
+      
+      height:'60%',
     },
     title: {
       color: 'black',
