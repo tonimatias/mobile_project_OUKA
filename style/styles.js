@@ -12,6 +12,8 @@ export default StyleSheet.create({
       height: 250,
       alignSelf: 'center',
       borderRadius: 25,
+      margin: 15,
+      
       
     },
     title1: {
@@ -41,4 +43,6 @@ export default StyleSheet.create({
       textAlign: 'center',
       margin: 10,
     },
+
+
   });
