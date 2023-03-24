@@ -20,6 +20,14 @@ export default StyleSheet.create({
       fontWeight: 'bold',
       margin: 5,
     },
+
+    frontpage_title: {
+      fontSize: 16,
+      margin: 5,
+      textAlign: 'center'
+
+    },
+
     header: {
       marginTop: 30,
       marginBottom: 15,
