@@ -1,5 +1,8 @@
 Importtien asennus koodit tänne
 
+22.3.
 npx expo install @react-navigation/native react-native-screens react-native-safe-area-context @reactnavigation/bottom-tabs @react-navigation/bottom-tabs
 npm install @react-navigation/native-stack 
 npx expo install '@expo/vector-icons' 
+
+
