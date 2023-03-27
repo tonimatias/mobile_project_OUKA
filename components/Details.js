@@ -41,7 +41,7 @@ export default Details = ({route,navigation}) =>  {
               <Image
                   style={styles.image}
                 />
-              <Text style={styles.title1}>{content}</Text>
+              <Text style={styles.title}>{content}</Text>
               <Text>kartta linkki tähän?{geo.coordinates}</Text>
             </ScrollView>
           );
