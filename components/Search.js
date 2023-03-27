@@ -1,20 +1,9 @@
 import React, { useState, useEffect } from 'react';
-
-// import all the components we are going to use
-import {
-  SafeAreaView,
-  Text,
-  StyleSheet,
-  View,
-  FlatList,
-  TextInput,
-  Image
-} from 'react-native';
-
+import { SafeAreaView, Text, View, FlatList, TextInput, Image } from 'react-native';
 import styles from '../style/styles';
 import Park from './Park';
 
-const App = () => {
+const Search = () => {
   const [search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
@@ -93,8 +82,6 @@ const App = () => {
     
     // Function for click on an item
     alert('Id : ' + item.id + ' Title : ' + item.title)
- 
-    
     
   };
 
@@ -120,4 +107,4 @@ const App = () => {
 };
 
 
-export default App;
+export default Search;
