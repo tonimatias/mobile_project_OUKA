@@ -40,7 +40,7 @@ export default function App() {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name='search' size={size} color={color} />
         )}}/>
-          <Tab.Screen name='Kategoriat' component={App} options={{headerShown: false,
+          <Tab.Screen name='Kategoriat' component={Search} options={{headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name='menu' size={size} color={color} />
         )}}/>
