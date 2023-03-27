@@ -10,6 +10,7 @@ import Histories from './components/History';
 import Frontpage from './components/Frontpage';
 import Architecture from './components/Architecture';
 import Search from './components/Search';
+import { useFonts } from 'expo-font';
 
 
 const Tab = createBottomTabNavigator();
@@ -17,9 +18,16 @@ const Tab = createBottomTabNavigator();
 export default function App() {
  
 
+  const [loaded] = useFonts({
+    ManropeRegular: require('./assets/fonts/Manrope-Regular.ttf'),
+  });
+
+  if(!loaded) {
+    return null;
+  }
 
   return (
-    <NavigationContainer>
+    <NavigationContainer styles={styles.container}>
       <Header />
     
     <Tab.Navigator

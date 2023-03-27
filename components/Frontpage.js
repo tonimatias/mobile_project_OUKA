@@ -4,10 +4,6 @@ import styles from '../style/styles';
 import Header from './Header';
 import Statue from '../components/Statue';
 
-
-
-
-
 export default Frontpage = () =>  {
 
   return (

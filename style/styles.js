@@ -6,6 +6,7 @@ export default StyleSheet.create({
       alignItems: 'center',
       paddingVertical: 10,
       paddingHorizontal: 20,
+
     },
     frontpageimage: {
       width: '100%',
@@ -24,7 +25,8 @@ export default StyleSheet.create({
     frontpage_title: {
       fontSize: 16,
       margin: 5,
-      textAlign: 'center'
+      textAlign: 'center',
+      fontFamily: 'ManropeRegular'
 
     },
 
