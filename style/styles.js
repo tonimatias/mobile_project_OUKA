@@ -15,7 +15,7 @@ export default StyleSheet.create({
       
       
     },
-    title1: {
+    category_title: {
       fontSize: 16,
       fontWeight: 'bold',
       margin: 5,
