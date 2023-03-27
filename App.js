@@ -22,7 +22,10 @@ export default function App() {
     <NavigationContainer>
       <Header />
     
-    <Tab.Navigator>
+    <Tab.Navigator
+      tabBarOptions={{
+        activeTintColor: '#9600AE', // Change this to your desired color
+      }}>
           <Tab.Screen name='Koti' component={Frontpage} options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name='ios-home' size={size} color={color} />
