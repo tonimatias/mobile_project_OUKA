@@ -50,6 +50,17 @@ export default StyleSheet.create({
       textAlign: 'center',
       margin: 10,
     },
+    itemStyle_search: {
+      padding: 10,
+    },
+    textInputStyle_search: {
+      height: 40,
+      borderWidth: 1,
+      paddingLeft: 20,
+      margin: 5,
+      borderColor:  '#9600AE',
+      backgroundColor: '#FFFFFF',
+    },
 
 
   });
