@@ -7,7 +7,7 @@ export default StyleSheet.create({
       paddingVertical: 10,
       paddingHorizontal: 20,
     },
-    image: {
+    frontpageimage: {
       width: '100%',
       height: 300,
       alignSelf: 'center',
@@ -30,7 +30,7 @@ export default StyleSheet.create({
 
     header: {
       marginTop: 30,
-      marginBottom: 15,
+      marginBottom: 0,
       backgroundColor: '#9600AE',
       flexDirection: 'row',
       height: '10%',

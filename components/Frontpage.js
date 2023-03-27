@@ -13,7 +13,7 @@ export default Frontpage = () =>  {
   return (
     <ScrollView>
            <Image
-        style={styles.image}
+        style={styles.frontpageimage}
         source={require('../pictures/Oulu_frontpage.jpg')}
         resizeMode='contain'
       />
