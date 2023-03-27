@@ -31,7 +31,7 @@ export default StyleSheet.create({
     header: {
       marginTop: 30,
       marginBottom: 15,
-      backgroundColor: '#78C2D9',
+      backgroundColor: '#9600AE',
       flexDirection: 'row',
       height: '10%',
     },    
