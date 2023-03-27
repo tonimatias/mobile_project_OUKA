@@ -23,15 +23,15 @@ export default function App() {
       <Header />
     
     <Tab.Navigator>
-          <Tab.Screen name='Koti' component={Frontpage} options={{
+          <Tab.Screen name='Koti' component={Frontpage} options={{headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name='ios-home' size={size} color={color} />
         )}}/>
-          <Tab.Screen name='Haku' component={Search} options={{
+          <Tab.Screen name='Haku' component={Search} options={{headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name='search' size={size} color={color} />
         )}}/>
-          <Tab.Screen name='Kategoriat' component={App} options={{
+          <Tab.Screen name='Kategoriat' component={App} options={{headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name='menu' size={size} color={color} />
         )}}/>
