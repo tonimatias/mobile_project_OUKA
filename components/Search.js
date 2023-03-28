@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, Text, View, FlatList, TextInput, Image } from 'react-native';
+import { SafeAreaView, Text, View, FlatList, TextInput, Image, Pressable } from 'react-native';
 import styles from '../style/styles';
 import Park from './Park';
+import { useNavigation } from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 
 const Search = () => {
   const [search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
+
+
+  const navigation = useNavigation();
 
   useEffect(() => {
     fetch('https://opendata.zoneatlas.com/oulu/objects.json')
@@ -46,22 +51,31 @@ const Search = () => {
   const ItemView = ({ item }) => {
     return (
       // Flat List Item
-      <Text style={styles.itemStyle_search} onPress={() => getItem(item)}>
-        {item.title.toUpperCase()}
-        {'\n'}
+      <Pressable
+        onPress={() => getItem(item)}
+        style={({ pressed }) => [
+          {
+            backgroundColor: pressed ? '#E5E5E5' : 'white'
+          }
+        ]}
+      >
+        <Text style={styles.itemStyle_search}>
+          {item.title.toUpperCase()}
+          {'\n'}
+        </Text>
         {item.Media.map((media) => (
-      <Image
-        key={media.id}
-        source={{ uri: media.path }}
-        style={{
-          height: 500,
-          width: 400,
-          margin: 5,
-          padding: 5
-        }}
-      />
-    ))}
-      </Text>
+          <Image
+            key={media.id}
+            source={{ uri: media.path }}
+            style={{
+              height: 500,
+              width: 400,
+              margin: 5,
+              padding: 5
+            }}
+          />
+        ))}
+      </Pressable>
     );
   };
 
@@ -78,15 +92,21 @@ const Search = () => {
     );
   };
 
-  const getItem = (item) => {
-    
-    // Function for click on an item
-    alert('Id : ' + item.id + ' Title : ' + item.title)
-    
-  };
+  const Categories = () => {
+    const route = useRoute();
+    const category = route.params.category;
+  
+    // Rest of the code for displaying the items in the selected category
+  }
+  
+    const getItem = (item) => {
+      // Navigate to the category of the item
+      navigation.navigate('Categories', { category: item.Categories });
+    };
+  
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={styles.container}>
       <View>
         <TextInput
           style={styles.textInputStyle_search}
@@ -105,6 +125,7 @@ const Search = () => {
     </SafeAreaView>
   );
 };
+
 
 
 export default Search;
