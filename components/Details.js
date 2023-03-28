@@ -3,8 +3,8 @@ import { Text, ScrollView, Image, BackHandler } from 'react-native';
 import styles from '../style/styles';
 import Header from './Header';
 
-
-
+//tää pitää lisätä joka kategoriaan
+//<Button title='lisätieto' onPress={() => navigation.navigate('Details', {data: object})}/>
 
 export default Details = ({route}) =>  {
 
