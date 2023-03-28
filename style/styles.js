@@ -4,8 +4,10 @@ export default StyleSheet.create({
     container: {
       flexDirection: 'row',
       alignItems: 'center',
-      paddingVertical: 10,
-      paddingHorizontal: 20,
+      alignSelf: 'center',
+      paddingVertical: 5,
+      paddingHorizontal: 5,
+      fontFamily: 'ManropeRegular'
 
     },
     frontpageimage: {
@@ -20,6 +22,7 @@ export default StyleSheet.create({
       fontSize: 16,
       fontWeight: 'bold',
       margin: 5,
+      fontFamily: 'ManropeRegular'
     },
 
     frontpage_title: {
@@ -36,13 +39,14 @@ export default StyleSheet.create({
       backgroundColor: '#9600AE',
       flexDirection: 'row',
       height: '10%',
+      fontFamily: 'ManropeRegular'
     },    
     headertitle: {
       flex: 1,
       margin: 10,
       paddingTop:'5%',
-      
       height:'60%',
+      fontFamily: 'ManropeRegular'
     },
     title: {
       color: 'black',
@@ -51,6 +55,7 @@ export default StyleSheet.create({
       fontSize: 23,
       textAlign: 'center',
       margin: 10,
+      fontFamily: 'ManropeRegular'
     },
     itemStyle_search: {
       padding: 10,
