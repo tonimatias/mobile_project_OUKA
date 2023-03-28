@@ -7,7 +7,7 @@ export default StyleSheet.create({
       alignSelf: 'center',
       paddingVertical: 5,
       paddingHorizontal: 5,
-      fontFamily: 'ManropeRegular'
+      
 
     },
     frontpageimage: {
@@ -46,7 +46,7 @@ export default StyleSheet.create({
       margin: 10,
       paddingTop:'5%',
       height:'60%',
-      fontFamily: 'ManropeRegular'
+      
     },
     title: {
       color: 'black',
