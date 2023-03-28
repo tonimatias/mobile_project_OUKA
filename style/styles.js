@@ -41,11 +41,10 @@ export default StyleSheet.create({
       height: '10%',
       fontFamily: 'ManropeRegular'
     },    
-    headertitle: {
+    headerlogo: {
       flex: 1,
-      margin: 10,
-      paddingTop:'5%',
-      height:'60%',
+      height:30,
+      alignSelf: 'center',
       
     },
     title: {

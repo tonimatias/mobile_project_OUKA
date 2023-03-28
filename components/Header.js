@@ -7,7 +7,7 @@ export default Header = () => {
     return (
         <View style={styles.header}>
             <Image
-        style={styles.headertitle}
+        style={styles.headerlogo}
         source={require('../pictures/ouluawaits_logo.png')}
         resizeMode='contain'
       />
