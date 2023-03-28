@@ -23,12 +23,13 @@ export default function App() {
   function MyDrawer() {
   
     return (
-      <Drawer.Navigator screenOptions={{drawerPosition:'right', 
+      <Drawer.Navigator screenOptions={{drawerPosition:'left', 
         overlayColor:'#FFFFFFD9', 
         headerStyle:{ backgroundColor:'#9600AE'},
         drawerActiveTintColor: '#151515',
         headerTintColor:'white',
-        }} defaultStatus={'open'}>
+        }}
+        defaultStatus={'open'}>
        <Drawer.Screen name="Arkkitehtuuri"  component={Architecture} />
         <Drawer.Screen name="Patsaat" component={Statue} />
       </Drawer.Navigator>
