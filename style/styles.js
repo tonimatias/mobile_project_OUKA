@@ -67,6 +67,9 @@ export default StyleSheet.create({
       borderColor:  '#9600AE',
       backgroundColor: '#FFFFFF',
     },
-
+    image: {
+      width: '100%',
+      height: 300,
+    }
 
   });
