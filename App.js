@@ -41,40 +41,31 @@ export default function App() {
   }
 
   return (
-    <>
-    <NavigationContainer styles={styles.container}>
-      <Header />
-      <Drawer.Navigator >
-        <Drawer.Screen name="Arkkitehtuuri" component={Architecture} />
-        <Drawer.Screen name="Patsaat" component={Statue} />
-      </Drawer.Navigator>
-    </NavigationContainer>
-
     <NavigationContainer>
+      <Header />
     <Tab.Navigator
       screenOptions={{
         "tabBarActiveTintColor": "#9600AE",
         "tabBarStyle": [
-      {
-        "display": "flex"
-      },
-      null
-      ]
+          {
+            "display": "flex"
+          },
+          null
+        ]
       }}>
-          <Tab.Screen name='Koti' component={Frontpage} options={{headerShown: false,
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name='ios-home' size={size} color={color} />
-        )}}/>
-          <Tab.Screen name='Haku' component={Search} options={{headerShown: false,
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name='search' size={size} color={color} />
-        )}}/>
-          <Tab.Screen name='Kategoriat' component={Search} options={{headerShown: false,
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name='menu' size={size} color={color} />
-        )}}/>
+      <Tab.Screen name='Koti' component={Frontpage} options={{headerShown: false,
+        tabBarIcon: ({ color, size }) => (
+          <Ionicons name='ios-home' size={size} color={color} />
+      )}}/>
+      <Tab.Screen name='Haku' component={Search} options={{headerShown: false,
+        tabBarIcon: ({ color, size }) => (
+          <Ionicons name='search' size={size} color={color} />
+      )}}/>
+      <Tab.Screen name='Kategoriat' component={MyDrawer} options={{headerShown: false,
+        tabBarIcon: ({ color, size }) => (
+          <Ionicons name='menu' size={size} color={color} />
+      )}}/>
     </Tab.Navigator>
-    </NavigationContainer>
-    </>
+  </NavigationContainer>
   );
 }
