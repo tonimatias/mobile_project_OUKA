@@ -3,46 +3,25 @@ import { Text, ScrollView, Image, BackHandler } from 'react-native';
 import styles from '../style/styles';
 import Header from './Header';
 
+//tää pitää lisätä joka kategoriaan
+//<Button title='lisätieto' onPress={() => navigation.navigate('Details', {data: object})}/>
 
+export default Details = ({route}) =>  {
 
-
-export default Details = ({route,navigation}) =>  {
- 
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
-  const [geo, setGeo] = useState([]);
-  const [media, setMedia] = useState([]);
-    
-
-    useEffect(() => {
-
-        if (route.params?.data) {
-            setTitle(route.params.data.title)
-            setContent(route.params.data.content)
-            setGeo(route.params.data.geo)
-            setMedia(route.params.data.media)
-        }
-
-    BackHandler.addEventListener('hardwareBackPress',close);
-    return () => {
-    BackHandler.removeEventListener('hardwareBackPress',close);
-
-    }
-    }, [route.params?.data]);
-
-    function close() {
-      navigation.goBack(null);
-      return true;
-    }
+const {data} = route.params;
 
           return (
             <ScrollView>
-              <Text style={styles.title}>{title}</Text>
+              <Text style={styles.title}>{data.title}</Text>
+              {data.Media.map((media) => (
               <Image
-                  style={styles.image}
+                  key={media.id}
+                  source={{ uri: media.path }}
+                  style={styles.image} 
                 />
-              <Text style={styles.title}>{content}</Text>
-              <Text>kartta linkki tähän?{geo.coordinates}</Text>
+                ))}
+              <Text style={styles.title1}>{data.content}</Text>
+              <Text>kartta linkki tähän?{data.geo.coordinates}</Text>
             </ScrollView>
           );
-  }
+  } 
