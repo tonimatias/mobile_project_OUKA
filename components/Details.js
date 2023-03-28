@@ -6,43 +6,22 @@ import Header from './Header';
 
 
 
-export default Details = ({route,navigation}) =>  {
- 
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
-  const [geo, setGeo] = useState([]);
-  const [media, setMedia] = useState([]);
-    
+export default Details = ({route}) =>  {
 
-    useEffect(() => {
-
-        if (route.params?.data) {
-            setTitle(route.params.data.title)
-            setContent(route.params.data.content)
-            setGeo(route.params.data.geo)
-            setMedia(route.params.data.media)
-        }
-
-    BackHandler.addEventListener('hardwareBackPress',close);
-    return () => {
-    BackHandler.removeEventListener('hardwareBackPress',close);
-
-    }
-    }, [route.params?.data]);
-
-    function close() {
-      navigation.goBack(null);
-      return true;
-    }
+const {data} = route.params;
 
           return (
             <ScrollView>
-              <Text style={styles.title}>{title}</Text>
+              <Text style={styles.title}>{data.title}</Text>
+              {data.Media.map((media) => (
               <Image
-                  style={styles.image}
+                  key={media.id}
+                  source={{ uri: media.path }}
+                  style={styles.image} 
                 />
-              <Text style={styles.title}>{content}</Text>
-              <Text>kartta linkki tähän?{geo.coordinates}</Text>
+                ))}
+              <Text style={styles.title1}>{data.content}</Text>
+              <Text>kartta linkki tähän?{data.geo.coordinates}</Text>
             </ScrollView>
           );
-  }
+  } 
