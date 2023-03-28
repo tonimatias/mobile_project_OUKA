@@ -1,7 +1,9 @@
+import 'react-native-gesture-handler';
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView } from 'react-native';
+import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, Button } from 'react-native';
 import styles from './style/styles'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import Header from './components/Header'
@@ -14,8 +16,20 @@ import { useFonts } from 'expo-font';
 
 
 const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
 export default function App() {
+
+  
+  
+  function MyDrawer() {
+    return (
+      <Drawer.Navigator >
+       <Drawer.Screen name="Arkkitehtuuri" component={Architecture} />
+        <Drawer.Screen name="Patsaat" component={Statue} />
+      </Drawer.Navigator>
+    );
+  }
  
 
   const [loaded] = useFonts({
@@ -27,9 +41,16 @@ export default function App() {
   }
 
   return (
+    <>
     <NavigationContainer styles={styles.container}>
       <Header />
-    
+      <Drawer.Navigator >
+        <Drawer.Screen name="Arkkitehtuuri" component={Architecture} />
+        <Drawer.Screen name="Patsaat" component={Statue} />
+      </Drawer.Navigator>
+    </NavigationContainer>
+
+    <NavigationContainer>
     <Tab.Navigator
       screenOptions={{
         "tabBarActiveTintColor": "#9600AE",
@@ -54,5 +75,6 @@ export default function App() {
         )}}/>
     </Tab.Navigator>
     </NavigationContainer>
+    </>
   );
 }
