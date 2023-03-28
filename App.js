@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, Button } from 'react-native';
+import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, Button, TouchableOpacity } from 'react-native';
 import styles from './style/styles'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -20,12 +20,16 @@ const Drawer = createDrawerNavigator();
 
 export default function App() {
 
-  
-  
   function MyDrawer() {
+  
     return (
-      <Drawer.Navigator >
-       <Drawer.Screen name="Arkkitehtuuri" component={Architecture} />
+      <Drawer.Navigator screenOptions={{drawerPosition:'right', 
+        overlayColor:'#FFFFFFD9', 
+        headerStyle:{ backgroundColor:'#9600AE'},
+        drawerActiveTintColor: '#151515',
+        headerTintColor:'white',
+        }} defaultStatus={'open'}>
+       <Drawer.Screen name="Arkkitehtuuri"  component={Architecture} />
         <Drawer.Screen name="Patsaat" component={Statue} />
       </Drawer.Navigator>
     );
@@ -63,7 +67,7 @@ export default function App() {
       )}}/>
       <Tab.Screen name='Kategoriat' component={MyDrawer} options={{headerShown: false,
         tabBarIcon: ({ color, size }) => (
-          <Ionicons name='menu' size={size} color={color} />
+          <Ionicons name='menu' size={size} color={color} />     
       )}}/>
     </Tab.Navigator>
   </NavigationContainer>
