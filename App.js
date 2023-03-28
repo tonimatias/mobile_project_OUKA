@@ -25,9 +25,9 @@ export default function App() {
 
   function HomeStack() {
     return (
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Home" component={Frontpage} options={{display: "none"}}/>
-        <Stack.Screen name="Details" component={Details} />
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Frontpage} options={{headerShown: false}}/>
+        <Stack.Screen name="Lisätiedot" component={Details}/>
       </Stack.Navigator>
     );
   }

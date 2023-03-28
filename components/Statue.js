@@ -45,7 +45,7 @@ export default Statue = ({navigation}) =>  {
                 style={styles.image}
               />
             ))}
-            <Button title='lisätietoa' onPress={() => navigation.navigate('Details', {data: object})}/>
+            <Button title='lisätietoa' onPress={() => navigation.navigate('Lisätiedot', {data: object})}/>
             </View>
           );
         })}
