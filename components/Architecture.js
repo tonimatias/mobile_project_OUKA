@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView } from 'react-native';
+import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, Button } from 'react-native';
 import styles from '../style/styles';
 import Header from './Header';
 
 
 
 
-export default Architecture = () =>  {
+export default Architecture = ({navigation}) =>  {
  
     const [data, setData] = useState([]);
 
@@ -42,6 +42,7 @@ export default Architecture = () =>  {
                   style={styles.image}
                 />
               ))}
+              <Button title='lisätietoa' onPress={() => navigation.navigate('Details', {data: object})}/>
             </View>
           );
         })}

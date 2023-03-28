@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
+import Details from './components/Details';
 import Header from './components/Header'
 import Statue from './components/Statue';
 import Histories from './components/History';
@@ -13,12 +14,23 @@ import Frontpage from './components/Frontpage';
 import Architecture from './components/Architecture';
 import Search from './components/Search';
 import { useFonts } from 'expo-font';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
+const Stack = createNativeStackNavigator();
 
 export default function App() {
+
+  function HomeStack() {
+    return (
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Home" component={Frontpage} options={{display: "none"}}/>
+        <Stack.Screen name="Details" component={Details} />
+      </Stack.Navigator>
+    );
+  }
 
   function MyDrawer() {
   
@@ -57,7 +69,7 @@ export default function App() {
           null
         ]
       }}>
-      <Tab.Screen name='Koti' component={Frontpage} options={{headerShown: false,
+      <Tab.Screen name='Koti' component={HomeStack} options={{headerShown: false,
         tabBarIcon: ({ color, size }) => (
           <Ionicons name='ios-home' size={size} color={color} />
       )}}/>

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView } from 'react-native';
+import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, Button } from 'react-native';
 import styles from '../style/styles';
 import Header from './Header';
 
 
 
 
-export default Statue = () =>  {
+export default Statue = ({navigation}) =>  {
  
     const [data, setData] = useState([]);
 
@@ -45,6 +45,7 @@ export default Statue = () =>  {
                 style={styles.image}
               />
             ))}
+            <Button title='lisätietoa' onPress={() => navigation.navigate('Details', {data: object})}/>
             </View>
           );
         })}
