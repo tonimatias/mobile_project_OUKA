@@ -56,6 +56,15 @@ export default StyleSheet.create({
       margin: 10,
       fontFamily: 'ManropeRegular'
     },
+    title1: {
+      color: 'black',
+      fontWeight: 'bold',
+      flex: 1,
+      fontSize: 14,
+      textAlign: 'center',
+      margin: 10,
+      fontFamily: 'ManropeRegular'
+    },
     itemStyle_search: {
       padding: 10,
     },

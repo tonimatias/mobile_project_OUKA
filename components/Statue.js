@@ -31,8 +31,8 @@ export default Statue = ({navigation}) =>  {
           return (
             <View key={object.id}>
               <Text style={styles.title}>{object.title}</Text>
-              <Text style={styles.category_title}>{object.content}</Text>
-              <Text style={styles.category_title}>Koordinaatit: {object.geo.coordinates}</Text>
+              <Text style={styles.title1}>{object.content}</Text>
+              <Text style={styles.title1}>Koordinaatit: {object.geo.coordinates}</Text>
               <View key={object.Categories.id}>
               </View>
               {/* {object.Categories.map((category) => (
