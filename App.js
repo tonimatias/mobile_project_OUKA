@@ -3,18 +3,21 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, Button, TouchableOpacity } from 'react-native';
 import styles from './style/styles'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator, DrawerToggleButton  } from '@react-navigation/drawer';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import Details from './components/Details';
 import Header from './components/Header'
 import Statue from './components/Statue';
 import Histories from './components/History';
+import Art from './components/Art';
+import Park from './components/Park';
 import Frontpage from './components/Frontpage';
 import Architecture from './components/Architecture';
 import Search from './components/Search';
 import { useFonts } from 'expo-font';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { FA5Style } from '@expo/vector-icons/build/FontAwesome5';
 
 
 const Tab = createBottomTabNavigator();
@@ -22,7 +25,7 @@ const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-
+  
   function HomeStack() {
     return (
       <Stack.Navigator>
@@ -33,17 +36,22 @@ export default function App() {
   }
 
   function MyDrawer() {
-  
+
     return (
-      <Drawer.Navigator screenOptions={{drawerPosition:'left', 
+      <Drawer.Navigator screenOptions={{drawerPosition:'right', 
         overlayColor:'#FFFFFFD9', 
         headerStyle:{ backgroundColor:'#9600AE'},
         drawerActiveTintColor: '#151515',
         headerTintColor:'white',
+        headerLeft:false,
+        headerRight: () => <DrawerToggleButton tintColor='white' />
         }}
         defaultStatus={'open'}>
        <Drawer.Screen name="Arkkitehtuuri"  component={Architecture} />
         <Drawer.Screen name="Patsaat" component={Statue} />
+        <Drawer.Screen name="Taideteokset" component={Art} />
+        <Drawer.Screen name="Historialliset kohteet" component={Histories} />
+        <Drawer.Screen name="Puistot" component={Park} />
       </Drawer.Navigator>
     );
   }
