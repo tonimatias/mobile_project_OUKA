@@ -43,12 +43,13 @@ export default function App() {
         headerStyle:{ backgroundColor:'#9600AE'},
         drawerActiveTintColor: '#151515',
         headerTintColor:'white',
+        drawerLabelStyle:{fontFamily:'ManropeRegular', fontSize:17, color:'#9600AE'},
         headerLeft:false,
         headerRight: () => <DrawerToggleButton tintColor='white' />
         }}
-        defaultStatus={'open'}>
-       <Drawer.Screen name="Arkkitehtuuri"  component={Architecture} />
-        <Drawer.Screen name="Patsaat" component={Statue} />
+        defaultStatus='open'>
+       <Drawer.Screen name="Arkkitehtuuri"  component={Architecture}/>
+        <Drawer.Screen name="Patsaat" component={Statue}/>
         <Drawer.Screen name="Taideteokset" component={Art} />
         <Drawer.Screen name="Historialliset kohteet" component={Histories} />
         <Drawer.Screen name="Puistot" component={Park} />
