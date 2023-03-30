@@ -19,7 +19,7 @@ export default Histories = () =>  {
 
     return (
       <ScrollView>
-        {data.map((object) => {
+        {data.map((object = route.params) => {
           // Check if the object has the category "Historiallinen kohde"
           const History = object.Categories.find(
             (category) => category.title === "Historiallinen kohde"

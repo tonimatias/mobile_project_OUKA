@@ -4,8 +4,6 @@ import styles from '../style/styles';
 import Header from './Header';
 
 
-
-
 export default Park = () =>  {
  
     const [data, setData] = useState([]);
@@ -19,7 +17,7 @@ export default Park = () =>  {
 
     return (
       <ScrollView>
-        {data.map((object) => {
+        {data.map((object = route.params) => {
           // Check if the object has the category "Puisto"
           const Parks = object.Categories.find(
             (category) => category.title === "Puisto"

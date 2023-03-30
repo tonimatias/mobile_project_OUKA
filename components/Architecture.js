@@ -19,7 +19,7 @@ export default Architecture = ({navigation}) =>  {
 
     return (
       <ScrollView>
-        {data.map((object) => {
+        {data.map((object = route.params) => {
           // Check if the object has the category "Arkkitehtuuri"
           const Architectures = object.Categories.find(
             (category) => category.title === "Arkkitehtuuri"

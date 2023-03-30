@@ -6,9 +6,11 @@ import Header from './Header';
 
 
 
-export default Art = () =>  {
+export default Art = (route) =>  {
  
+    
     const [data, setData] = useState([]);
+
 
     useEffect(() => {
       fetch('https://opendata.zoneatlas.com/oulu/objects.json')
@@ -19,7 +21,7 @@ export default Art = () =>  {
 
     return (
       <ScrollView>
-        {data.map((object) => {
+        {data.map((object = route.params) => {
           // Check if the object has the category "Taideteos"
           const Arts = object.Categories.find(
             (category) => category.title === "Taideteos"
@@ -28,6 +30,9 @@ export default Art = () =>  {
             // If the object does not have the "Taideteos" category, skip it
             return null;
           }
+
+         
+          
           return (
             <View key={object.id}>
               <Text style={styles.title}>{object.title}</Text>

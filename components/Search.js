@@ -4,6 +4,7 @@ import styles from '../style/styles';
 import Park from './Park';
 import { useNavigation } from '@react-navigation/native';
 import { useRoute } from '@react-navigation/native';
+import Architecture from './Architecture';
 
 const Search = () => {
   const [search, setSearch] = useState('');
@@ -92,17 +93,12 @@ const Search = () => {
     );
   };
 
-  const Categories = () => {
-    const route = useRoute();
-    const category = route.params.category;
   
-    // Rest of the code for displaying the items in the selected category
-  }
   
     const getItem = (item) => {
       // Navigate to the category of the item
-      navigation.navigate('Categories', { category: item.Categories });
-    };
+      navigation.navigate('Taideteokset', item.Category)
+    }
   
 
   return (
