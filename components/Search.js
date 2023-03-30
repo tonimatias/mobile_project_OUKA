@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, Text, View, FlatList, TextInput, Image, Pressable } from 'react-native';
+import { SafeAreaView, Text, View, FlatList, TextInput, Image, Pressable, Button } from 'react-native';
 import styles from '../style/styles';
 import Park from './Park';
 import { useNavigation } from '@react-navigation/native';
@@ -49,53 +49,36 @@ const Search = () => {
     }
   };
 
+
   const ItemView = ({ item }) => {
     return (
       // Flat List Item
-      <Pressable
-        onPress={() => getItem(item)}
-        style={({ pressed }) => [
-          {
-            backgroundColor: pressed ? '#E5E5E5' : 'white'
-          }
-        ]}
-      >
-        <Text style={styles.itemStyle_search}>
-          {item.title.toUpperCase()}
-          {'\n'}
-        </Text>
+      <Text style={styles.itemStyle_search}>
+        {item.title.toUpperCase()}
+        {'\n'}
+        <Button title= 'Lisätietoa' onPress={() => getItem(item)}>Klikkaa tästä</Button>
+        {'\n'}
         {item.Media.map((media) => (
-          <Image
-            key={media.id}
-            source={{ uri: media.path }}
-            style={{
-              height: 500,
-              width: 400,
-              margin: 5,
-              padding: 5
-            }}
-          />
-        ))}
-      </Pressable>
-    );
-  };
-
-  const ItemSeparatorView = () => {
-    return (
-      // Flat List Item Separator
-      <View
+      <Image
+        key={media.id}
+        source={{ uri: media.path }}
         style={{
-          height: 0.5,
-          width: '100%',
-          backgroundColor: '#C8C8C8',
+          height: 500,
+          width: 400,
+          margin: 5,
+          padding: 5
         }}
       />
+    ))}
+    
+      </Text>
     );
   };
 
   
   
   const getItem = (item) => {
+    
     navigation.navigate('Lisätiedot', { data: item });
   }
 
@@ -109,11 +92,17 @@ const Search = () => {
           underlineColorAndroid="transparent"
           placeholder="Search Here"
         />
+        
         <FlatList
           data={filteredDataSource}
           keyExtractor={(item, index) => index.toString()}
-          ItemSeparatorComponent={ItemSeparatorView}
-          renderItem={ItemView}
+          renderItem={({ item }) => {
+            if (search !== '') {
+              return <ItemView item={item} />;
+            } else {
+              return null;
+            }
+          }}
         />
       </View>
     </SafeAreaView>
