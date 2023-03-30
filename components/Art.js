@@ -21,7 +21,7 @@ export default Art = (route) =>  {
 
     return (
       <ScrollView>
-        {data.map((object = route.params) => {
+        {data.map((object) => {
           // Check if the object has the category "Taideteos"
           const Arts = object.Categories.find(
             (category) => category.title === "Taideteos"
@@ -47,6 +47,7 @@ export default Art = (route) =>  {
                   style={styles.image}
                 />
               ))}
+              <Button title='lisätieto' onPress={() => navigation.navigate('Details', {data: object})}/>
             </View>
           );
         })}

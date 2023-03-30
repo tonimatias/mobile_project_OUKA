@@ -95,11 +95,9 @@ const Search = () => {
 
   
   
-    const getItem = (item) => {
-      // Navigate to the category of the item
-      navigation.navigate('Taideteokset', item.Category)
-    }
-  
+  const getItem = (item) => {
+    navigation.navigate('Lisätiedot', { data: item });
+  }
 
   return (
     <SafeAreaView style={styles.container}>

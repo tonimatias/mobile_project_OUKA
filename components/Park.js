@@ -17,7 +17,7 @@ export default Park = () =>  {
 
     return (
       <ScrollView>
-        {data.map((object = route.params) => {
+        {data.map((object) => {
           // Check if the object has the category "Puisto"
           const Parks = object.Categories.find(
             (category) => category.title === "Puisto"
@@ -40,6 +40,7 @@ export default Park = () =>  {
                   style={styles.image}
                 />
               ))}
+              <Button title='lisätieto' onPress={() => navigation.navigate('Details', {data: object})}/>
             </View>
           );
         })}

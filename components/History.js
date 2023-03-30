@@ -19,7 +19,7 @@ export default Histories = () =>  {
 
     return (
       <ScrollView>
-        {data.map((object = route.params) => {
+        {data.map((object) => {
           // Check if the object has the category "Historiallinen kohde"
           const History = object.Categories.find(
             (category) => category.title === "Historiallinen kohde"
@@ -42,6 +42,7 @@ export default Histories = () =>  {
                   style={styles.image}
                 />
               ))}
+              <Button title='lisätieto' onPress={() => navigation.navigate('Details', {data: object})}/>
             </View>
           );
         })}

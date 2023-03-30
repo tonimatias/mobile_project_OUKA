@@ -19,7 +19,7 @@ export default Statue = ({navigation}) =>  {
 
     return (
       <ScrollView>
-        {data.map((object = route.params) => {
+        {data.map((object) => {
           // Check if the object has the category "Patsas"
           const Statues = object.Categories.find(
             (category) => category.title === "Patsas"
