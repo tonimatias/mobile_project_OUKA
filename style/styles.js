@@ -82,5 +82,18 @@ export default StyleSheet.create({
       width: '100%',
       height: 300,
     },
-
+    Button: {
+      flex: 1,
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      paddingHorizontal: 24,
+      paddingVertical: 8,
+      elevation: 2,
+      backgroundColor: '#9047da',
+    },
+    buttonText: {
+      color: 'white',
+      fontSize: 15
+    }
   });

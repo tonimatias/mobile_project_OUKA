@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, Button } from 'react-native';
+import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
 import styles from '../style/styles';
 import Header from './Header';
 
@@ -42,7 +42,9 @@ export default Histories = ({navigation}) =>  {
                   style={styles.image}
                 />
               ))}
-              <Button title='lisätieto' onPress={() => navigation.navigate('Lisätiedot', {data: object})}/>
+              <TouchableOpacity  style={styles.Button} title='lisätietoa' onPress={() => navigation.navigate('Lisätiedot', {data: object})}>
+              <Text style={styles.buttonText}>Lisätietoja</Text>
+             </TouchableOpacity>
             </View>
           );
         })}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, Button } from 'react-native';
+import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, TouchableOpacity, Button } from 'react-native';
 import styles from '../style/styles';
 import Header from './Header';
 
@@ -41,7 +41,9 @@ export default Art = () => {
               {object.Media.map((media) => (
                 <Image key={media.id} source={{ uri: media.path }} style={styles.image} />
               ))}
-              <Button title='lisätieto' onPress={() => navigation.navigate('Lisätiedot', {data: object})}/>
+            <TouchableOpacity  style={styles.Button} title='lisätietoa' onPress={() => navigation.navigate('Lisätiedot', {data: object})}>
+              <Text style={styles.buttonText}>Lisätietoja</Text>
+            </TouchableOpacity>
             </View>
           );
         })}

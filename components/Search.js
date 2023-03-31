@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, Text, View, FlatList, TextInput, Image, Pressable, Button } from 'react-native';
+import { SafeAreaView, Text, View, FlatList, TextInput, Image, TouchableOpacity } from 'react-native';
 import styles from '../style/styles';
 import Park from './Park';
 import { useNavigation } from '@react-navigation/native';
@@ -65,7 +65,9 @@ const Search = () => {
       <Text style={styles.itemStyle_search}>
         {item.title.toUpperCase()}
         {'\n'}
-        <Button title= 'Lisätietoa' onPress={() => getItem(item)}></Button>
+        <TouchableOpacity  style={styles.Button} title='lisätietoa' onPress={() => navigation.navigate('Lisätiedot', {data: object})}>
+          <Text style={styles.buttonText}>Lisätietoja</Text>
+        </TouchableOpacity>
         {'\n'}
         {item.Media.map((media) => (
       <Image
