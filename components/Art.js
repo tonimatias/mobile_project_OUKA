@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView } from 'react-native';
+import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, Button } from 'react-native';
 import styles from '../style/styles';
 import Header from './Header';
 
 
 
 
-export default Art = (route) =>  {
+export default Art = ({navigation}) =>  {
  
     
     const [data, setData] = useState([]);
@@ -47,7 +47,7 @@ export default Art = (route) =>  {
                   style={styles.image}
                 />
               ))}
-              <Button title='lisätieto' onPress={() => navigation.navigate('Details', {data: object})}/>
+              <Button title='lisätieto' onPress={() => navigation.navigate('Lisätiedot', {data: object})}/>
             </View>
           );
         })}

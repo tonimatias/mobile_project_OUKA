@@ -56,7 +56,7 @@ const Search = () => {
       <Text style={styles.itemStyle_search}>
         {item.title.toUpperCase()}
         {'\n'}
-        <Button title= 'Lisätietoa' onPress={() => getItem(item)}>Klikkaa tästä</Button>
+        <Button title= 'Lisätietoa' onPress={() => getItem(item)}></Button>
         {'\n'}
         {item.Media.map((media) => (
       <Image
