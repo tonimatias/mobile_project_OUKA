@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, Text, View, FlatList, TextInput, Image, Pressable } from 'react-native';
+import { SafeAreaView, Text, View, FlatList, TextInput, Image, Pressable, Button } from 'react-native';
 import styles from '../style/styles';
 import Park from './Park';
 import { useNavigation } from '@react-navigation/native';
 import { useRoute } from '@react-navigation/native';
+import Architecture from './Architecture';
 
 const Search = () => {
   const [search, setSearch] = useState('');
@@ -26,15 +27,24 @@ const Search = () => {
   }, []);
 
   const searchFilterFunction = (text) => {
+
+ 
     // Check if searched text is not blank
     if (text) {
       // Inserted text is not blank
       // Filter the masterDataSource and update FilteredDataSource
       const newData = masterDataSource.filter(function (item) {
         // Applying filter for the inserted text in search bar
+        const Architectures = item.Categories.find(
+          (category) => ["Arkkitehtuuri", "Patsas", "Puisto", "Taideteos", "Historialliset kohteet"].includes(category.title));
+
+          if (!Architectures) {
+            // If the object does not have the "Arkkitehtuuri" category, skip it
+            return null;
+          } 
+          
         const itemData = item.title
-          ? item.title.toUpperCase()
-          : ''.toUpperCase();
+          ? item.title.toUpperCase(): ''.toUpperCase();
         const textData = text.toUpperCase();
         return itemData.indexOf(textData) > -1;
       });
@@ -48,62 +58,37 @@ const Search = () => {
     }
   };
 
+
   const ItemView = ({ item }) => {
     return (
       // Flat List Item
-      <Pressable
-        onPress={() => getItem(item)}
-        style={({ pressed }) => [
-          {
-            backgroundColor: pressed ? '#E5E5E5' : 'white'
-          }
-        ]}
-      >
-        <Text style={styles.itemStyle_search}>
-          {item.title.toUpperCase()}
-          {'\n'}
-        </Text>
+      <Text style={styles.itemStyle_search}>
+        {item.title.toUpperCase()}
+        {'\n'}
+        <Button title= 'Lisätietoa' onPress={() => getItem(item)}></Button>
+        {'\n'}
         {item.Media.map((media) => (
-          <Image
-            key={media.id}
-            source={{ uri: media.path }}
-            style={{
-              height: 500,
-              width: 400,
-              margin: 5,
-              padding: 5
-            }}
-          />
-        ))}
-      </Pressable>
-    );
-  };
-
-  const ItemSeparatorView = () => {
-    return (
-      // Flat List Item Separator
-      <View
+      <Image
+        key={media.id}
+        source={{ uri: media.path }}
         style={{
-          height: 0.5,
-          width: '100%',
-          backgroundColor: '#C8C8C8',
+          height: 400,
+          width: 300,
+          
         }}
       />
+    ))}
+    
+      </Text>
     );
   };
 
-  const Categories = () => {
-    const route = useRoute();
-    const category = route.params.category;
   
-    // Rest of the code for displaying the items in the selected category
+  
+  const getItem = (item) => {
+    
+    navigation.navigate('Lisätiedot', { data: item });
   }
-  
-    const getItem = (item) => {
-      // Navigate to the category of the item
-      navigation.navigate('Categories', { category: item.Categories });
-    };
-  
 
   return (
     <SafeAreaView style={styles.container}>
@@ -115,11 +100,17 @@ const Search = () => {
           underlineColorAndroid="transparent"
           placeholder="Search Here"
         />
+        
         <FlatList
           data={filteredDataSource}
           keyExtractor={(item, index) => index.toString()}
-          ItemSeparatorComponent={ItemSeparatorView}
-          renderItem={ItemView}
+          renderItem={({ item }) => {
+            if (search !== '') {
+              return <ItemView item={item} />;
+            } else {
+              return null;
+            }
+          }}
         />
       </View>
     </SafeAreaView>

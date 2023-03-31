@@ -7,7 +7,7 @@ export default StyleSheet.create({
       alignSelf: 'center',
       paddingVertical: 5,
       paddingHorizontal: 5,
-      
+      flex: 1
 
     },
     frontpageimage: {
@@ -71,6 +71,8 @@ export default StyleSheet.create({
     textInputStyle_search: {
       height: 40,
       borderWidth: 1,
+      width: 300,
+      alignSelf: 'center',
       paddingLeft: 20,
       margin: 5,
       borderColor:  '#9600AE',
@@ -79,5 +81,6 @@ export default StyleSheet.create({
     image: {
       width: '100%',
       height: 300,
-    }
+    },
+
   });

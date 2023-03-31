@@ -29,6 +29,9 @@ export default Art = () => {
           if (!Arts) {
             return null;
           }
+
+         
+          
           return (
             <View key={object.id}>
               <Text style={styles.title}>{object.title}</Text>
@@ -38,6 +41,7 @@ export default Art = () => {
               {object.Media.map((media) => (
                 <Image key={media.id} source={{ uri: media.path }} style={styles.image} />
               ))}
+              <Button title='lisätieto' onPress={() => navigation.navigate('Lisätiedot', {data: object})}/>
             </View>
           );
         })}
