@@ -27,15 +27,24 @@ const Search = () => {
   }, []);
 
   const searchFilterFunction = (text) => {
+
+ 
     // Check if searched text is not blank
     if (text) {
       // Inserted text is not blank
       // Filter the masterDataSource and update FilteredDataSource
       const newData = masterDataSource.filter(function (item) {
         // Applying filter for the inserted text in search bar
+        const Architectures = item.Categories.find(
+          (category) => ["Arkkitehtuuri", "Patsas", "Puisto", "Taideteos", "Historialliset kohteet"].includes(category.title));
+
+          if (!Architectures) {
+            // If the object does not have the "Arkkitehtuuri" category, skip it
+            return null;
+          } 
+          
         const itemData = item.title
-          ? item.title.toUpperCase()
-          : ''.toUpperCase();
+          ? item.title.toUpperCase(): ''.toUpperCase();
         const textData = text.toUpperCase();
         return itemData.indexOf(textData) > -1;
       });
@@ -63,10 +72,9 @@ const Search = () => {
         key={media.id}
         source={{ uri: media.path }}
         style={{
-          height: 500,
-          width: 400,
-          margin: 5,
-          padding: 5
+          height: 400,
+          width: 300,
+          
         }}
       />
     ))}
