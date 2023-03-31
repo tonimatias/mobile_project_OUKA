@@ -8,7 +8,7 @@ export default Header = () => {
         <View style={styles.header}>
             <Image
         style={styles.headerlogo}
-        source={require('../pictures/ouluawaits_logo.png')}
+        source={require('../pictures/ouluawaits_logo_2.0.png')}
         resizeMode='contain'
       />
         </View>

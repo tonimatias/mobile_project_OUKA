@@ -40,12 +40,12 @@ export default function App() {
     return (
       <Drawer.Navigator screenOptions={{drawerPosition:'right', 
         overlayColor:'#FFFFFFD9', 
-        headerStyle:{ backgroundColor:'#9600AE'},
+        headerStyle:{ backgroundColor:'#FFFFFF'},
         drawerActiveTintColor: '#151515',
-        headerTintColor:'white',
+        headerTintColor:'#C200E1',
         drawerLabelStyle:{fontFamily:'ManropeRegular', fontSize:17, color:'#9600AE'},
         headerLeft:false,
-        headerRight: () => <DrawerToggleButton tintColor='white' />
+        headerRight: () => <DrawerToggleButton tintColor='#9600AE' />
         }}
         defaultStatus='open'>
        <Drawer.Screen name="Arkkitehtuuri"  component={Architecture}/>
