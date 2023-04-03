@@ -7,7 +7,8 @@ export default StyleSheet.create({
       alignSelf: 'center',
       paddingVertical: 5,
       paddingHorizontal: 5,
-      flex: 1
+      padding: 5,
+      flex: 1,
 
     },
     frontpageimage: {
@@ -67,6 +68,8 @@ export default StyleSheet.create({
     },
     itemStyle_search: {
       padding: 10,
+      fontFamily: 'ManropeRegular',
+      alignSelf: 'center'
     },
     textInputStyle_search: {
       height: 40,
@@ -77,23 +80,27 @@ export default StyleSheet.create({
       margin: 5,
       borderColor:  '#9600AE',
       backgroundColor: '#FFFFFF',
+      fontFamily: 'ManropeRegular'
     },
     image: {
       width: '100%',
-      height: 300,
+      height: 500
     },
     Button: {
       flex: 1,
       flexDirection: 'row',
       justifyContent: 'center',
-      alignItems: 'center',
-      paddingHorizontal: 24,
-      paddingVertical: 8,
-      elevation: 2,
+      alignSelf: 'center',
       backgroundColor: '#9047da',
+      padding: 10,
+      margin: 10,
+      width: 150,
+      borderRadius: 10,
+     
     },
     buttonText: {
       color: 'white',
-      fontSize: 15
+      fontSize: 15,
+      fontFamily: 'ManropeRegular'
     }
   });
