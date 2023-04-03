@@ -86,7 +86,7 @@ const Search = () => {
 
 
   return (
-    <SafeAreaView >
+    <SafeAreaView style={styles.container}>
       <View>
         <TextInput
           style={styles.textInputStyle_search}
