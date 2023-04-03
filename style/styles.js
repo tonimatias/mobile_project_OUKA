@@ -91,7 +91,7 @@ export default StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'center',
       alignSelf: 'center',
-      backgroundColor: '#9047da',
+      backgroundColor: '#b248d2',
       padding: 10,
       margin: 10,
       width: 150,
