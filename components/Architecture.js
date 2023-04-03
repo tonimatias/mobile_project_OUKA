@@ -31,8 +31,6 @@ export default Architecture = ({navigation}) =>  {
           return (
             <View key={object.id}>
               <Text style={styles.title}>{object.title}</Text>
-              <Text style={styles.style1}>{object.content}</Text>
-              <Text style={styles.title1}>Koordinaatit: {object.geo.coordinates}</Text>
               <View key={object.Categories.id}>
               </View>
               {object.Media.map((media) => (
