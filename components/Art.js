@@ -3,7 +3,7 @@ import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, TouchableOpaci
 import styles from '../style/styles';
 import Header from './Header';
 
-export default Art = () => {
+export default Art = ({navigation}) => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0); // new state for total pages
