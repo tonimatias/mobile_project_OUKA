@@ -65,7 +65,7 @@ const Search = () => {
       <Text style={styles.itemStyle_search}>
         {item.title.toUpperCase()}
         {'\n'}
-        <TouchableOpacity  style={styles.Button} title='lisätietoa' onPress={() => navigation.navigate('Lisätiedot', {data: object})}>
+        <TouchableOpacity  style={styles.Button} title='lisätietoa' onPress={() => navigation.navigate('Lisätiedot', {data: item})}>
           <Text style={styles.buttonText}>Lisätietoja</Text>
         </TouchableOpacity>
         {'\n'}
@@ -74,8 +74,8 @@ const Search = () => {
         key={media.id}
         source={{ uri: media.path }}
         style={{
-          height: 400,
-          width: 300,
+          height: 500,
+          width: 500,
           
         }}
       />
@@ -85,15 +85,9 @@ const Search = () => {
     );
   };
 
-  
-  
-  const getItem = (item) => {
-    
-    navigation.navigate('Lisätiedot', { data: item });
-  }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView>
       <View>
         <TextInput
           style={styles.textInputStyle_search}
