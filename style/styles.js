@@ -66,10 +66,11 @@ export default StyleSheet.create({
       margin: 10,
       fontFamily: 'ManropeRegular'
     },
-    itemStyle_search: {
+    title_search: {
       padding: 10,
       fontFamily: 'ManropeRegular',
-      alignSelf: 'center'
+      alignSelf: 'center',
+      fontSize: 18
     },
     textInputStyle_search: {
       height: 40,
@@ -92,15 +93,16 @@ export default StyleSheet.create({
       justifyContent: 'center',
       alignSelf: 'center',
       backgroundColor: '#b248d2',
-      padding: 10,
+      padding: 5,
       margin: 10,
       width: 150,
+      height: 40,
       borderRadius: 10,
      
     },
     buttonText: {
       color: 'white',
-      fontSize: 15,
+      fontSize: 18,
       fontFamily: 'ManropeRegular'
     }
   });
