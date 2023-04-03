@@ -104,5 +104,9 @@ export default StyleSheet.create({
       color: 'white',
       fontSize: 18,
       fontFamily: 'ManropeRegular'
-    }
+    },
+    map: {
+      height: 300,
+      margin: 10,
+    },
   });
