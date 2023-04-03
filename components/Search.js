@@ -62,32 +62,31 @@ const Search = () => {
   const ItemView = ({ item }) => {
     return (
       // Flat List Item
+      <View>
       <Text style={styles.itemStyle_search}>
         {item.title.toUpperCase()}
-        {'\n'}
-        <TouchableOpacity  style={styles.Button} title='lisätietoa' onPress={() => navigation.navigate('Lisätiedot', {data: item})}>
-          <Text style={styles.buttonText}>Lisätietoja</Text>
-        </TouchableOpacity>
-        {'\n'}
+        </Text>
         {item.Media.map((media) => (
       <Image
         key={media.id}
         source={{ uri: media.path }}
         style={{
-          height: 500,
-          width: 500,
-          
+          height: 200,
+          width: 400
+        
         }}
       />
     ))}
-    
-      </Text>
+     <TouchableOpacity  style={styles.Button} title='lisätietoa' onPress={() => navigation.navigate('Lisätiedot', {data: item})}>
+          <Text style={styles.buttonText}>Lisätietoja</Text>
+        </TouchableOpacity>
+      </View>
     );
   };
 
 
   return (
-    <SafeAreaView>
+    <SafeAreaView >
       <View>
         <TextInput
           style={styles.textInputStyle_search}
