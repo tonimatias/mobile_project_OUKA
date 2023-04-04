@@ -4,10 +4,10 @@ import styles from '../style/styles';
 import Header from './Header';
 import Statue from '../components/Statue';
 
-export default Frontpage = () =>  {
-
+export default Frontpage = (props) =>  {
+  const { isDarkmode} = props
   return (
-    <ScrollView>
+    <ScrollView style={{ backgroundColor: isDarkmode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor }}>
            <Image
         style={styles.frontpageimage}
         source={require('../pictures/Oulu_frontpage.jpg')}

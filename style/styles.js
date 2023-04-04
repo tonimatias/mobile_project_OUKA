@@ -40,13 +40,19 @@ export default StyleSheet.create({
       backgroundColor: '#FFFFFF',
       flexDirection: 'row',
       height: '10%',
-      fontFamily: 'ManropeRegular'
+      fontFamily: 'ManropeRegular',
+      alignContent: 'center'
+    
     },    
     headerlogo: {
       flex: 1,
       height:30,
+      //margin:'auto'
       alignSelf: 'center',
-      
+    },
+    themeButton: {
+      marginTop: 30,
+      //alignSelf: 'center'
     },
     title: {
       color: 'black',
@@ -102,5 +108,22 @@ export default StyleSheet.create({
       color: 'white',
       fontSize: 15,
       fontFamily: 'ManropeRegular'
-    }
+    },
+    headerDark: {
+      backgroundColor:'#272727',
+    },
+    headerLight: {
+      backgroundColor:'#FFFFFF'
+    },
+    drawerDark:{
+      backgroundColor:'#494848'
+    },
+    contentBackgroundLight:{
+      backgroundColor:'#faf4f4'
+
+    },
+    contentBackgroundDark: {
+      backgroundColor:'#5f5f5f'
+    },
+    
   });
