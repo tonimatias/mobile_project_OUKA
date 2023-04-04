@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, Text, View, FlatList, TextInput, Image, TouchableOpacity } from 'react-native';
+import { SafeAreaView, Text, View, FlatList, TextInput, Image, TouchableOpacity, ImageBackground } from 'react-native';
 import styles from '../style/styles';
 import { useNavigation } from '@react-navigation/native';
 
@@ -61,19 +61,26 @@ const Search = () => {
   const ItemView = ({ item }) => {
     return (
       // Flat List Item
-      <View>
+      <View style={{
+        borderBottomColor: '#d1d0d0',
+        borderBottomWidth: 1,
+        padding: 15,
+        margin: 5
+      }}>
         {item.Media.map((media) => (
       <Image
         key={media.id}
         source={{ uri: media.path }}
         style={{
           height: 400,
-          width: 400
+          width: 400,
+          alignSelf: 'center',
+          backgroundColor: 'white'
         
         }}
       />
     ))}
-     <Text style={styles.itemStyle_search}>
+     <Text style={styles.title_search}>
         {item.title.toUpperCase()}
         </Text>
      <TouchableOpacity  style={styles.Button} title='lisätietoa' onPress={() => navigation.navigate('Lisätiedot', {data: item})}>
@@ -92,7 +99,7 @@ const Search = () => {
           onChangeText={(text) => searchFilterFunction(text)}
           value={search}
           underlineColorAndroid="transparent"
-          placeholder="Search Here"
+          placeholder="Hae tästä"
         />
         
         <FlatList
