@@ -9,8 +9,10 @@ export default StyleSheet.create({
       paddingHorizontal: 5,
       padding: 5,
       flex: 1,
+      backgroundColor: '#f7f7f7'
 
     },
+    
     frontpageimage: {
       width: '100%',
       height: 300,
@@ -81,7 +83,7 @@ export default StyleSheet.create({
     textInputStyle_search: {
       height: 40,
       borderWidth: 1,
-      width: 300,
+      width: 350,
       alignSelf: 'center',
       paddingLeft: 20,
       margin: 5,

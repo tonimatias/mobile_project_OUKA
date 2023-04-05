@@ -38,11 +38,11 @@ export default Park = ({navigation}) => {
 
           return (
             <View key={object.id}>
-              <Text style={styles.title}>{object.title}</Text>
-              <View key={object.Categories.id}></View>
               {object.Media.map((media) => (
                 <Image key={media.id} source={{ uri: media.path }} style={styles.image} />
               ))}
+              <Text style={styles.title}>{object.title}</Text>
+              <View key={object.Categories.id}></View>
             <TouchableOpacity  style={styles.Button} title='lisätietoa' onPress={() => navigation.navigate('Lisätiedot', {data: object})}>
               <Text style={styles.buttonText}>Lisätietoja</Text>
             </TouchableOpacity>
