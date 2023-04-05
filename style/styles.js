@@ -106,6 +106,19 @@ export default StyleSheet.create({
       borderRadius: 10,
      
     },
+    category_button: {
+      flex: 1,
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignSelf: 'center',
+      backgroundColor: '#b248d2',
+      padding: 10,
+      margin: 20,
+      width: 100,
+      height: 30,
+      
+      
+    },
     buttonText: {
       color: 'white',
       fontSize: 18,
