@@ -106,22 +106,26 @@ export default StyleSheet.create({
       borderRadius: 10,
      
     },
+    buttonText: {
+      color: 'white',
+      fontSize: 18,
+      fontFamily: 'ManropeRegular'
+    },
+
     category_button: {
-      flex: 1,
       flexDirection: 'row',
       justifyContent: 'center',
       alignSelf: 'center',
       backgroundColor: '#b248d2',
       padding: 10,
       margin: 20,
-      width: 100,
-      height: 30,
-      
-      
+      width: 130,
+      height: 40,
     },
-    buttonText: {
+    
+    category_buttonText: {
       color: 'white',
-      fontSize: 18,
+      fontSize: 15,
       fontFamily: 'ManropeRegular'
     },
     headerDark: {

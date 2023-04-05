@@ -49,28 +49,31 @@ export default Architecture = ({navigation}) => {
             </View>
           );
         })}
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-        <TouchableOpacity
-          title="Edellinen sivu"
-          style={styles.category_button}
-          disabled={currentPage === 1}
-          onPress={() => {
-            setCurrentPage(currentPage - 1);
-            scrollViewRef.current.scrollTo({ x: 0, y: 0, animated: false });
-          }}
-        />
-        <Text style={styles.title_search}>
-          {currentPage} / {totalPages} {/* display current page and total pages */}
-        </Text>
-        <TouchableOpacity
-          title="Seuraava sivu"
-          style={styles.category_button}
-          disabled={currentPage === totalPages} 
-          onPress={() => {
-            setCurrentPage(currentPage + 1);
-            scrollViewRef.current.scrollTo({ x: 0, y: 0, animated: false });
-          }}
-        />
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          <TouchableOpacity
+            title="Edellinen sivu"
+            style={styles.category_button}
+            disabled={currentPage === 1}
+            onPress={() => {
+              setCurrentPage(currentPage - 1);
+              scrollViewRef.current.scrollTo({ x: 0, y: 0, animated: false });
+            }}>
+            <Text style={styles.category_buttonText}>Edellinen sivu</Text>
+            </TouchableOpacity>
+
+          <Text style={styles.title_search}>
+            {currentPage} / {totalPages} {/* display current page and total pages */}
+          </Text>
+          <TouchableOpacity
+            title="Seuraava sivu"
+            style={styles.category_button}
+            disabled={currentPage === totalPages} 
+            onPress={() => {
+              setCurrentPage(currentPage + 1);
+              scrollViewRef.current.scrollTo({ x: 0, y: 0, animated: false });
+            }}>
+            <Text style={styles.category_buttonText}>Seuraava sivu</Text>
+          </TouchableOpacity>
       </View>
     </ScrollView>
   );

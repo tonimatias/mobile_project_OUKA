@@ -57,8 +57,9 @@ export default Statue = ({navigation}) => {
           onPress={() => {
             setCurrentPage(currentPage - 1);
             scrollViewRef.current.scrollTo({ x: 0, y: 0, animated: false });
-          }}
-        />
+          }}>
+          <Text style={styles.category_buttonText}>Edellinen sivu</Text>
+        </TouchableOpacity>
         <Text style={styles.title_search}>
           {currentPage} / {totalPages} {/* display current page and total pages */}
         </Text>
@@ -69,8 +70,9 @@ export default Statue = ({navigation}) => {
           onPress={() => {
             setCurrentPage(currentPage + 1);
             scrollViewRef.current.scrollTo({ x: 0, y: 0, animated: false });
-          }}
-        />
+          }}>
+            <Text style={styles.category_buttonText}>Seuraava sivu</Text>
+          </TouchableOpacity>
       </View>
     </ScrollView>
   );
