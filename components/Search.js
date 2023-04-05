@@ -65,7 +65,8 @@ const Search = () => {
         borderBottomColor: '#d1d0d0',
         borderBottomWidth: 1,
         padding: 15,
-        margin: 5
+        margin: 5,
+        backgroundColor: '#ffffff'
       }}>
         {item.Media.map((media) => (
       <Image
@@ -73,7 +74,7 @@ const Search = () => {
         source={{ uri: media.path }}
         style={{
           height: 400,
-          width: 400,
+          width: 350,
           alignSelf: 'center',
           backgroundColor: 'white'
         
