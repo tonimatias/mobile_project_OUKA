@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, Button, TouchableOpacity } from 'react-native';
 import styles from './style/styles'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createDrawerNavigator, DrawerToggleButton  } from '@react-navigation/drawer';
+import { createDrawerNavigator, DrawerToggleButton } from '@react-navigation/drawer';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import Details from './components/Details';
@@ -23,8 +23,11 @@ import { FA5Style } from '@expo/vector-icons/build/FontAwesome5';
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
+//const isDarkMode = true;
+
 
 export default function App() {
+  const [isDarkmode, setIsDarkmode] = useState(false)
   
   function HomeStack() {
     return (
@@ -34,21 +37,25 @@ export default function App() {
       </Stack.Navigator>
     );
   }
+  function toggleDarkMode() {
+    setIsDarkmode(!isDarkmode);
+  }
 
   function MyDrawer() {
-
+    
     return (
       <Drawer.Navigator screenOptions={{drawerPosition:'right', 
         overlayColor:'#FFFFFFD9', 
-        headerStyle:{ backgroundColor:'#FFFFFF'},
+        headerStyle:{ backgroundColor: isDarkmode ? styles.headerDark.backgroundColor : styles.headerLight.backgroundColor},
         drawerActiveTintColor: '#151515',
-        headerTintColor:'#C200E1',
-        drawerLabelStyle:{fontFamily:'ManropeRegular', fontSize:17, color:'#9600AE'},
+        headerTintColor:'#b248d2',
+        drawerLabelStyle:{fontFamily:'ManropeRegular', fontSize:17, color:'#b248d2'},
+        drawerStyle:{backgroundColor:isDarkmode ? styles.drawerDark.backgroundColor : styles.headerLight.backgroundColor},
         headerLeft:false,
         headerRight: () => <DrawerToggleButton tintColor='#9600AE' />
         }}
         defaultStatus='open'>
-       <Drawer.Screen name="Arkkitehtuuri" component={Architecture}/>
+       <Drawer.Screen name="Arkkitehtuuri"  component={Architecture} />
         <Drawer.Screen name="Patsaat" component={Statue}/>
         <Drawer.Screen name="Taideteokset" component={Art} />
         <Drawer.Screen name="Historialliset kohteet" component={Histories} />
@@ -69,13 +76,16 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Header />
+      <Header isDarkmode={isDarkmode} toggleDarkMode={toggleDarkMode}/>
     <Tab.Navigator
       screenOptions={{
         "tabBarActiveTintColor": "#9600AE",
         "tabBarStyle": [
           {
             "display": "flex"
+          },
+          {
+            "backgroundColor": isDarkmode ? styles.headerDark.backgroundColor : styles.headerLight.backgroundColor
           },
           null
         ]

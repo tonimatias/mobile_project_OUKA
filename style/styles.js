@@ -7,9 +7,12 @@ export default StyleSheet.create({
       alignSelf: 'center',
       paddingVertical: 5,
       paddingHorizontal: 5,
-      flex: 1
+      padding: 5,
+      flex: 1,
+      backgroundColor: '#f7f7f7'
 
     },
+    
     frontpageimage: {
       width: '100%',
       height: 300,
@@ -17,12 +20,6 @@ export default StyleSheet.create({
       margin: 15,
       
       
-    },
-    category_title: {
-      fontSize: 16,
-      fontWeight: 'bold',
-      margin: 5,
-      fontFamily: 'ManropeRegular'
     },
 
     frontpage_title: {
@@ -39,61 +36,104 @@ export default StyleSheet.create({
       backgroundColor: '#FFFFFF',
       flexDirection: 'row',
       height: '10%',
-      fontFamily: 'ManropeRegular'
+      fontFamily: 'ManropeRegular',
+      alignContent: 'center'
+    
     },    
     headerlogo: {
       flex: 1,
       height:30,
+      //margin:'auto'
       alignSelf: 'center',
-      
+    },
+    themeButton: {
+      marginTop: 30,
+      //alignSelf: 'center'
     },
     title: {
       color: 'black',
-      fontWeight: 'bold',
       flex: 1,
       fontSize: 23,
       textAlign: 'center',
       margin: 10,
       fontFamily: 'ManropeRegular'
     },
-    title1: {
-      color: 'black',
-      fontWeight: 'bold',
-      flex: 1,
-      fontSize: 14,
-      textAlign: 'center',
-      margin: 10,
-      fontFamily: 'ManropeRegular'
-    },
-    itemStyle_search: {
+ 
+    category_title: {
       padding: 10,
+      fontFamily: 'ManropeRegular',
+      alignSelf: 'center',
+      fontSize: 18
     },
     textInputStyle_search: {
       height: 40,
       borderWidth: 1,
-      width: 300,
+      width: 350,
       alignSelf: 'center',
       paddingLeft: 20,
       margin: 5,
       borderColor:  '#9600AE',
       backgroundColor: '#FFFFFF',
+      fontFamily: 'ManropeRegular'
     },
     image: {
       width: '100%',
-      height: 300,
+      height: 500
     },
     Button: {
       flex: 1,
       flexDirection: 'row',
       justifyContent: 'center',
-      alignItems: 'center',
-      paddingHorizontal: 24,
-      paddingVertical: 8,
-      elevation: 2,
-      backgroundColor: '#9047da',
+      alignSelf: 'center',
+      backgroundColor: '#b248d2',
+      padding: 5,
+      margin: 10,
+      width: 150,
+      height: 40,
+      borderRadius: 10,
+     
     },
     buttonText: {
       color: 'white',
-      fontSize: 15
-    }
+      fontSize: 18,
+      fontFamily: 'ManropeRegular'
+    },
+
+    category_button: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignSelf: 'center',
+      backgroundColor: '#b248d2',
+      padding: 10,
+      margin: 20,
+      width: 130,
+      height: 40,
+    },
+    
+    category_buttonText: {
+      color: 'white',
+      fontSize: 15,
+      fontFamily: 'ManropeRegular'
+    },
+    headerDark: {
+      backgroundColor:'#272727',
+    },
+    headerLight: {
+      backgroundColor:'#FFFFFF'
+    },
+    drawerDark:{
+      backgroundColor:'#494848'
+    },
+    contentBackgroundLight:{
+      backgroundColor:'#faf4f4'
+
+    },
+    contentBackgroundDark: {
+      backgroundColor:'#5f5f5f'
+    },
+    
+    map: {
+      height: 300,
+      margin: 10,
+    },
   });

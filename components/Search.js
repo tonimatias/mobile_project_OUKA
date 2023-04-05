@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, Text, View, FlatList, TextInput, Image, TouchableOpacity } from 'react-native';
+import { SafeAreaView, Text, View, FlatList, TextInput, Image, TouchableOpacity, ImageBackground } from 'react-native';
 import styles from '../style/styles';
-import Park from './Park';
 import { useNavigation } from '@react-navigation/native';
-import { useRoute } from '@react-navigation/native';
-import Architecture from './Architecture';
+
+
 
 const Search = () => {
   const [search, setSearch] = useState('');
@@ -35,7 +34,7 @@ const Search = () => {
       // Filter the masterDataSource and update FilteredDataSource
       const newData = masterDataSource.filter(function (item) {
         // Applying filter for the inserted text in search bar
-        const Architectures = item.Categories.find(
+        const Architectures = item.Categories.some(
           (category) => ["Arkkitehtuuri", "Patsas", "Puisto", "Taideteos", "Historialliset kohteet"].includes(category.title));
 
           if (!Architectures) {
@@ -62,28 +61,36 @@ const Search = () => {
   const ItemView = ({ item }) => {
     return (
       // Flat List Item
-      <View>
-      <Text style={styles.itemStyle_search}>
-        {item.title.toUpperCase()}
-        </Text>
+      <View style={{
+        borderBottomColor: '#d1d0d0',
+        borderBottomWidth: 1,
+        padding: 15,
+        margin: 5,
+        backgroundColor: '#ffffff'
+      }}>
         {item.Media.map((media) => (
       <Image
         key={media.id}
         source={{ uri: media.path }}
         style={{
-          height: 200,
-          width: 400
+          height: 400,
+          width: 350,
+          alignSelf: 'center',
+          backgroundColor: 'white'
         
         }}
       />
     ))}
+     <Text style={styles.category_title}>
+        {item.title.toUpperCase()}
+        </Text>
      <TouchableOpacity  style={styles.Button} title='lisätietoa' onPress={() => navigation.navigate('Lisätiedot', {data: item})}>
           <Text style={styles.buttonText}>Lisätietoja</Text>
         </TouchableOpacity>
       </View>
+  
     );
   };
-
 
   return (
     <SafeAreaView style={styles.container}>
@@ -93,7 +100,7 @@ const Search = () => {
           onChangeText={(text) => searchFilterFunction(text)}
           value={search}
           underlineColorAndroid="transparent"
-          placeholder="Search Here"
+          placeholder="Hae tästä"
         />
         
         <FlatList

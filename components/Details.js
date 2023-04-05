@@ -2,13 +2,27 @@ import React, { useState, useEffect } from 'react';
 import { Text, ScrollView, Image, BackHandler, Button, Touchable } from 'react-native';
 import styles from '../style/styles';
 import Header from './Header';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import MapView from 'react-native-maps';
+import Marker from 'react-native-maps';
 
-//tää pitää lisätä joka kategoriaan
-//<Button title='lisätieto' onPress={() => navigation.navigate('Details', {data: object})}/>
+export default function Details({ route, navigation }) {
+  const { data } = route.params;
+  const [coordinates, setCoordinates] = useState(null);
 
-export default Details = ({route, navigation}) =>  {
-  const {data} = route.params;
+  useEffect(() => {
+    fetch('https://opendata.zoneatlas.com/oulu/objects.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const location = data.find((object) => object.id === route.params.data.id);
+        console.log(location);
+        if (location && location.geo && location.geo.coordinates) {
+          setCoordinates(location.geo.coordinates);
+        } else {
+          console.error('Location not found or missing coordinates');
+        }
+      })
+      .catch((error) => console.error(error));
+  }, [route.params.data.id]);
 
   return (
     <ScrollView>
@@ -18,13 +32,30 @@ export default Details = ({route, navigation}) =>  {
         <Image
           key={media.id}
           source={{ uri: media.path }}
-          style={styles.image} 
+          style={styles.image}
         />
       ))}
-      <Text style={styles.title1}>{data.content}</Text>
-      <Text>kartta linkki tähän?{data.geo.coordinates}</Text>
-
+      <Text style={styles.title}>{data.content}</Text>
+      <Text>kartta linkki tähän?</Text>
+      {coordinates ?
+        <MapView
+        style={styles.map}
+        initialRegion={{
+          latitude: coordinates[1],
+          longitude: coordinates[0],
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        }}
+      >
+        {coordinates && (
+          <Marker coordinate={{ latitude: coordinates[1], longitude: coordinates[0] }} />
+        )}
+      </MapView>
       
+        :
+        <Text>No coordinates found</Text>
+      }
     </ScrollView>
   );
 }
+
