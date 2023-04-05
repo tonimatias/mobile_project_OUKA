@@ -21,12 +21,6 @@ export default StyleSheet.create({
       
       
     },
-    category_title: {
-      fontSize: 16,
-      fontWeight: 'bold',
-      margin: 5,
-      fontFamily: 'ManropeRegular'
-    },
 
     frontpage_title: {
       fontSize: 16,
@@ -58,23 +52,14 @@ export default StyleSheet.create({
     },
     title: {
       color: 'black',
-      fontWeight: 'bold',
       flex: 1,
       fontSize: 23,
       textAlign: 'center',
       margin: 10,
       fontFamily: 'ManropeRegular'
     },
-    title1: {
-      color: 'black',
-      fontWeight: 'bold',
-      flex: 1,
-      fontSize: 14,
-      textAlign: 'center',
-      margin: 10,
-      fontFamily: 'ManropeRegular'
-    },
-    title_search: {
+ 
+    category_title: {
       padding: 10,
       fontFamily: 'ManropeRegular',
       alignSelf: 'center',

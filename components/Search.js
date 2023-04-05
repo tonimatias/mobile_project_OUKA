@@ -81,7 +81,7 @@ const Search = () => {
         }}
       />
     ))}
-     <Text style={styles.title_search}>
+     <Text style={styles.category_title}>
         {item.title.toUpperCase()}
         </Text>
      <TouchableOpacity  style={styles.Button} title='lisätietoa' onPress={() => navigation.navigate('Lisätiedot', {data: item})}>

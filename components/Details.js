@@ -34,7 +34,7 @@ export default function Details({ route }) {
           style={styles.image}
         />
       ))}
-      <Text style={styles.title1}>{data.content}</Text>
+      <Text style={styles.title}>{data.content}</Text>
       <Text>kartta linkki tähän?</Text>
       {coordinates ?
         <MapView

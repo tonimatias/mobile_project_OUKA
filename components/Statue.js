@@ -41,7 +41,7 @@ export default Statue = ({navigation}) => {
               {object.Media.map((media) => (
                 <Image key={media.id} source={{ uri: media.path }} style={styles.image} />
               ))}
-              <Text style={styles.title}>{object.title}</Text>
+              <Text style={styles.category_title}>{object.title.toUpperCase()}</Text>
               <View key={object.Categories.id}></View>
             <TouchableOpacity  style={styles.Button} title='lisätietoa' onPress={() => navigation.navigate('Lisätiedot', {data: object})}>
               <Text style={styles.buttonText}>Lisätietoja</Text>
