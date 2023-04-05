@@ -30,7 +30,7 @@ export default function App() {
     return (
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Frontpage} options={{headerShown: false}}/>
-        <Stack.Screen name="Lisätiedot" component={Details}/>
+        <Stack.Screen name="Lisätiedot" component={Details} options={{headerShown: false}}/>
       </Stack.Navigator>
     );
   }
@@ -48,14 +48,15 @@ export default function App() {
         headerRight: () => <DrawerToggleButton tintColor='#9600AE' />
         }}
         defaultStatus='open'>
-       <Drawer.Screen name="Arkkitehtuuri"  component={Architecture}/>
+       <Drawer.Screen name="Arkkitehtuuri" component={Architecture}/>
         <Drawer.Screen name="Patsaat" component={Statue}/>
         <Drawer.Screen name="Taideteokset" component={Art} />
         <Drawer.Screen name="Historialliset kohteet" component={Histories} />
-        <Drawer.Screen name="Puistot" component={Park} />
+        <Drawer.Screen name="Puistot" component={Park}/>
       </Drawer.Navigator>
     );
   }
+  
  
 
   const [loaded] = useFonts({
