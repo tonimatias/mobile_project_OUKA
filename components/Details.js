@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Text, ScrollView, Image, BackHandler, Button, Touchable } from 'react-native';
 import styles from '../style/styles';
 import Header from './Header';
-import MapView from 'react-native-maps';
-import Marker from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
 
 export default function Details({ route, navigation }) {
   const { data } = route.params;
@@ -14,7 +13,7 @@ export default function Details({ route, navigation }) {
       .then((response) => response.json())
       .then((data) => {
         const location = data.find((object) => object.id === route.params.data.id);
-        console.log(location);
+        //console.log(location);
         if (location && location.geo && location.geo.coordinates) {
           setCoordinates(location.geo.coordinates);
         } else {
