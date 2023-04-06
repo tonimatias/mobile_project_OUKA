@@ -14,7 +14,7 @@ export default function Details({ route, navigation }) {
       .then((response) => response.json())
       .then((data) => {
         const location = data.find((object) => object.id === route.params.data.id);
-        console.log(location);
+        //console.log(location);
         if (location && location.geo && location.geo.coordinates) {
           setCoordinates(location.geo.coordinates);
         } else {
