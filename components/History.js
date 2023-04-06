@@ -60,7 +60,7 @@ export default Histories = ({navigation}) => {
             }}>
             <Text style={styles.category_buttonText}>Edellinen sivu</Text>
           </TouchableOpacity>
-          <Text style={styles.title_search}>
+          <Text style={styles.page_number}>
             {currentPage} / {totalPages} {/* display current page and total pages */}
           </Text>
           <TouchableOpacity

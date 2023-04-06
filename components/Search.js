@@ -102,7 +102,7 @@ const Search = () => {
           underlineColorAndroid="transparent"
           placeholder="Hae tästä"
         />
-        
+        <Text style={styles.frontpage_title}>Tältä sivulta voit hakea </Text>
         <FlatList
           data={filteredDataSource}
           keyExtractor={(item, index) => index.toString()}

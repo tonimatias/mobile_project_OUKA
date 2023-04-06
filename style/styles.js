@@ -65,6 +65,15 @@ export default StyleSheet.create({
       alignSelf: 'center',
       fontSize: 18
     },
+
+    page_number: {
+      padding: 20,
+      margin: 5,
+      marginTop: 28,
+      fontFamily: 'ManropeRegular',
+      alignSelf: 'center',
+      fontSize: 15,
+    },
     textInputStyle_search: {
       height: 40,
       borderWidth: 1,
@@ -104,10 +113,12 @@ export default StyleSheet.create({
       justifyContent: 'center',
       alignSelf: 'center',
       backgroundColor: '#b248d2',
-      padding: 10,
+      padding: 8,
       margin: 20,
-      width: 130,
-      height: 40,
+      marginTop: 50,
+      width: 110,
+      height: 35,
+      borderRadius: 5
     },
     
     category_buttonText: {
