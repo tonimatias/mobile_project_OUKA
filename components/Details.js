@@ -10,17 +10,18 @@ export default function Details({ route, navigation }) {
 
   useEffect(() => {
     fetch('https://opendata.zoneatlas.com/oulu/objects.json')
-      .then((response) => response.json())
-      .then((data) => {
-        const location = data.find((object) => object.id === route.params.data.id);
-        //console.log(location);
-        if (location && location.geo && location.geo.coordinates) {
-          setCoordinates(location.geo.coordinates);
-        } else {
-          console.error('Location not found or missing coordinates');
-        }
-      })
-      .catch((error) => console.error(error));
+  .then((response) => response.json())
+  .then((data) => {
+    const location = data.find((object) => object.id === route.params.data.id);
+    console.log(location); // Log the location object to the console
+    if (location && location.geo && location.geo.coordinates) {
+      setCoordinates(location.geo.coordinates);
+    } else {
+      console.error('Location not found or missing coordinates');
+    }
+  })
+  .catch((error) => console.error(error));
+
   }, [route.params.data.id]);
 
   return (
@@ -38,23 +39,22 @@ export default function Details({ route, navigation }) {
       <Text>kartta linkki tähän?</Text>
       {coordinates ?
         <MapView
-        style={styles.map}
-        initialRegion={{
-          latitude: coordinates[1],
-          longitude: coordinates[0],
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
-      >
-        {coordinates && (
-          <Marker coordinate={{ latitude: coordinates[1], longitude: coordinates[0] }} />
-        )}
-      </MapView>
-      
+          style={styles.map}
+          region={{
+            latitude: coordinates[0],
+            longitude: coordinates[1],
+            latitudeDelta: 0.005,
+            longitudeDelta: 0.005,
+          }}
+        >
+          {coordinates && (
+        <Marker coordinate={{ latitude: coordinates[0], longitude: coordinates[1] }} />
+)}
+
+        </MapView>
         :
         <Text>No coordinates found</Text>
       }
     </ScrollView>
   );
 }
-
