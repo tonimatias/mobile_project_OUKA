@@ -12,7 +12,13 @@ export default StyleSheet.create({
       backgroundColor: '#f7f7f7'
 
     },
-    
+    frontpage_container: {
+      flex: 1,
+    },
+    image: {
+    flex: 1,
+    justifyContent: 'center',
+  },
     frontpageimage: {
       width: '95%',
       height: 300,
