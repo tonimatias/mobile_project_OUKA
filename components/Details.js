@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Text, ScrollView, Image, BackHandler, Button, Touchable } from 'react-native';
 import styles from '../style/styles';
 import Header from './Header';
-import MapView from 'react-native-maps';
-import Marker from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
 
 export default function Details({ route, navigation }) {
   const { data } = route.params;
