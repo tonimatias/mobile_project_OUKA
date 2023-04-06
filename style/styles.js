@@ -14,18 +14,28 @@ export default StyleSheet.create({
     },
     
     frontpageimage: {
-      width: '100%',
+      width: '95%',
       height: 300,
+      overflow: "hidden",
       alignSelf: 'center',
-      margin: 15,
-      
+         
       
     },
-
     frontpage_title: {
+      fontSize: 30,
+      marginLeft: 10,
+      marginRight: 10,
+      textAlign: 'left',
+      fontFamily: 'ManropeRegular'
+
+    },
+
+    frontpage_txt: {
       fontSize: 16,
-      margin: 5,
-      textAlign: 'center',
+      marginLeft: 10,
+      marginRight: 10,
+      marginTop:10,
+      textAlign: 'left',
       fontFamily: 'ManropeRegular'
 
     },

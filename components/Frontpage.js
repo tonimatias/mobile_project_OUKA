@@ -13,8 +13,9 @@ export default Frontpage = (props) =>  {
         source={require('../pictures/Oulu_frontpage.jpg')}
         resizeMode='contain'
       />
-      <Text style={styles.frontpage_title}>OuluAwaits on sovellus, jonka avulla löydät mielenkiintoista arkkitehtuuria, taideteoksia, patsaita, sekä puistoja ja historiallisia paikkoja.  </Text>
-      <Text style={styles.frontpage_title}>Alhaalta voit etsiä aluetta, taiteilijaa, tai paikkaa. Valikosta löytyy jokaiselle kategorialle oma sivusto.</Text>
+      <Text style={styles.frontpage_title}>Mikä ihmeen Oulu Awaits?</Text>
+      <Text style={styles.frontpage_txt}>OuluAwaits on sovellus, jonka avulla löydät mielenkiintoista arkkitehtuuria, taideteoksia, patsaita, sekä puistoja ja historiallisia paikkoja.  </Text>
+      <Text style={styles.frontpage_txt}>Alhaalta voit etsiä aluetta, taiteilijaa, tai paikkaa. Valikosta löytyy jokaiselle kategorialle oma sivusto.</Text>
     </ScrollView>
   );
 }
