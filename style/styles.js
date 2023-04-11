@@ -88,7 +88,8 @@ export default StyleSheet.create({
       fontSize: 23,
       textAlign: 'center',
       margin: 10,
-      fontFamily: 'ManropeRegular'
+      fontFamily: 'ManropeRegular',
+      fontWeight: 'bold',
     },
  
     category_title: {
@@ -118,8 +119,10 @@ export default StyleSheet.create({
       fontFamily: 'ManropeRegular'
     },
     image: {
-      width: '100%',
-      height: 500
+      marginTop: 20,
+      alignSelf: 'center',
+      width: '80%',
+      height: 200
     },
     Button: {
       flex: 1,
@@ -179,4 +182,25 @@ export default StyleSheet.create({
       height: 300,
       margin: 10,
     },
+
+    returnButton: {
+      backgroundColor: '#fff',
+    },
+
+    returnText: {
+      color: '#C200E1',
+      padding: 15,
+      fontSize: 20,
+      fontFamily: 'ManropeRegular',
+      //fontWeight: 'bold',
+    },
+
+    content: {
+      textAlign: 'center',
+      fontFamily: 'ManropeRegular',
+    },
+
+    details: {
+      backgroundColor: '#fff',
+    }
   });

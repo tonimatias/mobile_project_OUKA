@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, ScrollView, Image, BackHandler, Button, Touchable } from 'react-native';
+import { Text, ScrollView, Image, BackHandler, Button, Touchable, Pressable } from 'react-native';
 import styles from '../style/styles';
 import Header from './Header';
 import MapView, { Marker } from 'react-native-maps';
@@ -25,9 +25,10 @@ export default function Details({ route, navigation }) {
   }, [route.params.data.id]);
 
   return (
-    <ScrollView>
-      <Button style={styles.Button} title='Takaisin' onPress={() => navigation.navigate('Kategoriat')}/>
-      <Text style={styles.title}>{data.title}</Text>
+    <ScrollView style={styles.details}>
+      <Pressable style={styles.returnButton} onPress={() => navigation.navigate('Kategoriat')}>
+        <Text style={styles.returnText}>Takaisin</Text>
+      </Pressable>
       {data.Media.map((media) => (
         <Image
           key={media.id}
@@ -35,8 +36,8 @@ export default function Details({ route, navigation }) {
           style={styles.image}
         />
       ))}
-      <Text style={styles.title}>{data.content}</Text>
-      <Text>kartta linkki tähän?</Text>
+      <Text style={styles.title}>{data.title}</Text>
+      <Text style={styles.content}>{data.content}</Text>
       {coordinates ?
         <MapView
           style={styles.map}
