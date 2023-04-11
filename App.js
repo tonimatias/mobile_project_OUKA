@@ -68,6 +68,7 @@ export default function App() {
 
   const [loaded] = useFonts({
     ManropeRegular: require('./assets/fonts/Manrope-Regular.ttf'),
+    ManropeBold: require('./assets/fonts/Manrope-ExtraBold.ttf'),
   });
 
   if(!loaded) {

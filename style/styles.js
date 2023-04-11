@@ -1,5 +1,8 @@
 import { StyleSheet } from 'react-native';
 
+
+
+
 export default StyleSheet.create({
     container: {
       flexDirection: 'row',
@@ -12,12 +15,23 @@ export default StyleSheet.create({
       backgroundColor: '#f7f7f7'
 
     },
+    container1: {
+      flex:1,
+      flexDirection: 'row',
+      alignItems: 'center',
+      alignSelf: 'center',
+    },
     frontpage_container: {
-      flex: 1,
+      flex:1,
+      alignItems: 'center',
+      alignSelf: 'center',
+      flexDirection: 'row',
     },
     image: {
-    flex: 1,
-    justifyContent: 'center',
+      flex:1,
+      alignItems: 'center',
+      alignSelf: 'center',
+      flexDirection: 'row',
   },
     frontpageimage: {
       width: '95%',
@@ -31,16 +45,18 @@ export default StyleSheet.create({
       fontSize: 30,
       marginLeft: 10,
       marginRight: 10,
+      marginBottom:10,
       textAlign: 'left',
-      fontFamily: 'ManropeRegular'
-
+      fontFamily: 'ManropeBold',
+      
+    
     },
 
     frontpage_txt: {
       fontSize: 16,
       marginLeft: 10,
       marginRight: 10,
-      marginTop:10,
+      marginTop:5,
       textAlign: 'left',
       fontFamily: 'ManropeRegular'
 
