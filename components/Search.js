@@ -69,26 +69,26 @@ const Search = () => {
         margin: 5,
         backgroundColor: '#ffffff'
       }}>
-        {item.Media.map((media) => (
-      <Image
-        key={media.id}
-        source={{ uri: media.path }}
-        style={{
-          height: 400,
-          width: 350,
-          alignSelf: 'center',
-          backgroundColor: 'white'
-        
-        }}
-      />
-    ))}
+    <View key={item.id}>
+      {item.Media.length > 0 ? (
+        item.Media.map((media) => (
+          <Image key={media.id} source={{ uri: media.path }} style={styles.image} />
+        ))
+      ) : (
+    <Image
+      source={require('../pictures/placeholder.png')} // replace with the path to your own placeholder image
+      style={styles.image}
+    />
+  )}
+  {/* rest of the code */}
+  </View>
      <Text style={styles.category_title}>
         {item.title.toUpperCase()}
         </Text>
      <TouchableOpacity  style={styles.Button} title='lisätietoa' onPress={() => navigation.navigate('Lisätiedot', {data: item})}>
           <Text style={styles.buttonText}>Lisätietoja</Text>
-        </TouchableOpacity>
-      </View>
+      </TouchableOpacity>
+    </View>
   
     );
   };
