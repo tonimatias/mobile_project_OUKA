@@ -3,6 +3,7 @@ import { Text, ScrollView, Image, BackHandler, Button, Touchable, Pressable } fr
 import styles from '../style/styles';
 import Header from './Header';
 import MapView, { Marker } from 'react-native-maps';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function Details({ route, navigation }) {
   const { data } = route.params;
@@ -27,7 +28,7 @@ export default function Details({ route, navigation }) {
   return (
     <ScrollView style={styles.details}>
       <Pressable style={styles.returnButton} onPress={() => navigation.navigate('Kategoriat')}>
-        <Text style={styles.returnText}>Takaisin</Text>
+      <Ionicons style={styles.arrowIcon} size={30} color='#9600AE' name="arrow-back-outline"/>
       </Pressable>
       {data.Media.map((media) => (
         <Image

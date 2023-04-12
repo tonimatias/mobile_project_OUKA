@@ -15,23 +15,21 @@ export default StyleSheet.create({
       backgroundColor: '#f7f7f7'
 
     },
-    container1: {
-      flex:1,
-      flexDirection: 'row',
-      alignItems: 'center',
-      alignSelf: 'center',
-    },
+
     frontpage_container: {
       flex:1,
-      alignItems: 'center',
-      alignSelf: 'center',
-      flexDirection: 'row',
+ 
+
     },
-    image: {
+    container1: {
+      paddingTop:'90%',
+      height:'100%',
+      backgroundColor:'#00000040',
+
+    },
+    imagefrontpage: {
       flex:1,
-      alignItems: 'center',
-      alignSelf: 'center',
-      flexDirection: 'row',
+      
   },
     frontpageimage: {
       width: '95%',
@@ -42,12 +40,13 @@ export default StyleSheet.create({
       
     },
     frontpage_title: {
-      fontSize: 30,
+      fontSize: 40,
       marginLeft: 10,
       marginRight: 10,
       marginBottom:10,
       textAlign: 'left',
       fontFamily: 'ManropeBold',
+      color:'white'
       
     
     },
@@ -58,7 +57,8 @@ export default StyleSheet.create({
       marginRight: 10,
       marginTop:5,
       textAlign: 'left',
-      fontFamily: 'ManropeRegular'
+      fontFamily: 'ManropeRegular',
+      color:'white'
 
     },
 
@@ -85,6 +85,9 @@ export default StyleSheet.create({
       right:0,
       zIndex: 1,
       //alignSelf: 'center'
+    },
+    arrowIcon: {
+      padding: 10
     },
     title: {
       color: 'black',
