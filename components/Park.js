@@ -36,11 +36,21 @@ export default Park = ({navigation}) => {
             return null;
           }
 
+          const PlaceholderImage = () => (
+            <View style={styles.imagePlaceholder}>
+              <Image style={styles.image}source={require('../pictures/placeholder.png')}></Image>
+            </View>
+          );
+
           return (
             <View key={object.id}>
-              {object.Media.map((media) => (
+            {object.Media.length > 0 ? (
+                object.Media.map((media) => (
                 <Image key={media.id} source={{ uri: media.path }} style={styles.image} />
-              ))}
+                ))
+            ) : (
+                <PlaceholderImage />
+            )}
               <Text style={styles.category_title}>{object.title.toUpperCase()}</Text>
               <View key={object.Categories.id}></View>
             <TouchableOpacity  style={styles.Button} title='lisätietoa' onPress={() => navigation.navigate('Lisätiedot', {data: object})}>
