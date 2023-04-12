@@ -127,6 +127,12 @@ export default StyleSheet.create({
       width: '80%',
       height: 200
     },
+    OuluSeal: {
+      marginTop: 20,
+      alignSelf: 'center',
+      width: '80%',
+      height: 400
+    },
     Button: {
       flex: 1,
       flexDirection: 'row',
