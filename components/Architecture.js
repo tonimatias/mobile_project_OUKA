@@ -37,11 +37,11 @@ export default Architecture = ({navigation}) => {
           }
 
           return (
-            <View key={object.id}>
+            <View key={object.id} style={styles.bg}>
+              <Text style={styles.category_title}>{object.title.toUpperCase()}</Text>
               {object.Media.map((media) => (
                 <Image key={media.id} source={{ uri: media.path }} style={styles.image} />
               ))}
-              <Text style={styles.category_title}>{object.title.toUpperCase()}</Text>
               <View key={object.Categories.id}></View>
             <TouchableOpacity  style={styles.Button} title='lisätietoa' onPress={() => navigation.navigate('Lisätiedot', {data: object})}>
               <Text style={styles.buttonText}>Lisätietoja</Text>

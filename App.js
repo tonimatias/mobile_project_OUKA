@@ -19,6 +19,7 @@ import { useFonts } from 'expo-font';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { FA5Style } from '@expo/vector-icons/build/FontAwesome5';
 import AboutUs from './components/AboutUs';
+import Fireplace from './components/Fireplace';
 
 
 const Tab = createBottomTabNavigator();
