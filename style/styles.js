@@ -132,11 +132,11 @@ export default StyleSheet.create({
       height: 200
     },
     OuluSeal: {
-      marginTop: 20,
-      marginBottom: 10,
-      alignSelf: 'center',
-      width: '45%',
-      height: 216
+    marginTop: 10,
+    width: undefined,
+    height: '100%',
+    aspectRatio: 1,
+    alignSelf: 'center',
     },
     Button: {
       flex: 1,
