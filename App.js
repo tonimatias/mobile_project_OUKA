@@ -19,6 +19,7 @@ import { useFonts } from 'expo-font';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { FA5Style } from '@expo/vector-icons/build/FontAwesome5';
 import AboutUs from './components/AboutUs';
+import Fireplace from './components/Fireplace';
 
 
 const Tab = createBottomTabNavigator();
@@ -61,6 +62,7 @@ export default function App() {
         <Drawer.Screen name="Taideteokset" component={Art} />
         <Drawer.Screen name="Historialliset kohteet" component={Histories} />
         <Drawer.Screen name="Puistot" component={Park}/>
+        <Drawer.Screen name="Nuotiopaikat" component={Fireplace}/>
         <Drawer.Screen name="Tietoa Meistä" component={AboutUs}/>
       </Drawer.Navigator>
     );
