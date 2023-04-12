@@ -3,6 +3,7 @@ import { SafeAreaView, Text, View, FlatList, TextInput, Image, TouchableOpacity,
 import styles from '../style/styles';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
+import { Searchbar } from 'react-native-paper';
 
 
 
@@ -10,7 +11,6 @@ const Search = () => {
   const [search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
-
 
   const navigation = useNavigation();
 
@@ -97,16 +97,14 @@ const Search = () => {
     <SafeAreaView>
       <View>
         <View>
-      <Ionicons name="search-outline"/>
-        <TextInput
+        <Searchbar
           style={styles.textInputStyle_search}
           onChangeText={(text) => searchFilterFunction(text)}
           value={search}
           underlineColorAndroid="transparent"
           placeholder="Hae tästä"
-          
+        
         />
-        <Text style={styles.frontpage_title}>Tältä sivulta voit hakea </Text>
         <FlatList
           data={filteredDataSource}
           keyExtractor={(item, index) => index.toString()}
