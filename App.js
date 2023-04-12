@@ -61,6 +61,7 @@ export default function App() {
         <Drawer.Screen name="Taideteokset" component={Art} />
         <Drawer.Screen name="Historialliset kohteet" component={Histories} />
         <Drawer.Screen name="Puistot" component={Park}/>
+        <Drawer.Screen name="Nuotiopaikat" component={Fireplace}/>
         <Drawer.Screen name="Tietoa Meistä" component={AboutUs}/>
       </Drawer.Navigator>
     );
