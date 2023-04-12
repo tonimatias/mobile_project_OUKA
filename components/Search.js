@@ -35,7 +35,7 @@ const Search = () => {
       const newData = masterDataSource.filter(function (item) {
         // Applying filter for the inserted text in search bar
         const Architectures = item.Categories.some(
-          (category) => ["Arkkitehtuuri", "Patsas", "Puisto", "Taideteos", "Historialliset kohteet"].includes(category.title));
+          (category) => ["Arkkitehtuuri", "Patsas", "Puisto", "Taideteos", "Historialliset kohteet", "Tulentekopaikka"].includes(category.title));
 
           if (!Architectures) {
             // If the object does not have the "Arkkitehtuuri" category, skip it
