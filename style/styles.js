@@ -82,6 +82,9 @@ export default StyleSheet.create({
       marginTop: 30,
       //alignSelf: 'center'
     },
+    arrowIcon: {
+      padding: 10
+    },
     title: {
       color: 'black',
       flex: 1,
