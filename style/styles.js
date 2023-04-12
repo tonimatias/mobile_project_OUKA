@@ -80,6 +80,10 @@ export default StyleSheet.create({
     },
     themeButton: {
       marginTop: 30,
+      position: 'absolute',
+      paddingRight:15,
+      right:0,
+      zIndex: 1,
       //alignSelf: 'center'
     },
     arrowIcon: {
