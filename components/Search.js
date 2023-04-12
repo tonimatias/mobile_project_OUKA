@@ -94,7 +94,7 @@ const Search = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView>
       <View>
         <View>
       <Ionicons name="search-outline"/>
