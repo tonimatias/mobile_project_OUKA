@@ -62,13 +62,7 @@ const Search = () => {
   const ItemView = ({ item }) => {
     return (
       // Flat List Item
-      <View style={{
-        borderBottomColor: '#d1d0d0',
-        borderBottomWidth: 1,
-        padding: 15,
-        margin: 5,
-        backgroundColor: '#ffffff'
-      }}>
+      <View style={styles.bg}>
     <View key={item.id}>
       {item.Media.length > 0 ? (
         item.Media.map((media) => (

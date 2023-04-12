@@ -125,7 +125,8 @@ export default StyleSheet.create({
       marginBottom: 10,
       alignSelf: 'center',
       width: '80%',
-      height: 200
+      height: 200,
+      
     },
     OuluSeal: {
     marginTop: 10,
@@ -196,14 +197,6 @@ export default StyleSheet.create({
       backgroundColor: '#fff',
     },
 
-    returnText: {
-      color: '#C200E1',
-      padding: 15,
-      fontSize: 20,
-      fontFamily: 'ManropeRegular',
-      //fontWeight: 'bold',
-    },
-
     content: {
       textAlign: 'center',
       fontFamily: 'ManropeRegular',
@@ -211,5 +204,10 @@ export default StyleSheet.create({
 
     bg: {
       backgroundColor: '#fff',
+      borderBottomColor: '#d1d0d0',
+        borderBottomWidth: 1,
+        padding: 15,
+        margin: 5,
+        backgroundColor: '#ffffff'
     }
   });
