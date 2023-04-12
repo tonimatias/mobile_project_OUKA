@@ -26,7 +26,7 @@ export default function Details({ route, navigation }) {
   }, [route.params.data.id]);
 
   return (
-    <ScrollView style={styles.details}>
+    <ScrollView style={styles.bg}>
       <Pressable style={styles.returnButton} onPress={() => navigation.navigate('Kategoriat')}>
       <Ionicons style={styles.arrowIcon} size={30} color='#9600AE' name="arrow-back-outline"/>
       </Pressable>
@@ -37,7 +37,7 @@ export default function Details({ route, navigation }) {
           style={styles.image}
         />
       ))}
-      <Text style={styles.title}>{data.title}</Text>
+      <Text style={styles.title}>{data.title.toUpperCase()}</Text>
       <Text style={styles.content}>{data.content}</Text>
       {coordinates ?
         <MapView

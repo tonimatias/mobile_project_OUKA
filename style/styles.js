@@ -96,7 +96,6 @@ export default StyleSheet.create({
       textAlign: 'center',
       margin: 10,
       fontFamily: 'ManropeRegular',
-      fontWeight: 'bold',
     },
  
     category_title: {
@@ -126,7 +125,8 @@ export default StyleSheet.create({
       fontFamily: 'ManropeRegular'
     },
     image: {
-      marginTop: 20,
+      marginTop: 10,
+      marginBottom: 10,
       alignSelf: 'center',
       width: '80%',
       height: 200
@@ -148,7 +148,6 @@ export default StyleSheet.create({
       width: 150,
       height: 40,
       borderRadius: 10,
-     
     },
     buttonText: {
       color: 'white',
@@ -213,7 +212,7 @@ export default StyleSheet.create({
       fontFamily: 'ManropeRegular',
     },
 
-    details: {
+    bg: {
       backgroundColor: '#fff',
     }
   });
