@@ -38,7 +38,7 @@ export default Fireplace = ({navigation}) => {
 
           const PlaceholderImage = () => (
             <View style={styles.imagePlaceholder}>
-              <Text>No image available</Text>
+              <Image style={styles.image}source={require('../pictures/placeholder.png')}></Image>
             </View>
           );
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, Text, View, FlatList, TextInput, Image, TouchableOpacity, ImageBackground } from 'react-native';
 import styles from '../style/styles';
 import { useNavigation } from '@react-navigation/native';
+import { Ionicons } from '@expo/vector-icons';
 
 
 
@@ -95,12 +96,15 @@ const Search = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View>
+        <View>
+      <Ionicons name="search-outline"/>
         <TextInput
           style={styles.textInputStyle_search}
           onChangeText={(text) => searchFilterFunction(text)}
           value={search}
           underlineColorAndroid="transparent"
           placeholder="Hae tästä"
+          
         />
         <Text style={styles.frontpage_title}>Tältä sivulta voit hakea </Text>
         <FlatList
@@ -114,6 +118,7 @@ const Search = () => {
             }
           }}
         />
+      </View>
       </View>
     </SafeAreaView>
   );
