@@ -35,6 +35,7 @@ export default function Details({ route, navigation }) {
           key={media.id}
           source={{ uri: media.path }}
           style={styles.image}
+          resizeMode='contain'
         />
       ))}
       <Text style={styles.title}>{data.title.toUpperCase()}</Text>
