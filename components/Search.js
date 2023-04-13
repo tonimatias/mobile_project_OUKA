@@ -96,7 +96,7 @@ const Search = ({mode}) => {
   };
 
   return (
-    <SafeAreaView style= {{backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}}>
+    <SafeAreaView style= {{backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor, flex:1}}>
       <View >
         <View >
         <Searchbar
