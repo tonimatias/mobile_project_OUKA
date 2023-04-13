@@ -114,11 +114,18 @@ export default StyleSheet.create({
       fontSize: 15,
     },
     textInputStyle_search: {
-      margin: 10,
+      margin: 20,
       height: 60,
       backgroundColor: '#FFFFFF',
       fontFamily: 'ManropeRegular',
       color: '#f000001'
+    },
+    searchpage_text: {
+      padding: 20,
+      margin: 5,
+      fontFamily: 'ManropeRegular',
+      fontSize: 15,
+      alignSelf: 'center'
     },
     image: {
       marginTop: 10,
