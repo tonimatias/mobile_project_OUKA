@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
 import styles from '../style/styles';
+import { useNavigation } from '@react-navigation/native';
 import Header from './Header';
 
-export default Architecture = ({navigation}) => {
+export default Architecture = ({ mode}) => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0); // new state for total pages
   const itemsPerPage = 7;
 
-
+  const navigation = useNavigation();
 
   const scrollViewRef = useRef();
 
@@ -27,8 +28,12 @@ export default Architecture = ({navigation}) => {
       .catch((error) => console.error(error));
   }, []);
 
+  useEffect(() =>{
+    console.log("isDarkmode: " + mode);
+  },[mode]);
+  
   return (
-    <ScrollView ref={scrollViewRef}>
+    <ScrollView ref={scrollViewRef} >
       {data.length > 0 &&
         data.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map((object) => {
           Architectures = object.Categories.find((category) => category.title === 'Arkkitehtuuri');
@@ -37,7 +42,7 @@ export default Architecture = ({navigation}) => {
           }
 
           return (
-            <View key={object.id} style={styles.bg}>
+            <View key={object.id} style={[styles.bg, {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
               <Text style={styles.category_title}>{object.title.toUpperCase()}</Text>
               {object.Media.map((media) => (
                 <Image key={media.id} source={{ uri: media.path }} style={styles.image}/>

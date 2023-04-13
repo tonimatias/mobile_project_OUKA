@@ -57,13 +57,13 @@ export default function App() {
         headerRight: () => <DrawerToggleButton tintColor='#9600AE' />
         }}
         defaultStatus='open'>
-       <Drawer.Screen name="Arkkitehtuuri"  component={Architecture} />
-        <Drawer.Screen name="Patsaat" component={Statue}/>
-        <Drawer.Screen name="Taideteokset" component={Art} />
-        <Drawer.Screen name="Historialliset kohteet" component={Histories} />
-        <Drawer.Screen name="Puistot" component={Park}/>
-        <Drawer.Screen name="Nuotiopaikat" component={Fireplace}/>
-        <Drawer.Screen name="Tietoa Meistä" component={AboutUs}/>
+       <Drawer.Screen name="Arkkitehtuuri"  children={()=><Architecture mode={isDarkmode}/>} options={{unmountOnBlur:true}} />
+        <Drawer.Screen name="Patsaat" children={()=><Statue mode={isDarkmode}/>} options={{unmountOnBlur:true}}/>
+        <Drawer.Screen name="Taideteokset" children={()=><Art mode={isDarkmode}/>} options={{unmountOnBlur:true}} />
+        <Drawer.Screen name="Historialliset kohteet" children={()=><Histories mode={isDarkmode}/>} options={{unmountOnBlur:true}} />
+        <Drawer.Screen name="Puistot" children={()=><Park mode={isDarkmode}/>} options={{unmountOnBlur:true}}/>
+        <Drawer.Screen name="Nuotiopaikat" children={()=><Fireplace mode={isDarkmode}/>} options={{unmountOnBlur:true}}/>
+        <Drawer.Screen name="Tietoa Meistä" children={()=><AboutUs mode={isDarkmode}/>} options={{unmountOnBlur:true}}/>
       </Drawer.Navigator>
     );
   }
@@ -99,7 +99,7 @@ export default function App() {
         tabBarIcon: ({ color, size }) => (
           <Ionicons name='ios-home' size={size} color={color} />
       )}}/>
-      <Tab.Screen name='Haku' component={Search} options={{headerShown: false,
+      <Tab.Screen name='Haku' children={()=><Search mode={isDarkmode}/>} options={{headerShown: false, unmountOnBlur: true,
         tabBarIcon: ({ color, size }) => (
           <Ionicons name='search' size={size} color={color} />
       )}}/>

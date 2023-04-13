@@ -7,7 +7,7 @@ import { Searchbar } from 'react-native-paper';
 
 
 
-const Search = () => {
+const Search = ({mode}) => {
   const [search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
@@ -25,6 +25,10 @@ const Search = () => {
         console.error(error);
       });
   }, []);
+
+  useEffect(() =>{
+    //console.log("isDarkmode: " + mode);
+  },[mode]);
 
   const searchFilterFunction = (text) => {
 
@@ -58,12 +62,11 @@ const Search = () => {
     }
   };
 
-
   const ItemView = ({ item }) => {
     return (
       // Flat List Item
-      <View style={styles.bg}>
-    <View key={item.id}>
+      <View style={[styles.bg, {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
+    <View key={item.id} >
       {item.Media.length > 0 ? (
         item.Media.map((media) => (
           <Image key={media.id} source={{ uri: media.path }} style={styles.image} />
@@ -88,9 +91,9 @@ const Search = () => {
   };
 
   return (
-    <SafeAreaView>
-      <View>
-        <View>
+    <SafeAreaView style= {{backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}}>
+      <View >
+        <View >
         <Searchbar
           style={styles.textInputStyle_search}
           onChangeText={(text) => searchFilterFunction(text)}

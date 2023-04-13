@@ -2,13 +2,16 @@ import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
 import styles from '../style/styles';
 import Header from './Header';
+import { useNavigation } from '@react-navigation/native';
 
-export default Art = ({navigation}) => {
+
+export default Art = ({mode}) => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0); // new state for total pages
   const itemsPerPage = 7;
 
+  const navigation = useNavigation();
 
 
   const scrollViewRef = useRef();
@@ -27,6 +30,10 @@ export default Art = ({navigation}) => {
       .catch((error) => console.error(error));
   }, []);
 
+  useEffect(() =>{
+   // console.log("isDarkmode: " + mode);
+  },[mode]);
+
   return (
     <ScrollView ref={scrollViewRef}>
       {data.length > 0 &&
@@ -44,7 +51,7 @@ export default Art = ({navigation}) => {
 
 
           return (
-            <View key={object.id} style={styles.bg}>
+            <View key={object.id} style={[styles.bg, {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
               <Text style={styles.category_title}>{object.title.toUpperCase()}</Text>
             {object.Media.length > 0 ? (
                 object.Media.map((media) => (

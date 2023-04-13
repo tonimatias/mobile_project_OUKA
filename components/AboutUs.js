@@ -4,9 +4,13 @@ import styles from '../style/styles';
 import Oulunvaakuna from '../pictures/Oulunvaakuna.png';
 
 
-export default AboutUs = () =>  {
+export default AboutUs = ({mode}) =>  {
+
+  useEffect(() =>{
+  },[mode]);
+
   return (
-    <ScrollView style={styles.bg}>
+    <ScrollView style={[styles.bg, {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
        <View>
         <Image source={require('../pictures/Oulunvaakuna.png')} style={styles.OuluSeal}/>
       </View>
