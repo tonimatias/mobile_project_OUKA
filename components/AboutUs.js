@@ -12,9 +12,9 @@ export default AboutUs = ({mode}) =>  {
   return (
     <ScrollView style={[styles.bg, {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
        <View>
-        <Image source={require('../pictures/Oulunvaakuna.png')} style={styles.OuluSeal}/>
+        <Image source={require('../pictures/Oulunvaakuna.png')} style={styles.OuluSeal} resizeMode='contain'/>
       </View>
-      <Text style={styles.title}>Terve</Text>
+      <Text style={styles.title}>Info</Text>
       <Text style={styles.content}>Teimme OuluAwaits sovelluksen Oulun historiasta kiinnostuneille ihmisille. Olitpa sitten ensimmäistä kertaa käymässä tai sitten kaupungin oma asukki, Oulu tarjoaa monia kiinnostavia nähtävyyksiä ja historiallisia kohteita joista jokainen voi nauttia. Sovellus tarjoaa sijainnit nähtävyyksille, sekä antaa sinulle niiden historian (jos tieto on saatavilla). Tämän lisäksi löydät sijainnit yleisille nuotiopaikoille jonne voit mennä vaikka makkaranpaistoon.  </Text>
       
     </ScrollView>

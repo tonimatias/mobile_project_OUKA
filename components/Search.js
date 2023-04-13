@@ -11,6 +11,8 @@ const Search = ({mode}) => {
   const [search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
+  const [isSearching, setIsSearching] = useState(false);
+
 
   const navigation = useNavigation();
 
@@ -35,6 +37,8 @@ const Search = ({mode}) => {
  
     // Check if searched text is not blank
     if (text) {
+
+      setIsSearching(true);
       // Inserted text is not blank
       // Filter the masterDataSource and update FilteredDataSource
       const newData = masterDataSource.filter(function (item) {
@@ -59,6 +63,7 @@ const Search = ({mode}) => {
       // Update FilteredDataSource with masterDataSource
       setFilteredDataSource(masterDataSource);
       setSearch(text);
+      setIsSearching(false);
     }
   };
 
@@ -99,9 +104,14 @@ const Search = ({mode}) => {
           onChangeText={(text) => searchFilterFunction(text)}
           value={search}
           underlineColorAndroid="transparent"
-          placeholder="Hae tästä"
+          placeholder='Hae tästä'
         
         />
+         {search ? null : (
+        <Text style={styles.searchpage_text}>Tervetuloa etsimään Oulun kaupungin kulttuurillisia kohteita. Voit etsiä kohteita niiden nimien tai kirjainten perusteella. Syötä hakusana ylhäällä olevaan hakukenttään
+         ja voit löytää uusia kiinnostavia kohteita Oulun kaupungista. Jos et ole varma mitä etsit, voit myös selata kaikkia kohteita menemällä kategoriat sivulle.
+          Kun löydät mielenkiintoisen kohteen, klikkaa "Lisätietoja" -painiketta saadaksesi lisää tietoa kohteesta, kuten sen historiasta ja sijainnista. Me toivomme, että löydät etsimäsi ja että saat nauttia kaupungin kulttuurin kauneudesta ja monimuotoisuudesta!</Text>
+        )}
         <FlatList
           data={filteredDataSource}
           keyExtractor={(item, index) => index.toString()}
