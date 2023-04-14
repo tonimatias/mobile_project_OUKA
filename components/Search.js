@@ -82,7 +82,7 @@ const Search = ({mode}) => {
       style={styles.image}
     />
   )}
-  {/* rest of the code */}
+ 
   </View>
      <Text style={styles.category_title}>
         {item.title.toUpperCase()}
@@ -94,7 +94,6 @@ const Search = ({mode}) => {
   
     );
   };
-
   return (
     <SafeAreaView style= {{backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor, flex:1}}>
       <View >
@@ -112,7 +111,7 @@ const Search = ({mode}) => {
          ja voit löytää uusia kiinnostavia kohteita Oulun kaupungista. Jos et ole varma mitä etsit, voit myös selata kaikkia kohteita menemällä kategoriat sivulle.
           Kun löydät mielenkiintoisen kohteen, klikkaa "Lisätietoja" -painiketta saadaksesi lisää tietoa kohteesta, kuten sen historiasta ja sijainnista. Me toivomme, että löydät etsimäsi ja että saat nauttia kaupungin kulttuurin kauneudesta ja monimuotoisuudesta!</Text>
         )}
-        <FlatList
+        <FlatList style={{backgroundColor: mode ? backgroundColor = '#494848' : backgroundColor = '#f7f7f7'}}
           data={filteredDataSource}
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => {

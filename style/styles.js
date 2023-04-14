@@ -116,16 +116,15 @@ export default StyleSheet.create({
     textInputStyle_search: {
       margin: 20,
       height: 60,
-      backgroundColor: '#FFFFFF',
+      backgroundColor: '#f7f7f7',
       fontFamily: 'ManropeRegular',
-      color: '#f000001'
     },
     searchpage_text: {
       padding: 20,
       margin: 5,
       fontFamily: 'ManropeRegular',
       fontSize: 15,
-      alignSelf: 'center'
+      alignSelf: 'center',
     },
     image: {
       marginTop: 10,
@@ -183,13 +182,13 @@ export default StyleSheet.create({
       backgroundColor:'#272727',
     },
     headerLight: {
-      backgroundColor:'#FFFFFF'
+      backgroundColor:'#ffffff'
     },
     drawerDark:{
       backgroundColor:'#494848'
     },
     contentBackgroundLight:{
-      backgroundColor:'#faf4f4'
+      backgroundColor:'#ffffff'
 
     },
     contentBackgroundDark: {
