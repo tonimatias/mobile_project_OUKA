@@ -5,9 +5,13 @@ import Header from './Header';
 import MapView, { Marker } from 'react-native-maps';
 import { Ionicons } from '@expo/vector-icons';
 
-export default function Details({ route, navigation }) {
+export default function Details({ route, navigation, mode }) {
   const { data } = route.params;
   const [coordinates, setCoordinates] = useState(null);
+
+  useEffect(() =>{
+    console.log("isDarkmode: " + mode);
+  },[mode]);
 
   useEffect(() => {
     fetch('https://opendata.zoneatlas.com/oulu/objects.json')
@@ -25,7 +29,7 @@ export default function Details({ route, navigation }) {
   }, [route.params.data.id]);
 
   return (
-    <ScrollView style={styles.bg}>
+    <ScrollView style={{backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}}>
       <Pressable style={styles.returnButton} onPress={() => navigation.navigate('Kategoriat')}>
       <Ionicons style={styles.arrowIcon} size={30} color='#9600AE' name="arrow-back-outline"/>
       </Pressable>

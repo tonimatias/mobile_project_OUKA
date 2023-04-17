@@ -213,8 +213,8 @@ export default StyleSheet.create({
       backgroundColor: '#fff',
       borderBottomColor: '#d1d0d0',
         borderBottomWidth: 1,
-        padding: 15,
-        margin: 5,
+        //padding: 15,
+        //margin: 5,
         backgroundColor: '#ffffff'
     }
   });

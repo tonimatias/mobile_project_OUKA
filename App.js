@@ -35,7 +35,7 @@ export default function App() {
     return (
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Frontpage} options={{headerShown: false}}/>
-        <Stack.Screen name="Lisätiedot" component={Details} options={{headerShown: false}}/>
+        <Stack.Screen name="Lisätiedot" component={Details} mode={isDarkmode} options={{headerShown: false}}/>
       </Stack.Navigator>
     );
   }
