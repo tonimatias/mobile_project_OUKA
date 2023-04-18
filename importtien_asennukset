@@ -17,3 +17,8 @@ npm install react-native-maps --save
 12.4
 npm install react-native-paper
 
+
+18.4.
+npm install react-native-css-vh-vw
+
+
