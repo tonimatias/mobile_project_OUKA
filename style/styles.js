@@ -23,7 +23,7 @@ export default StyleSheet.create({
     },
     container1: {
       paddingTop:'70%',
-      height:'100vh',
+      height:'100%',
       backgroundColor:'#00000040',
 
     },
