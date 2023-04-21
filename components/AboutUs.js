@@ -10,8 +10,8 @@ export default AboutUs = ({mode}) =>  {
   },[mode]);
 
   return (
-    <ScrollView style={[styles.bg, {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
-       <View>
+    <ScrollView style={[{backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
+       <View >
         <Image source={require('../pictures/Oulunvaakuna.png')} style={styles.OuluSeal} resizeMode='contain'/>
       </View>
       <Text style={styles.title}>Info</Text>

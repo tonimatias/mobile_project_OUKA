@@ -33,7 +33,7 @@ export default Fireplace = ({mode}) => {
   },[mode]);
 
   return (
-    <ScrollView ref={scrollViewRef}>
+    <ScrollView style={{backgroundColor: mode ? backgroundColor = '#494848' : backgroundColor = '#f7f7f7'}} ref={scrollViewRef}>
       {data.length > 0 &&
         data.slice((currentPage - 1) * itemsPerPage + 1, currentPage * itemsPerPage).map((object) => {
           Fireplaces = object.Categories.find((category) => category.title === 'Tulentekopaikka');
