@@ -132,6 +132,7 @@ export default StyleSheet.create({
       alignSelf: 'center',
       width: '80%',
       height: 200,
+      resizeMode: 'contain'
       
     },
     OuluSeal: {
