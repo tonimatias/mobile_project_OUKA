@@ -7,7 +7,7 @@ import { Searchbar } from 'react-native-paper';
 
 
 
-const Search = ({mode}) => {
+export default function Search({mode}) {
   const [search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
@@ -47,7 +47,6 @@ const Search = ({mode}) => {
           (category) => ["Arkkitehtuuri", "Patsas", "Puisto", "Taideteos", "Historialliset kohteet", "Tulentekopaikka"].includes(category.title));
 
           if (!Architectures) {
-            // If the object does not have the "Arkkitehtuuri" category, skip it
             return null;
           } 
           
@@ -78,7 +77,7 @@ const Search = ({mode}) => {
         ))
       ) : (
     <Image
-      source={require('../pictures/placeholder.png')} // replace with the path to your own placeholder image
+      source={require('../pictures/placeholder.png')} 
       style={styles.image}
     />
   )}
@@ -130,4 +129,4 @@ const Search = ({mode}) => {
 
 
 
-export default Search;
+
