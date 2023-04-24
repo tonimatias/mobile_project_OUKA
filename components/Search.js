@@ -4,6 +4,7 @@ import styles from '../style/styles';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { Searchbar } from 'react-native-paper';
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 
@@ -68,7 +69,7 @@ export default function Search({mode}) {
 
   const ItemView = ({ item }) => {
     return (
-      // Flat List Item
+      <ScrollView>
       <View style={[styles.bg, {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
     <View key={item.id} >
       {item.Media.length > 0 ? (
@@ -81,7 +82,6 @@ export default function Search({mode}) {
       style={styles.image}
     />
   )}
- 
   </View>
      <Text style={styles.category_title}>
         {item.title.toUpperCase()}
@@ -90,11 +90,12 @@ export default function Search({mode}) {
           <Text style={styles.buttonText}>Lisätietoja</Text>
       </TouchableOpacity>
     </View>
+    </ScrollView>
   
     );
   };
   return (
-    <SafeAreaView style= {{backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor, flex:1}}>
+    <SafeAreaView style= {{...styles.container, backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor, flex:1}}>
       <View >
         <View >
         <Searchbar

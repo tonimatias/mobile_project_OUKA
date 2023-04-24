@@ -6,19 +6,15 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
     container: {
       flexDirection: 'row',
-      alignItems: 'center',
       alignSelf: 'center',
-      paddingVertical: 5,
-      paddingHorizontal: 5,
       padding: 5,
       flex: 1,
-      backgroundColor: '#f7f7f7'
-
+      backgroundColor: '#f7f7f7',
+      marginBottom: 20,
     },
 
     frontpage_container: {
       flex:1,
- 
 
     },
     container1: {
@@ -132,8 +128,9 @@ export default StyleSheet.create({
       alignSelf: 'center',
       width: '80%',
       height: 200,
-      resizeMode: 'contain'
-      
+      aspectRatio: 1.5,
+      resizeMode: 'contain',
+  
     },
     OuluSeal: {
       marginTop: 10,
@@ -154,6 +151,8 @@ export default StyleSheet.create({
       width: 150,
       height: 40,
       borderRadius: 10,
+      marginBottom: 15
+      
     },
     buttonText: {
       color: 'white',
