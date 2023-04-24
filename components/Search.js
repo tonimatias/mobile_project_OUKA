@@ -69,9 +69,12 @@ export default function Search({mode}) {
 
   const ItemView = ({ item }) => {
     return (
-      <ScrollView>
+     
       <View style={[styles.bg, {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
     <View key={item.id} >
+    <Text style={styles.category_title}>
+        {item.title.toUpperCase()}
+        </Text>
       {item.Media.length > 0 ? (
         item.Media.map((media) => (
           <Image key={media.id} source={{ uri: media.path }} style={styles.image} />
@@ -83,19 +86,17 @@ export default function Search({mode}) {
     />
   )}
   </View>
-     <Text style={styles.category_title}>
-        {item.title.toUpperCase()}
-        </Text>
+    
      <TouchableOpacity  style={styles.Button} title='lisätietoa' onPress={() => navigation.navigate('Lisätiedot', {data: item})}>
           <Text style={styles.buttonText}>Lisätietoja</Text>
       </TouchableOpacity>
     </View>
-    </ScrollView>
+ 
   
     );
   };
   return (
-    <SafeAreaView style= {{...styles.container, backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor, flex:1}}>
+    <SafeAreaView style= {{ backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor, flex:1}}>
       <View >
         <View >
         <Searchbar
