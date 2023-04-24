@@ -42,7 +42,8 @@ export default StyleSheet.create({
       marginBottom:10,
       textAlign: 'left',
       fontFamily: 'ManropeBold',
-      color:'white'
+      color:'white',
+      
       
     
     },
@@ -93,6 +94,18 @@ export default StyleSheet.create({
       margin: 10,
       fontFamily: 'ManropeRegular',
     },
+    titleDetails: {
+      color: 'black',
+      flex: 1,
+      fontSize: 26,
+      textAlign: 'left',
+      marginTop: 20,
+      marginBottom:10,
+      marginLeft:5,
+      marginRight:5,
+      fontFamily: 'ManropeRegular',
+      lineHeight:30,
+    },
  
     category_title: {
       padding: 10,
@@ -130,6 +143,15 @@ export default StyleSheet.create({
       height: 200,
       aspectRatio: 1.5,
       resizeMode: 'contain',
+  
+    },
+    imageDetails: {
+      marginTop: 10,
+      marginBottom: 10,
+      alignSelf: 'center',
+      width: '100%',
+      height: 250,
+      
   
     },
     OuluSeal: {
@@ -207,6 +229,14 @@ export default StyleSheet.create({
     content: {
       textAlign: 'center',
       fontFamily: 'ManropeRegular',
+    },
+    contentDetails: {
+      textAlign: 'left',
+      fontFamily: 'ManropeRegular',
+      fontSize:16,
+      marginBottom:10,
+      marginLeft:5,
+      marginRight:5,
     },
 
     bg: {
