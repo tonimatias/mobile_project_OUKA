@@ -34,6 +34,7 @@ export default function Details({ route, navigation, isDarkmode }) {
     <ScrollView style={{backgroundColor: isDarkmodeState ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}}>
       <Pressable style={{...styles.returnButton, backgroundColor: isDarkmodeState ? backgroundColor = '#5f5f5f' : backgroundColor = '#ffffff'}} onPress={() => navigation.navigate('Kategoriat')}>
       <Ionicons style={styles.arrowIcon} size={30} color='#9600AE' name="arrow-back-outline"/>
+      <Text style={styles.title}>{data.title.toUpperCase()}</Text>
       </Pressable>
       {data.Media.map((media) => (
         <Image
