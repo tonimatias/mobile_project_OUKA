@@ -276,4 +276,23 @@ export default StyleSheet.create({
       padding: 15,
       margin: 5,
   },
+  buttonContainer: {
+    alignItems: 'left',
+    marginBottom:10,
+    marginLeft:5,
+    marginRight:5,
+  
+  },
+  buttonMapsDark: {
+    fontFamily: 'ManropeRegular',
+    fontSize:20,
+    color:'#b248d2',
+    marginLeft:40,
+    marginTop:-26,
+    
+   
+  },
+  iconDetails: {
+    
+  }
   });
