@@ -8,7 +8,12 @@ import { Ionicons } from '@expo/vector-icons';
 export default function Details({ route, navigation, isDarkmode }) {
   const { data } = route.params;
   const [coordinates, setCoordinates] = useState(null);
+  const [isDarkmodeState, setIsDarkmodeState] = useState(isDarkmode);
 
+
+  useEffect(() => {
+    setIsDarkmodeState(isDarkmode);
+  }, [isDarkmode]);
 
   useEffect(() => {
     fetch('https://opendata.zoneatlas.com/oulu/objects.json')
@@ -26,20 +31,23 @@ export default function Details({ route, navigation, isDarkmode }) {
   }, [route.params.data.id]);
 
   return (
-    <ScrollView style={{backgroundColor: isDarkmode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}}>
-      <Pressable style={{...styles.returnButton, backgroundColor: isDarkmode ? backgroundColor = '#5f5f5f' : backgroundColor = '#ffffff'}} onPress={() => navigation.navigate('Kategoriat')}>
+    <ScrollView style={{backgroundColor: isDarkmodeState ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}}>
+      <Pressable style={{...styles.returnButton, backgroundColor: isDarkmodeState ? backgroundColor = '#5f5f5f' : backgroundColor = '#ffffff'}} onPress={() => navigation.navigate('Kategoriat')}>
       <Ionicons style={styles.arrowIcon} size={30} color='#9600AE' name="arrow-back-outline"/>
+      
       </Pressable>
+      
+      
       {data.Media.map((media) => (
         <Image
           key={media.id}
           source={{ uri: media.path }}
-          style={styles.image}
-          resizeMode='contain'
+          style={styles.imageDetails}
+          resizeMode='cover'
         />
       ))}
-      <Text style={styles.title}>{data.title.toUpperCase()}</Text>
-      <Text style={styles.content}>{data.content}</Text>
+      <Text style={styles.titleDetails}>{data.title.toUpperCase()}</Text>
+      <Text style={styles.contentDetails}>{data.content}</Text>
       {coordinates ?
         <MapView
           style={styles.map}
