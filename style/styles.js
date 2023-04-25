@@ -215,14 +215,18 @@ export default StyleSheet.create({
 
     },
     contentBackgroundDark: {
-      backgroundColor:'#5f5f5f'
+      backgroundColor:'#5f5f5f',
+      
+    },
+    darkColor: {
+      color: '#e6e6e6'
+    },
+    lightColor: {
+      color: '#0b0b0b'
     },
     
     darkSearch: {
       color: '#494848' ,
-      margin: 20,
-      height: 60,
-      fontFamily: 'ManropeRegular',
     },
     map: {
       height: 300,

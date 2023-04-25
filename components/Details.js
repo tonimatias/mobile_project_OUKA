@@ -34,7 +34,6 @@ export default function Details({ route, navigation, isDarkmode }) {
     <ScrollView style={{backgroundColor: isDarkmodeState ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}}>
       <Pressable style={{...styles.returnButton, backgroundColor: isDarkmodeState ? backgroundColor = '#5f5f5f' : backgroundColor = '#ffffff'}} onPress={() => navigation.navigate('Kategoriat')}>
       <Ionicons style={styles.arrowIcon} size={30} color='#9600AE' name="arrow-back-outline"/>
-      
       </Pressable>
       
       
@@ -46,8 +45,8 @@ export default function Details({ route, navigation, isDarkmode }) {
           resizeMode='cover'
         />
       ))}
-      <Text style={styles.titleDetails}>{data.title.toUpperCase()}</Text>
-      <Text style={styles.contentDetails}>{data.content}</Text>
+      <Text style={{...styles.titleDetails, color: isDarkmodeState ? styles.darkColor.color : styles.lightColor.color}}>{data.title.toUpperCase()}</Text>
+      <Text style={{...styles.contentDetails, color: isDarkmodeState ? styles.darkColor.color : styles.lightColor.color}}>{data.content}</Text>
       {coordinates ?
         <MapView
           style={styles.map}

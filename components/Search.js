@@ -72,7 +72,7 @@ export default function Search({mode}) {
      
       <View style={[styles.bg, {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
     <View key={item.id} >
-    <Text style={{...styles.category_title, color: mode ? '#e6e6e6' : '#0b0b0b'}}>
+    <Text style={{...styles.category_title, color: mode ? styles.darkColor.color : styles.lightColor.color}}>
         {item.title.toUpperCase()}
         </Text>
       {item.Media.length > 0 ? (

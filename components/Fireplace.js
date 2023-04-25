@@ -50,7 +50,7 @@ export default Fireplace = ({mode}) => {
          
           return (
             <View key={object.id} style={[styles.bg, {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
-             <Text style={styles.category_title}>{object.title.toUpperCase()}</Text>
+             <Text style={{...styles.category_title, color: mode ? styles.darkColor.color : styles.lightColor.color}}>{object.title.toUpperCase()}</Text>
             {object.Media.length > 0 ? (
                 object.Media.map((media) => (
                 <Image key={media.id} source={{ uri: media.path }} style={styles.image} />
