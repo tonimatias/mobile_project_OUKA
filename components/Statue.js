@@ -1,20 +1,27 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, TouchableOpacity, Modal, Button } from 'react-native';
 import styles from '../style/styles';
 import Header from './Header';
 import { useNavigation } from '@react-navigation/native';
+import { Details2 } from './Details2';
 
 
-export default Statue = ({ mode}) => {
+export default Statue = ({ mode, route, navigation}) => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0); // new state for total pages
   const itemsPerPage = 7;
 
-  const navigation = useNavigation();
+  //const navigation = useNavigation();
 
+  const [showModal, setShowModal] = useState(false);
+  const [selectedObject, setSelectedObject] = useState(null);
 
   const scrollViewRef = useRef();
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  }
 
   useEffect(() => {
     fetch('https://opendata.zoneatlas.com/oulu/objects.json')
@@ -60,12 +67,31 @@ export default Statue = ({ mode}) => {
                 <PlaceholderImage />
             )}
               <View key={object.Categories.id}></View>
-            <TouchableOpacity  style={styles.Button} title='lisätietoa' onPress={() => navigation.navigate('Lisätiedot', {data: object})}>
-              <Text style={styles.buttonText}>Lisätietoja</Text>
-            </TouchableOpacity>
-            </View>
+              <TouchableOpacity
+                style={styles.Button}
+                title='lisätietoa'
+                onPress={() => {
+                setSelectedObject(object);
+                toggleModal();
+                }}>
+                <Text style={styles.buttonText}>Lisätietoja</Text>
+              </TouchableOpacity>
+
+              <Modal visible={showModal} animationType="none">
+                <ScrollView style={[styles.bg, {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
+                <Button title="takaisin" onPress={toggleModal} />
+                {selectedObject && (
+                  <Details2 object={selectedObject} />
+                )}
+                </ScrollView>
+              </Modal>
+
+              </View>
           );
         })}
+
+
+
       <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
         <TouchableOpacity
           title="Edellinen sivu"
