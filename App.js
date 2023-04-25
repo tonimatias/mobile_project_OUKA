@@ -107,7 +107,7 @@ export default function App() {
       )}}/>
       <Tab.Screen name='Kategoriat' component={MyDrawer} options={{headerShown: false,
         tabBarIcon: ({ color, size }) => (
-          <Ionicons name='menu' size={size} color={color} />     
+          <Ionicons name='albums-outline' size={size} color={color} />     
       )}}/>
     </Tab.Navigator>
   </NavigationContainer>
