@@ -21,4 +21,5 @@ npm install react-native-paper
 18.4.
 npm install react-native-css-vh-vw
 
-
+24.4
+npm i react-native-modal
