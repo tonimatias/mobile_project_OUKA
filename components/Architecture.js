@@ -42,7 +42,11 @@ export default Architecture = ({ mode}) => {
           }
 
           return (
-            <View key={object.id} style={[styles.bg, {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
+            <View key={object.id} style={[{
+                borderBottomColor: mode ? styles.bgDark.borderBottomColor   : styles.bgLight.borderBottomColor,
+                borderBottomWidth: mode ? styles.bgDark.borderBottomWidth : styles.bgLight.borderBottomWidth,
+                backgroundColor: mode? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor,
+                padding: mode ? styles.bgDark.padding : styles.bgLight.padding }]}>
               <Text style={{...styles.category_title, color: mode ? styles.darkColor.color : styles.lightColor.color}}>{object.title.toUpperCase()}</Text>
               {object.Media.map((media) => (
                 <Image key={media.id} source={{ uri: media.path }} style={styles.image}/>

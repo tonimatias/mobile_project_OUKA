@@ -69,12 +69,15 @@ export default function Search({mode}) {
 
   const ItemView = ({ item }) => {
     return (
-     
-      <View style={[styles.bg, {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
+      <View style={[{borderBottomWidth: mode ? styles.bgDark.borderBottomWidth : styles.bgLight.borderBottomWidth},
+      { borderBottomColor: mode ? styles.bgDark.borderBottomColor : styles.bgLight.borderBottomColor},
+      {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor},
+      {padding: mode ? styles.bgDark.padding : styles.bgLight.padding}]}>
     <View key={item.id} >
     <Text style={{...styles.category_title, color: mode ? styles.darkColor.color : styles.lightColor.color}}>
         {item.title.toUpperCase()}
         </Text>
+
       {item.Media.length > 0 ? (
         item.Media.map((media) => (
           <Image key={media.id} source={{ uri: media.path }}  style={styles.image} />
@@ -86,21 +89,20 @@ export default function Search({mode}) {
     />
   )}
   </View>
-    
      <TouchableOpacity  style={styles.Button} title='lisätietoa' onPress={() => navigation.navigate('Lisätiedot', {data: item})}>
           <Text style={styles.buttonText}>Lisätietoja</Text>
       </TouchableOpacity>
     </View>
+    
  
   
     );
   };
   return (
-    <SafeAreaView style= {{ backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor, flex:1}}>
-      <View >
-        <View >
+    <SafeAreaView style= {{ ...styles.searchContainer, backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}}>
+        <View style={{marginBottom: mode ? styles.bgDark.marginBottom : styles.bgLight.marginBottom}} >
         <Searchbar
-          style={{...styles.textInputStyle_search, backgroundColor: mode ? '#a1a1a1': '#f7f7f7', color: mode ? '#f7f7f7' : '#818181'}}
+          style={{...styles.textInputStyle_search, backgroundColor: mode ? '#a1a1a1': '#f7f7f7'}}
           onChangeText={(text) => searchFilterFunction(text)}
           value={search}
           underlineColorAndroid="transparent"
@@ -124,7 +126,6 @@ export default function Search({mode}) {
             }
           }}
         />
-      </View>
       </View>
     </SafeAreaView>
   );

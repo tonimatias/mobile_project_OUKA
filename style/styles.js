@@ -13,6 +13,15 @@ export default StyleSheet.create({
       marginBottom: 20,
     },
 
+    searchContainer: {
+      flexDirection: 'row',
+      alignSelf: 'center',
+      flex: 1,
+      padding: 19,
+    
+  
+    },
+ 
     frontpage_container: {
       flex:1,
 
@@ -137,12 +146,17 @@ export default StyleSheet.create({
     },
 
     image: {
-      width: '80%',
-      height: 200,
-      alignSelf: 'center',
-      aspectRatio: 1.5,
-      resizeMode: 'contain',
-      
+    width: '80%',
+    height: 280,
+    alignSelf: 'center',
+    margin: 10,
+    resizeMode: 'stretch',
+    aspectRatio: 1.12,
+    borderBottomWidth: 1,
+    padding: 15,
+    
+    
+        
     },
     imageDetails: {
       marginTop: 10,
@@ -151,8 +165,6 @@ export default StyleSheet.create({
       width: '100%',
       height: 250,
      
-      
-  
     },
     OuluSeal: {
       marginTop: 10,
@@ -218,10 +230,10 @@ export default StyleSheet.create({
       
     },
     backgroundDark: {
-      backgroundColor: '#494848'
+      backgroundColor: '#5f5f5f',
     },
     backgroundLight: {
-      backgroundColor: '#f7f7f7' 
+      backgroundColor: '#ffffff' 
     },
     darkColor: {
       color: '#e6e6e6'
@@ -252,9 +264,17 @@ export default StyleSheet.create({
       marginRight:5,
     },
 
-    bg: {
+    bgDark: {
+      borderBottomColor: '#9d9c9c',
+        borderBottomWidth: 1,
         padding: 15,
         margin: 5,
-        backgroundColor: '#ffffff'
-    }
+
+    },
+    bgLight: {
+      borderBottomColor: '#d1d0d0',
+      borderBottomWidth: 1,
+      padding: 15,
+      margin: 5,
+  },
   });
