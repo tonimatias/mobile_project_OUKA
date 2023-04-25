@@ -135,6 +135,7 @@ export default StyleSheet.create({
       fontSize: 15,
       alignSelf: 'center',
     },
+
     image: {
       marginTop: 10,
       marginBottom: 10,
@@ -217,6 +218,12 @@ export default StyleSheet.create({
       backgroundColor:'#5f5f5f'
     },
     
+    darkSearch: {
+      color: '#494848' ,
+      margin: 20,
+      height: 60,
+      fontFamily: 'ManropeRegular',
+    },
     map: {
       height: 300,
       margin: 10,

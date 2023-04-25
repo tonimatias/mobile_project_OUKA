@@ -72,7 +72,7 @@ export default function Search({mode}) {
      
       <View style={[styles.bg, {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
     <View key={item.id} >
-    <Text style={styles.category_title}>
+    <Text style={{...styles.category_title, color: mode ? '#e6e6e6' : '#0b0b0b'}}>
         {item.title.toUpperCase()}
         </Text>
       {item.Media.length > 0 ? (
@@ -100,7 +100,7 @@ export default function Search({mode}) {
       <View >
         <View >
         <Searchbar
-          style={styles.textInputStyle_search}
+          style={{...styles.textInputStyle_search, backgroundColor: mode ? '#a1a1a1': '#f7f7f7', color: mode ? '#f7f7f7' : '#818181'}}
           onChangeText={(text) => searchFilterFunction(text)}
           value={search}
           underlineColorAndroid="transparent"
@@ -108,11 +108,12 @@ export default function Search({mode}) {
         
         />
          {search ? null : (
-        <Text style={styles.searchpage_text}>Tervetuloa etsimään Oulun kaupungin kulttuurillisia kohteita. Voit etsiä kohteita niiden nimien tai kirjainten perusteella. Syötä hakusana ylhäällä olevaan hakukenttään
+        <Text style={{...styles.searchpage_text, color: mode ? '#e6e6e6' : '#0b0b0b'}}>Tervetuloa etsimään Oulun kaupungin kulttuurillisia kohteita. Voit etsiä kohteita niiden nimien tai kirjainten perusteella. Syötä hakusana ylhäällä olevaan hakukenttään
          ja voit löytää uusia kiinnostavia kohteita Oulun kaupungista. Jos et ole varma mitä etsit, voit myös selata kaikkia kohteita menemällä kategoriat sivulle.
           Kun löydät mielenkiintoisen kohteen, klikkaa "Lisätietoja" -painiketta saadaksesi lisää tietoa kohteesta, kuten sen historiasta ja sijainnista. Me toivomme, että löydät etsimäsi ja että saat nauttia kaupungin kulttuurin kauneudesta ja monimuotoisuudesta!</Text>
         )}
-        <FlatList style={{backgroundColor: mode ? backgroundColor = '#494848' : backgroundColor = '#f7f7f7'}}
+        <FlatList style={{
+            backgroundColor: mode ? '#494848' : '#f7f7f7' }}
           data={filteredDataSource}
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => {
