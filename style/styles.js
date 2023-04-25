@@ -137,14 +137,12 @@ export default StyleSheet.create({
     },
 
     image: {
-      marginTop: 10,
-      marginBottom: 10,
-      alignSelf: 'center',
       width: '80%',
       height: 200,
+      alignSelf: 'center',
       aspectRatio: 1.5,
       resizeMode: 'contain',
-  
+      
     },
     imageDetails: {
       marginTop: 10,
@@ -152,6 +150,7 @@ export default StyleSheet.create({
       alignSelf: 'center',
       width: '100%',
       height: 250,
+     
       
   
     },
@@ -218,16 +217,19 @@ export default StyleSheet.create({
       backgroundColor:'#5f5f5f',
       
     },
+    backgroundDark: {
+      backgroundColor: '#494848'
+    },
+    backgroundLight: {
+      backgroundColor: '#f7f7f7' 
+    },
     darkColor: {
       color: '#e6e6e6'
     },
     lightColor: {
       color: '#0b0b0b'
     },
-    
-    darkSearch: {
-      color: '#494848' ,
-    },
+
     map: {
       height: 300,
       margin: 10,
@@ -251,7 +253,6 @@ export default StyleSheet.create({
     },
 
     bg: {
-      backgroundColor: '#fff',
         padding: 15,
         margin: 5,
         backgroundColor: '#ffffff'

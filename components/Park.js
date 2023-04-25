@@ -34,7 +34,7 @@ export default Park = ({mode}) => {
   },[mode]);
 
   return (
-    <ScrollView style={{backgroundColor: mode ? backgroundColor = '#494848' : backgroundColor = '#f7f7f7'}} ref={scrollViewRef}>
+    <ScrollView style={{backgroundColor: mode ? styles.backgroundDark.backgroundColor : styles.backgroundLight.backgroundColor}} ref={scrollViewRef}>
       {data.length > 0 &&
         data.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map((object) => {
           Parks = object.Categories.find((category) => category.title ==='Puisto');

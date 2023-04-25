@@ -31,8 +31,8 @@ export default function Details({ route, navigation, isDarkmode }) {
   }, [route.params.data.id]);
 
   return (
-    <ScrollView style={{backgroundColor: isDarkmodeState ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}}>
-      <Pressable style={{...styles.returnButton, backgroundColor: isDarkmodeState ? backgroundColor = '#5f5f5f' : backgroundColor = '#ffffff'}} onPress={() => navigation.navigate('Kategoriat')}>
+    <ScrollView style={{backgroundColor: isDarkmodeState ? styles.backgroundDark.backgroundColor : styles.backgroundLight.backgroundColor}}>
+      <Pressable style={{...styles.returnButton, backgroundColor: isDarkmodeState ? styles.backgroundDark.backgroundColor : styles.backgroundLight.backgroundColor}} onPress={() => navigation.navigate('Kategoriat')}>
       <Ionicons style={styles.arrowIcon} size={30} color='#9600AE' name="arrow-back-outline"/>
       </Pressable>
       

@@ -77,7 +77,7 @@ export default function Search({mode}) {
         </Text>
       {item.Media.length > 0 ? (
         item.Media.map((media) => (
-          <Image key={media.id} source={{ uri: media.path }} style={styles.image} />
+          <Image key={media.id} source={{ uri: media.path }}  style={styles.image} />
         ))
       ) : (
     <Image
@@ -108,12 +108,12 @@ export default function Search({mode}) {
         
         />
          {search ? null : (
-        <Text style={{...styles.searchpage_text, color: mode ? '#e6e6e6' : '#0b0b0b'}}>Tervetuloa etsimään Oulun kaupungin kulttuurillisia kohteita. Voit etsiä kohteita niiden nimien tai kirjainten perusteella. Syötä hakusana ylhäällä olevaan hakukenttään
+        <Text style={{...styles.searchpage_text, color: mode ? styles.darkColor.color : styles.lightColor.color}}>Tervetuloa etsimään Oulun kaupungin kulttuurillisia kohteita. Voit etsiä kohteita niiden nimien tai kirjainten perusteella. Syötä hakusana ylhäällä olevaan hakukenttään
          ja voit löytää uusia kiinnostavia kohteita Oulun kaupungista. Jos et ole varma mitä etsit, voit myös selata kaikkia kohteita menemällä kategoriat sivulle.
           Kun löydät mielenkiintoisen kohteen, klikkaa "Lisätietoja" -painiketta saadaksesi lisää tietoa kohteesta, kuten sen historiasta ja sijainnista. Me toivomme, että löydät etsimäsi ja että saat nauttia kaupungin kulttuurin kauneudesta ja monimuotoisuudesta!</Text>
         )}
         <FlatList style={{
-            backgroundColor: mode ? '#494848' : '#f7f7f7' }}
+          backgroundColor: mode ? styles.backgroundDark.backgroundColor : styles.backgroundLight.backgroundColor}}
           data={filteredDataSource}
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => {
