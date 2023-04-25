@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, ScrollView, Image, BackHandler, Button, Touchable, Pressable } from 'react-native';
+import { Text, ScrollView, Image, BackHandler, Button, Touchable, Pressable, View } from 'react-native';
 import styles from '../style/styles';
 import Header from './Header';
 import MapView, { Marker } from 'react-native-maps';
@@ -32,6 +32,12 @@ export default function Details({ route, navigation, isDarkmode }) {
 
   const cleanContent = {...data, content: data.content.replace(/#/g,'').trim()};
 
+  const PlaceholderImage = () => (
+    <View style={styles.imagePlaceholder}>
+      <Image style={styles.image}source={require('../pictures/placeholder.png')}></Image>
+    </View>
+  );
+
   return (
     <ScrollView style={{backgroundColor: isDarkmodeState ? styles.backgroundDark.backgroundColor : styles.backgroundLight.backgroundColor}}>
       <Pressable style={{...styles.returnButton, backgroundColor: isDarkmodeState ? styles.backgroundDark.backgroundColor : styles.backgroundLight.backgroundColor}} onPress={() => navigation.navigate('Kategoriat')}>
@@ -39,14 +45,14 @@ export default function Details({ route, navigation, isDarkmode }) {
       </Pressable>
       
       
-      {data.Media.map((media) => (
-        <Image
-          key={media.id}
-          source={{ uri: media.path }}
-          style={styles.imageDetails}
-          resizeMode='cover'
-        />
-      ))}
+      {data.Media.length > 0 ? (
+                data.Media.map((media) => (
+                <Image key={media.id} source={{ uri: media.path }} style={styles.imageDetails} />
+                ))
+            ) : (
+                <PlaceholderImage />
+            )}
+
       <Text style={{...styles.titleDetails, color: isDarkmodeState ? styles.darkColor.color : styles.lightColor.color}}>{data.title.toUpperCase()}</Text>
       <Text style={{...styles.contentDetails, color: isDarkmodeState ? styles.darkColor.color : styles.lightColor.color}}>{cleanContent.content}</Text>
       {coordinates ?

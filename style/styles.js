@@ -104,7 +104,6 @@ export default StyleSheet.create({
       fontFamily: 'ManropeRegular',
     },
     titleDetails: {
-      color: 'black',
       flex: 1,
       fontSize: 26,
       textAlign: 'left',
@@ -112,8 +111,8 @@ export default StyleSheet.create({
       marginBottom:10,
       marginLeft:5,
       marginRight:5,
-      fontFamily: 'ManropeRegular',
-      lineHeight:30,
+      fontFamily: 'ManropeSemiBold',
+      lineHeight:35,
     },
  
     category_title: {
