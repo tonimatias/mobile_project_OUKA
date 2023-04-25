@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Text, ScrollView, Image, BackHandler, Button, Touchable, Pressable, View } from 'react-native';
+import { Text, ScrollView, Image, BackHandler, Button, Touchable, Pressable, View, Linking } from 'react-native';
+
 import styles from '../style/styles';
 import Header from './Header';
 import MapView, { Marker } from 'react-native-maps';
@@ -55,6 +56,17 @@ export default function Details({ route, navigation, isDarkmode }) {
 
       <Text style={{...styles.titleDetails, color: isDarkmodeState ? styles.darkColor.color : styles.lightColor.color}}>{data.title.toUpperCase()}</Text>
       <Text style={{...styles.contentDetails, color: isDarkmodeState ? styles.darkColor.color : styles.lightColor.color}}>{cleanContent.content}</Text>
+      <Button
+    title="Avaa Mapsissa"
+    onPress={() => {
+      if (coordinates) {
+        const url = `https://www.google.com/maps?q=${coordinates[0]},${coordinates[1]}`;
+        Linking.openURL(url);
+      } else {
+        console.error('Coordinates not found');
+      }
+    }}
+  />
       {coordinates ?
         <MapView
           style={styles.map}
