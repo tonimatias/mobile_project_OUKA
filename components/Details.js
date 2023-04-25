@@ -30,6 +30,8 @@ export default function Details({ route, navigation, isDarkmode }) {
 
   }, [route.params.data.id]);
 
+  const cleanContent = {...data, content: data.content.replace(/#/g,'').trim()};
+
   return (
     <ScrollView style={{backgroundColor: isDarkmodeState ? styles.backgroundDark.backgroundColor : styles.backgroundLight.backgroundColor}}>
       <Pressable style={{...styles.returnButton, backgroundColor: isDarkmodeState ? styles.backgroundDark.backgroundColor : styles.backgroundLight.backgroundColor}} onPress={() => navigation.navigate('Kategoriat')}>
@@ -46,7 +48,7 @@ export default function Details({ route, navigation, isDarkmode }) {
         />
       ))}
       <Text style={{...styles.titleDetails, color: isDarkmodeState ? styles.darkColor.color : styles.lightColor.color}}>{data.title.toUpperCase()}</Text>
-      <Text style={{...styles.contentDetails, color: isDarkmodeState ? styles.darkColor.color : styles.lightColor.color}}>{data.content}</Text>
+      <Text style={{...styles.contentDetails, color: isDarkmodeState ? styles.darkColor.color : styles.lightColor.color}}>{cleanContent.content}</Text>
       {coordinates ?
         <MapView
           style={styles.map}
