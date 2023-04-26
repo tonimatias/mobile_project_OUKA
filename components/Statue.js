@@ -82,12 +82,13 @@ export default Statue = ({ mode, route, navigation}) => {
               </TouchableOpacity>
 
               <Modal visible={showModal} animationType="none">
-                <ScrollView style={[styles.bg, {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
+                <SafeAreaView style={[styles.bg, {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
+                <Button title="takaisin" onPress={toggleModal} />
                 {selectedObject && (
                   <Details2 object={selectedObject} />
                 )}
-                <Button title="takaisin" onPress={toggleModal} />
-                </ScrollView>
+                
+                </SafeAreaView>
               </Modal>
 
               </View>
