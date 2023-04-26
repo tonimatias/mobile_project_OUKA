@@ -1,16 +1,25 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, TouchableOpacity, FlatList } from 'react-native';
+import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, TouchableOpacity, FlatList, Modal, Button } from 'react-native';
 import styles from '../style/styles';
 import { useNavigation } from '@react-navigation/native';
+import { Details2 } from './Details2';
+import { object } from 'prop-types';
 
 export default Architecture = ({ mode }) => {
   const [data, setData] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
   const itemsPerPage = 7;
 
+  const [showModal, setShowModal] = useState(false);
+  const [selectedObject, setSelectedObject] = useState(null);
+
   const navigation = useNavigation();
 
   const scrollViewRef = useRef();
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  }
 
   useEffect(() => {
     fetch('https://opendata.zoneatlas.com/oulu/objects.json')
@@ -100,13 +109,22 @@ export default Architecture = ({ mode }) => {
               <View key={item.Categories.id}></View>
               <TouchableOpacity
                 style={styles.Button}
-                title="lisätietoa"
-                onPress={() =>
-                  navigation.navigate('Lisätiedot', { data: item })
-                }
-              >
+                title='lisätietoa'
+                onPress={() => {
+                setSelectedObject(item);
+                toggleModal();
+                }}>
                 <Text style={styles.buttonText}>Lisätietoja</Text>
               </TouchableOpacity>
+
+              <Modal visible={showModal} animationType="none">
+                <ScrollView style={[styles.bg, {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
+                <Button title="takaisin" onPress={toggleModal} />
+                {selectedObject && (
+                  <Details2 object={selectedObject} />
+                )}
+                </ScrollView>
+              </Modal>
             </View>
           );
         }}
