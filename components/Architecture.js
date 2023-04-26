@@ -49,8 +49,8 @@ export default Architecture = ({ mode }) => {
       fetch(`https://opendata.zoneatlas.com/oulu/objects.json?start=${start}&end=${end}`)
         .then((response) => response.json())
         .then((json) => {
-          const architectureObjects = json.filter((object) => {
-            const Architectures = object.Categories.find((category) => category.title === 'Arkkitehtuuri');
+          const architectureObjects = json.filter((item) => {
+            const Architectures = item.Categories.find((category) => category.title === 'Arkkitehtuuri');
             return !!Architectures;
           });
           setData([...data, ...architectureObjects]);
