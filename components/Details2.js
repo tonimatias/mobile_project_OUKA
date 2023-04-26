@@ -15,16 +15,15 @@ export function Details2 ({ object }) {
 
     return (
         <ScrollView>
-            {object.Media.map((media) => (
-                <Image
-                    key={media.id}
-                    source={{ uri: media.path }}
-                    style={styles.image}
-                    resizeMode='contain'
-                />
-            ))}
-            <Text style={styles.title}>{object.title.toUpperCase()}</Text>
-            <Text style={styles.content}>{object.content}</Text>
+            {object.Media.length > 0 ? (
+                object.Media.map((media) => (
+                <Image key={media.id} source={{ uri: media.path }} style={styles.imageDetails} />
+                ))
+            ) : (
+                <PlaceholderImage />
+            )}
+            <Text style={styles.titleDetails}>{object.title.toUpperCase()}</Text>
+            <Text style={styles.contentDetails}>{object.content}</Text>
 
         {coordinates ?
         <MapView
