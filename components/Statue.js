@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, TouchableOpacity, Modal, Button } from 'react-native';
+import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, TouchableOpacity, Modal, Button, Pressable } from 'react-native';
 import styles from '../style/styles';
 import Header from './Header';
 import { useNavigation } from '@react-navigation/native';
 import { Details2 } from './Details2';
+import { Ionicons } from '@expo/vector-icons';
 
 
 export default Statue = ({ mode, route, navigation}) => {
@@ -82,12 +83,15 @@ export default Statue = ({ mode, route, navigation}) => {
               </TouchableOpacity>
 
               <Modal visible={showModal} animationType="none">
-                <ScrollView style={[styles.bg, {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
+                <SafeAreaView style={[styles.bg, {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
+                <Pressable style={{...styles.returnButton, backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}} onPress={toggleModal}>
+                <Ionicons style={styles.arrowIcon} size={35} color='#9600AE' name="arrow-back-outline"/>
+                </Pressable>
                 {selectedObject && (
                   <Details2 object={selectedObject} />
                 )}
-                <Button title="takaisin" onPress={toggleModal} />
-                </ScrollView>
+                
+                </SafeAreaView>
               </Modal>
 
               </View>

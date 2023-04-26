@@ -93,7 +93,7 @@ export default StyleSheet.create({
       //alignSelf: 'center'
     },
     arrowIcon: {
-      padding: 10
+      paddingLeft: 15
     },
     title: {
       color: 'black',
