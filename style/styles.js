@@ -150,12 +150,10 @@ export default StyleSheet.create({
     alignSelf: 'center',
     margin: 10,
     resizeMode: 'stretch',
-    aspectRatio: 1.12,
-    borderBottomWidth: 1,
-    padding: 15,
-    
-    
-        
+    aspectRatio: 1.10,
+   
+    padding: 15
+
     },
     imageDetails: {
       marginTop: 10,
@@ -277,7 +275,6 @@ export default StyleSheet.create({
       margin: 5,
   },
   buttonContainer: {
-    alignItems: 'left',
     marginBottom:10,
     marginLeft:5,
     marginRight:5,

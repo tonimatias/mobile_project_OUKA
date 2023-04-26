@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, TouchableOpacity, FlatList } from 'react-native';
 import styles from '../style/styles';
 import { useNavigation } from '@react-navigation/native';
-import Header from './Header';
 
-export default Architecture = ({ mode}) => {
+export default Architecture = ({ mode }) => {
   const [data, setData] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(0); // new state for total pages
+  const [totalPages, setTotalPages] = useState(0);
   const itemsPerPage = 7;
 
   const navigation = useNavigation();
@@ -23,67 +21,101 @@ export default Architecture = ({ mode}) => {
           return !!Architectures;
         });
         setData(architectureObjects);
-        setTotalPages(Math.ceil(architectureObjects.length / itemsPerPage)); // calculate total pages based on filtered objects
+        setTotalPages(Math.ceil(architectureObjects.length / itemsPerPage));
       })
       .catch((error) => console.error(error));
   }, []);
 
-  useEffect(() =>{
-    console.log("isDarkmode: " + mode);
-  },[mode]);
+  useEffect(() => {
+    console.log('isDarkmode: ' + mode);
+  }, [mode]);
+
+  const handleScroll = ({ nativeEvent }) => {
+    if (isCloseToBottom(nativeEvent)) {
+      loadMoreData();
+    }
+  };
+
+  const isCloseToBottom = ({ layoutMeasurement, contentOffset, contentSize }) => {
+    const paddingToBottom = 20;
+    return layoutMeasurement.height + contentOffset.y >= contentSize.height - paddingToBottom;
+  };
+
+  const loadMoreData = () => {
+    const currentPage = Math.ceil(data.length / itemsPerPage);
+    if (currentPage < totalPages) {
+      const start = currentPage * itemsPerPage;
+      const end = start + itemsPerPage;
+      fetch(`https://opendata.zoneatlas.com/oulu/objects.json?start=${start}&end=${end}`)
+        .then((response) => response.json())
+        .then((json) => {
+          const architectureObjects = json.filter((object) => {
+            const Architectures = object.Categories.find((category) => category.title === 'Arkkitehtuuri');
+            return !!Architectures;
+          });
+          setData([...data, ...architectureObjects]);
+        })
+        .catch((error) => console.error(error));
+    }
+  };
   
+
   return (
-    <ScrollView style={{backgroundColor: mode ? styles.backgroundDark.backgroundColor : styles.backgroundLight.backgroundColor}} ref={scrollViewRef} >
-      {data.length > 0 &&
-        data.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map((object) => {
-          Architectures = object.Categories.find((category) => category.title === 'Arkkitehtuuri');
+    <View style={{ flex: 1 }}>
+      <FlatList
+        style={{ backgroundColor: mode ? styles.backgroundDark.backgroundColor : styles.backgroundLight.backgroundColor
+ }}
+        ref={scrollViewRef}
+        data={data}
+        renderItem={({ item }) => {
+          const Architectures = item.Categories.find(
+            (category) => category.title === 'Arkkitehtuuri'
+          );
           if (!Architectures) {
             return null;
           }
-
+  
           return (
-            <View key={object.id} style={[{
-                borderBottomColor: mode ? styles.bgDark.borderBottomColor   : styles.bgLight.borderBottomColor,
-                borderBottomWidth: mode ? styles.bgDark.borderBottomWidth : styles.bgLight.borderBottomWidth,
-                backgroundColor: mode? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor,
-                padding: mode ? styles.bgDark.padding : styles.bgLight.padding }]}>
-              <Text style={{...styles.category_title, color: mode ? styles.darkColor.color : styles.lightColor.color}}>{object.title.toUpperCase()}</Text>
-              {object.Media.map((media) => (
-                <Image key={media.id} source={{ uri: media.path }} style={styles.image}/>
+            <View
+              key={item.id}
+              style={[
+                styles.bg,
+                {
+                  backgroundColor: mode
+                    ? styles.contentBackgroundDark.backgroundColor
+                    : styles.contentBackgroundLight.backgroundColor,
+                },
+              ]}
+            >
+              <Text style={styles.category_title}>
+                {item.title.toUpperCase()}
+              </Text>
+              {item.Media.map((media) => (
+                <Image
+                  key={media.id} 
+                  source={{ uri: media.path }}
+                  style={styles.image}
+                />
               ))}
-              <View key={object.Categories.id}></View>
-            <TouchableOpacity  style={styles.Button} title='lisätietoa' onPress={() => navigation.navigate('Lisätiedot', {data: object})}>
-              <Text style={styles.buttonText}>Lisätietoja</Text>
-            </TouchableOpacity>
+              <View key={item.Categories.id}></View>
+              <TouchableOpacity
+                style={styles.Button}
+                title="lisätietoa"
+                onPress={() =>
+                  navigation.navigate('Lisätiedot', { data: item })
+                }
+              >
+                <Text style={styles.buttonText}>Lisätietoja</Text>
+              </TouchableOpacity>
             </View>
           );
-        })}
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-          <TouchableOpacity
-            title="Edellinen sivu"
-            style={styles.category_button}
-            disabled={currentPage === 1}
-            onPress={() => {
-              setCurrentPage(currentPage - 1);
-              scrollViewRef.current.scrollTo({ x: 0, y: 0, animated: false });
-            }}>
-            <Text style={styles.category_buttonText}>Edellinen sivu</Text>
-            </TouchableOpacity>
-
-          <Text style={styles.page_number}>
-            {currentPage} / {totalPages} {/* display current page and total pages */}
-          </Text>
-          <TouchableOpacity
-            title="Seuraava sivu"
-            style={styles.category_button}
-            disabled={currentPage === totalPages} 
-            onPress={() => {
-              setCurrentPage(currentPage + 1);
-              scrollViewRef.current.scrollTo({ x: 0, y: 0, animated: false });
-            }}>
-            <Text style={styles.category_buttonText}>Seuraava sivu</Text>
-          </TouchableOpacity>
-      </View>
-    </ScrollView>
-  );
-}
+        }}
+        keyExtractor={(item) => item.id.toString()}
+        onEndReached={loadMoreData}
+        onEndReachedThreshold={0.5}
+        initialNumToRender={itemsPerPage}
+        maxToRenderPerBatch={itemsPerPage}
+        windowSize={10}
+      />
+    </View>
+  )};  
