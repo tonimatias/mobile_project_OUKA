@@ -14,12 +14,11 @@ export default StyleSheet.create({
     },
 
     searchContainer: {
-      flexDirection: 'row',
-      alignSelf: 'center',
+      backgroundColor: '#fffffff',
       flex: 1,
-      padding: 19,
-    
-  
+      justifyContent: 'center',
+      alignItems: 'center',
+      
     },
  
     frontpage_container: {
@@ -170,9 +169,8 @@ export default StyleSheet.create({
       alignSelf: 'center',
     },
     Button: {
-      flex: 1,
       flexDirection: 'row',
-      justifyContent: 'center',
+      justifyContent: 'space-around',
       alignSelf: 'center',
       backgroundColor: '#b248d2',
       padding: 5,
@@ -180,7 +178,7 @@ export default StyleSheet.create({
       width: 150,
       height: 40,
       borderRadius: 10,
-      marginBottom: 15
+      
       
     },
     buttonText: {
