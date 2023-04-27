@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, Text, View, FlatList, TextInput, Image, TouchableOpacity, ImageBackground } from 'react-native';
+import { SafeAreaView, Text, View, FlatList, TextInput, Image, TouchableOpacity, ImageBackground, Modal, Pressable } from 'react-native';
 import styles from '../style/styles';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { Searchbar } from 'react-native-paper';
 import { ScrollView } from 'react-native-gesture-handler';
-
+import { Details2 } from './Details2';
 
 
 export default function Search({mode}) {
@@ -13,9 +13,15 @@ export default function Search({mode}) {
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
-
+  const [showModal, setShowModal] = useState(false);
+  const [selectedObject, setSelectedObject] = useState(null);
 
   const navigation = useNavigation();
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  }
+
 
   useEffect(() => {
     fetch('https://opendata.zoneatlas.com/oulu/objects.json')
@@ -89,10 +95,27 @@ export default function Search({mode}) {
     />
   )}
   </View>
-     <TouchableOpacity  style={styles.Button} title='lisätietoa' onPress={() => navigation.navigate('Lisätiedot', {data: item})}>
-          <Text style={styles.buttonText}>Lisätietoja</Text>
-      </TouchableOpacity>
-    </View>
+  <TouchableOpacity
+                style={styles.Button}
+                title='lisätietoa'
+                onPress={() => {
+                setSelectedObject(item);
+                toggleModal();
+                }}>
+                <Text style={styles.buttonText}>Lisätietoja</Text>
+              </TouchableOpacity>
+
+  <Modal visible={showModal} animationType="none">
+  <SafeAreaView style={[styles.bg, {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
+    <Pressable style={{...styles.returnButton, backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}} onPress={toggleModal}>
+      <Ionicons style={styles.arrowIcon} size={35} color='#9600AE' name="arrow-back-outline"/>
+    </Pressable>
+      {selectedObject && (
+        <Details2 object={selectedObject} />
+      )} 
+    </SafeAreaView>
+  </Modal>
+</View>
     
  
   
