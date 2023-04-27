@@ -17,7 +17,7 @@ export default StyleSheet.create({
       flexDirection: 'row',
       alignSelf: 'center',
       flex: 1,
-     
+      padding: 19,
     
   
     },
