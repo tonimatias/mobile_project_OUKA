@@ -15,7 +15,6 @@ export default StyleSheet.create({
 
     searchContainer: {
       backgroundColor: '#fffffff',
-      flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
       
@@ -132,6 +131,8 @@ export default StyleSheet.create({
       height: 60,
       backgroundColor: '#f7f7f7',
       fontFamily: 'ManropeRegular',
+      maxWidth: 350,
+      minWidth: 350
     },
     searchpage_text: {
       padding: 20,
@@ -238,6 +239,7 @@ export default StyleSheet.create({
     map: {
       height: 300,
       margin: 10,
+      marginBottom: 70
     },
 
     returnButton: {
