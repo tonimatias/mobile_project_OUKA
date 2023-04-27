@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Text, ScrollView, Image, BackHandler, Button, Touchable, Pressable } from 'react-native';
+import { Text, ScrollView, Image, BackHandler, Button, Touchable, Pressable, View, TouchableOpacity, Linking } from 'react-native';
 import styles from '../style/styles';
 import Header from './Header';
 import MapView, { Marker } from 'react-native-maps';
 import { Ionicons } from '@expo/vector-icons';
 
-export function Details2 ({ object }) {
+export function Details2 ({ object, mode }) {
 
     const [coordinates, setCoordinates] = useState(null);
 
@@ -24,10 +24,25 @@ export function Details2 ({ object }) {
             ) : (
                 <PlaceholderImage />
             )}
-            <Text style={styles.titleDetails}>{object.title.toUpperCase()}</Text>
-            <Text style={styles.contentDetails}>{trimmedContent}</Text>
+            <Text style={{...styles.titleDetails, color: mode ? styles.darkColor.color : styles.lightColor.color}}>{object.title.toUpperCase()}</Text>
+            <Text style={{...styles.contentDetails, color: mode ? styles.darkColor.color : styles.lightColor.color}}>{trimmedContent}</Text>
+            <View style={styles.buttonContainer}>
 
+<TouchableOpacity 
+  title="Avaa Mapsissa"
+  onPress={() => {
+    if (coordinates) {
+      const url = `https://www.google.com/maps?q=${coordinates[0]},${coordinates[1]}`;
+      Linking.openURL(url);
+    } else {
+      console.error('Coordinates not found');
+    }
+  }}>
+    <Ionicons style={styles.iconDetails} name='map-outline' size={30} color='#9600AE' /><Text style={styles.buttonMapsDark} >Avaa Mapsissa</Text>
+</TouchableOpacity>
+</View>
         {coordinates ?
+        
         <MapView
           style={styles.map}
           region={{
@@ -42,6 +57,7 @@ export function Details2 ({ object }) {
 )}
 
         </MapView>
+        
         :
         <Text>No coordinates found</Text>
       }
