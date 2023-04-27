@@ -164,10 +164,15 @@ export default StyleSheet.create({
     OuluSeal: {
       marginTop: 10,
       width: undefined,
-      height: 350,
+      height: 150,
       marginBottom: 10,
       aspectRatio: 1,
       alignSelf: 'center',
+    },
+    OuluSealContainer:{
+      height:250,
+      justifyContent:'center',
+      marginBottom:-20
     },
     Button: {
       flex: 1,

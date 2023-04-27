@@ -11,11 +11,11 @@ export default AboutUs = ({mode}) =>  {
 
   return (
     <ScrollView style={[{backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
-       <View >
+       <View style={styles.OuluSealContainer}>
         <Image source={require('../pictures/Oulunvaakuna.png')} style={styles.OuluSeal} resizeMode='contain'/>
       </View>
-      <Text style={{...styles.title, color: mode ? styles.darkColor.color : styles.lightColor.color}}>Info</Text>
-      <Text style={{...styles.content, color: mode ? styles.darkColor.color : styles.lightColor.color}}>Teimme OuluAwaits sovelluksen Oulun historiasta kiinnostuneille ihmisille. Olitpa sitten ensimmäistä kertaa käymässä tai sitten kaupungin oma asukki, Oulu tarjoaa monia kiinnostavia nähtävyyksiä ja historiallisia kohteita joista jokainen voi nauttia. Sovellus tarjoaa sijainnit nähtävyyksille, sekä antaa sinulle niiden historian (jos tieto on saatavilla). Tämän lisäksi löydät sijainnit yleisille nuotiopaikoille jonne voit mennä vaikka makkaranpaistoon.  </Text>
+      <Text style={{...styles.titleDetails, color: mode ? styles.darkColor.color : styles.lightColor.color}}>Mikä on OuluAwaits?</Text>
+      <Text style={{...styles.contentDetails, color: mode ? styles.darkColor.color : styles.lightColor.color}}>Teimme OuluAwaits sovelluksen Oulun historiasta kiinnostuneille ihmisille. Olitpa sitten ensimmäistä kertaa käymässä tai sitten kaupungin oma asukki, Oulu tarjoaa monia kiinnostavia nähtävyyksiä ja historiallisia kohteita joista jokainen voi nauttia. Sovellus tarjoaa sijainnit nähtävyyksille, sekä antaa sinulle niiden historian (jos tieto on saatavilla). Tämän lisäksi löydät sijainnit yleisille nuotiopaikoille jonne voit mennä vaikka makkaranpaistoon.  </Text>
       
     </ScrollView>
    
