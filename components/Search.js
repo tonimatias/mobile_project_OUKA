@@ -116,7 +116,7 @@ export default function Search({mode}) {
       <Ionicons style={styles.arrowIcon} size={35} color='#9600AE' name="arrow-back-outline"/>
     </Pressable>
       {selectedObject && (
-        <Details2 object={selectedObject} />
+        <Details2 object={selectedObject} mode={mode}/>
       )} 
     </SafeAreaView>
   </Modal>
