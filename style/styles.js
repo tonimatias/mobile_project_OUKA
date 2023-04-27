@@ -17,7 +17,7 @@ export default StyleSheet.create({
       flexDirection: 'row',
       alignSelf: 'center',
       flex: 1,
-      padding: 19,
+     
     
   
     },
@@ -53,8 +53,6 @@ export default StyleSheet.create({
       fontFamily: 'ManropeBold',
       color:'white',
       
-      
-    
     },
 
     frontpage_txt: {
