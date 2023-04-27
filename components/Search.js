@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, Text, View, FlatList, TextInput, Image, TouchableOpacity, ImageBackground, Modal, Pressable } from 'react-native';
+import { SafeAreaView, Text, View, FlatList, Image, TouchableOpacity, Modal, Pressable } from 'react-native';
 import styles from '../style/styles';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
@@ -96,14 +96,14 @@ export default function Search({mode}) {
   )}
   </View>
   <TouchableOpacity
-                style={styles.Button}
-                title='lisätietoa'
-                onPress={() => {
-                setSelectedObject(item);
-                toggleModal();
-                }}>
-                <Text style={styles.buttonText}>Lisätietoja</Text>
-              </TouchableOpacity>
+    style={styles.Button}
+    title='lisätietoa'
+    onPress={() => {
+    setSelectedObject(item);
+    toggleModal();
+  }}>
+    <Text style={styles.buttonText}>Lisätietoja</Text>
+  </TouchableOpacity>
 
   <Modal visible={showModal} animationType="none">
   <SafeAreaView style={[styles.bg, {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>

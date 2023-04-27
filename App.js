@@ -59,13 +59,13 @@ export default function App() {
         headerRight: () => <DrawerToggleButton tintColor='#9600AE' />
         }}
         defaultStatus='open'>
-       <Drawer.Screen name="Arkkitehtuuri"  children={()=><Architecture mode={isDarkmode}/>} options={{unmountOnBlur:true}} />
-        <Drawer.Screen name="Patsaat" children={()=><Statue mode={isDarkmode}/>} options={{unmountOnBlur:true}}/>
-        <Drawer.Screen name="Taideteokset" children={()=><Art mode={isDarkmode}/>} options={{unmountOnBlur:true}} />
-        <Drawer.Screen name="Historialliset kohteet" children={()=><Histories mode={isDarkmode}/>} options={{unmountOnBlur:true}} />
-        <Drawer.Screen name="Puistot" children={()=><Park mode={isDarkmode}/>} options={{unmountOnBlur:true}}/>
-        <Drawer.Screen name="Nuotiopaikat" children={()=><Fireplace mode={isDarkmode}/>} options={{unmountOnBlur:true}}/>
-        <Drawer.Screen name="Tietoa Meistä" children={()=><AboutUs mode={isDarkmode}/>} options={{unmountOnBlur:true}}/>
+       <Drawer.Screen name="Arkkitehtuuri"  children={()=><Architecture mode={isDarkmode}/>} options={{unmountOnBlur:true, headerTitleAlign: 'center'}} />
+        <Drawer.Screen name="Patsaat" children={()=><Statue mode={isDarkmode}/>} options={{unmountOnBlur:true, headerTitleAlign: 'center'}}/>
+        <Drawer.Screen name="Taideteokset" children={()=><Art mode={isDarkmode}/>} options={{unmountOnBlur:true, headerTitleAlign: 'center'}} />
+        <Drawer.Screen name="Historialliset kohteet" children={()=><Histories mode={isDarkmode}/>} options={{unmountOnBlur:true, headerTitleAlign: 'center'}} />
+        <Drawer.Screen name="Puistot" children={()=><Park mode={isDarkmode}/>} options={{unmountOnBlur:true, headerTitleAlign: 'center'}}/>
+        <Drawer.Screen name="Nuotiopaikat" children={()=><Fireplace mode={isDarkmode}/>} options={{unmountOnBlur:true, headerTitleAlign: 'center'}}/>
+        <Drawer.Screen name="Tietoa Meistä" children={()=><AboutUs mode={isDarkmode}/>} options={{unmountOnBlur:true, headerTitleAlign: 'center'}}/>
       </Drawer.Navigator>
     );
   }
