@@ -106,12 +106,17 @@ export default function Search({mode}) {
   </TouchableOpacity>
 
   <Modal visible={showModal} animationType="none">
-  <SafeAreaView style={[{backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
+  <SafeAreaView style={[{
+    borderBottomColor: mode ? styles.bgDark.borderBottomColor   : styles.bgLight.borderBottomColor,
+    borderBottomWidth: mode ? styles.bgDark.borderBottomWidth : styles.bgLight.borderBottomWidth,
+    backgroundColor: mode? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor,
+    padding: mode ? styles.bgDark.padding : styles.bgLight.padding,
+    backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
     <Pressable style={{...styles.returnButton, backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}} onPress={toggleModal}>
       <Ionicons style={styles.arrowIcon} size={35} color='#9600AE' name="arrow-back-outline"/>
     </Pressable>
       {selectedObject && (
-        <Details2 object={selectedObject} />
+        <Details2 object={selectedObject} mode={mode}/>
       )} 
     </SafeAreaView>
   </Modal>

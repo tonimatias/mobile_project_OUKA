@@ -14,12 +14,10 @@ export default StyleSheet.create({
     },
 
     searchContainer: {
-      flexDirection: 'row',
-      alignSelf: 'center',
-      flex: 1,
-      padding: 19,
-    
-  
+      backgroundColor: '#fffffff',
+      justifyContent: 'center',
+      alignItems: 'center',
+      
     },
  
     frontpage_container: {
@@ -133,6 +131,8 @@ export default StyleSheet.create({
       height: 60,
       backgroundColor: '#f7f7f7',
       fontFamily: 'ManropeRegular',
+      maxWidth: 350,
+      minWidth: 350
     },
     searchpage_text: {
       padding: 20,
@@ -175,9 +175,8 @@ export default StyleSheet.create({
       marginBottom:-20
     },
     Button: {
-      flex: 1,
       flexDirection: 'row',
-      justifyContent: 'center',
+      justifyContent: 'space-around',
       alignSelf: 'center',
       backgroundColor: '#b248d2',
       padding: 5,
@@ -185,7 +184,7 @@ export default StyleSheet.create({
       width: 150,
       height: 40,
       borderRadius: 10,
-      marginBottom: 15
+      
       
     },
     buttonText: {
@@ -245,6 +244,7 @@ export default StyleSheet.create({
     map: {
       height: 300,
       margin: 10,
+      marginBottom: 100
     },
 
     returnButton: {
