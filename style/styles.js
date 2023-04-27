@@ -239,7 +239,7 @@ export default StyleSheet.create({
     map: {
       height: 300,
       margin: 10,
-      marginBottom: 70
+      marginBottom: 100
     },
 
     returnButton: {
