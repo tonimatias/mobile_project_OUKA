@@ -13,6 +13,8 @@ export function Details2 ({ object }) {
         setCoordinates(object.geo.coordinates);
       }, []);
 
+      const trimmedContent = object.content.replace(/[#\*]/g, '').trim();
+
     return (
         <ScrollView>
             {object.Media.length > 0 ? (
@@ -23,7 +25,7 @@ export function Details2 ({ object }) {
                 <PlaceholderImage />
             )}
             <Text style={styles.titleDetails}>{object.title.toUpperCase()}</Text>
-            <Text style={styles.contentDetails}>{object.content}</Text>
+            <Text style={styles.contentDetails}>{trimmedContent}</Text>
 
         {coordinates ?
         <MapView

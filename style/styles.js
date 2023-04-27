@@ -53,8 +53,6 @@ export default StyleSheet.create({
       fontFamily: 'ManropeBold',
       color:'white',
       
-      
-    
     },
 
     frontpage_txt: {
