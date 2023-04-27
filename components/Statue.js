@@ -96,7 +96,7 @@ export default Statue = ({ mode }) => {
               borderBottomWidth: mode ? styles.bgDark.borderBottomWidth : styles.bgLight.borderBottomWidth,
               backgroundColor: mode? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor,
               padding: mode ? styles.bgDark.padding : styles.bgLight.padding }]}>
-              <Text style={styles.category_title}>
+              <Text style={{...styles.category_title, color: mode ? styles.darkColor.color : styles.lightColor.color}}>
                 {item.title.toUpperCase()}
               </Text>
               {item.Media.length > 0 ? (

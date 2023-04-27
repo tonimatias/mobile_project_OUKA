@@ -97,7 +97,7 @@ export default Art = ({mode}) => {
               borderBottomWidth: mode ? styles.bgDark.borderBottomWidth : styles.bgLight.borderBottomWidth,
               backgroundColor: mode? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor,
               padding: mode ? styles.bgDark.padding : styles.bgLight.padding }]}>
-              <Text style={styles.category_title}>
+              <Text style={{...styles.category_title, color: mode ? styles.darkColor.color : styles.lightColor.color}}>
                 {item.title.toUpperCase()}
               </Text>
               {item.Media.length > 0 ? (
@@ -124,7 +124,7 @@ export default Art = ({mode}) => {
                 <Ionicons style={styles.arrowIcon} size={35} color='#9600AE' name="arrow-back-outline"/>
                 </Pressable>
                 {selectedObject && (
-                  <Details2 object={selectedObject} />
+                  <Details2 object={selectedObject} mode={mode}/>
                 )}
                 
                 </SafeAreaView>
