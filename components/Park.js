@@ -92,27 +92,21 @@ export default Park = ({ mode }) => {
           );
   
           return (
-            <View
-              key={item.id}
-              style={[
-                styles.bg,
-                {
-                  backgroundColor: mode
-                    ? styles.contentBackgroundDark.backgroundColor
-                    : styles.contentBackgroundLight.backgroundColor,
-                },
-              ]}
-            >
+            <View key={item.id} style={[{
+              borderBottomColor: mode ? styles.bgDark.borderBottomColor   : styles.bgLight.borderBottomColor,
+              borderBottomWidth: mode ? styles.bgDark.borderBottomWidth : styles.bgLight.borderBottomWidth,
+              backgroundColor: mode? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor,
+              padding: mode ? styles.bgDark.padding : styles.bgLight.padding }]}>
               <Text style={styles.category_title}>
                 {item.title.toUpperCase()}
               </Text>
-              {item.Media.map((media) => (
-                <Image
-                  key={media.id} 
-                  source={{ uri: media.path }}
-                  style={styles.image}
-                />
-              ))}
+              {item.Media.length > 0 ? (
+                item.Media.map((media) => (
+                <Image key={media.id} source={{ uri: media.path }} style={styles.image} />
+                ))
+            ) : (
+                <PlaceholderImage />
+            )}
               <View key={item.Categories.id}></View>
               <TouchableOpacity
                 style={styles.Button}
