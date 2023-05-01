@@ -5,7 +5,7 @@ import Header from './Header';
 import MapView, { Marker } from 'react-native-maps';
 import { Ionicons } from '@expo/vector-icons';
 
-export function Details2 ({ object, mode }) {
+export function Details2 ({ object, mode, PlaceholderImage }) {
 
     const [coordinates, setCoordinates] = useState(null);
 
@@ -14,6 +14,8 @@ export function Details2 ({ object, mode }) {
       }, []);
 
       const trimmedContent = object.content.replace(/[#\*]/g, '').trim();
+
+      
 
     return (
         <ScrollView>

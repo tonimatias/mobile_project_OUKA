@@ -87,7 +87,7 @@ export default Park = ({ mode }) => {
 
           const PlaceholderImage = () => (
             <View style={styles.imagePlaceholder}>
-              <Image style={styles.image}source={require('../pictures/placeholder.png')}></Image>
+              <Image style={styles.image}source={require('../pictures/fireplace_placeholder.jpg')}></Image>
             </View>
           );
   
@@ -124,7 +124,7 @@ export default Park = ({ mode }) => {
                 <Ionicons style={styles.arrowIcon} size={35} color='#9600AE' name="arrow-back-outline"/>
                 </Pressable>
                 {selectedObject && (
-                  <Details2 object={selectedObject} mode={mode}/>
+                  <Details2 object={selectedObject} mode={mode} PlaceholderImage={PlaceholderImage}/>
                 )}
                 
                 </SafeAreaView>
