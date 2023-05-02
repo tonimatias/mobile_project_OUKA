@@ -72,6 +72,11 @@ export default function Search({mode}) {
       setIsSearching(false);
     }
   };
+  const PlaceholderImageDetails = () => (
+    <View style={styles.imagePlaceholder}>
+      <Image style={styles.imageDetails}source={require('../pictures/placeholder.png')}></Image>
+    </View>
+  );
 
   const ItemView = ({ item }) => {
     return (
@@ -116,7 +121,7 @@ export default function Search({mode}) {
       <Ionicons style={styles.arrowIcon} size={35} color='#9600AE' name="arrow-back-outline"/>
     </Pressable>
       {selectedObject && (
-        <Details2 object={selectedObject} mode={mode}/>
+        <Details2 object={selectedObject} mode={mode} PlaceholderImage={PlaceholderImageDetails}/>
       )} 
     </SafeAreaView>
   </Modal>

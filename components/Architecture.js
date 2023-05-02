@@ -90,6 +90,12 @@ export default Architecture = ({ mode }) => {
               <Image style={styles.image}source={require('../pictures/placeholder.png')}></Image>
             </View>
           );
+
+          const PlaceholderImageDetails = () => (
+            <View style={styles.imagePlaceholder}>
+              <Image style={styles.imageDetails}source={require('../pictures/placeholder.png')}></Image>
+            </View>
+          );
   
           return (
             <View key={item.id} style={[{
@@ -124,7 +130,7 @@ export default Architecture = ({ mode }) => {
                 <Ionicons style={styles.arrowIcon} size={35} color='#9600AE' name="arrow-back-outline"/>
                 </Pressable>
                 {selectedObject && (
-                  <Details2 object={selectedObject} mode={mode}/>
+                  <Details2 object={selectedObject} mode={mode} PlaceholderImage={PlaceholderImageDetails}/>
                 )}
                 
                 </SafeAreaView>

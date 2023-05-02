@@ -91,6 +91,12 @@ export default Park = ({ mode }) => {
             </View>
           );
   
+          const PlaceholderImageDetails = () => (
+            <View style={styles.imagePlaceholder}>
+              <Image style={styles.imageDetails}source={require('../pictures/placeholder.png')}></Image>
+            </View>
+          );
+
           return (
             <View key={item.id} style={[{
               borderBottomColor: mode ? styles.bgDark.borderBottomColor   : styles.bgLight.borderBottomColor,
@@ -124,7 +130,7 @@ export default Park = ({ mode }) => {
                 <Ionicons style={styles.arrowIcon} size={35} color='#9600AE' name="arrow-back-outline"/>
                 </Pressable>
                 {selectedObject && (
-                  <Details2 object={selectedObject} mode={mode}/>
+                  <Details2 object={selectedObject} mode={mode} PlaceholderImage={PlaceholderImageDetails}/>
                 )}
                 
                 </SafeAreaView>
