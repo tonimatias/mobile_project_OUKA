@@ -89,16 +89,11 @@ export default function Search({mode}) {
         {item.title.toUpperCase()}
         </Text>
 
-      {item.Media.length > 0 ? (
-        item.Media.map((media) => (
-          <Image key={media.id} source={{ uri: media.path }}  style={styles.image} />
-        ))
-      ) : (
-    <Image
-      source={require('../pictures/placeholder.png')} 
-      style={styles.image}
-    />
-  )}
+        {item.Media.length > 0 ? (
+          <Image key={item.Media[0].id} source={{ uri: item.Media[0].path }} style={styles.image} />
+          ) : (
+          <PlaceholderImage />
+        )}
   </View>
   <TouchableOpacity
     style={styles.Button}

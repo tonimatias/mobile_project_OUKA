@@ -107,12 +107,10 @@ export default Park = ({ mode }) => {
                 {item.title.toUpperCase()}
               </Text>
               {item.Media.length > 0 ? (
-                item.Media.map((media) => (
-                <Image key={media.id} source={{ uri: media.path }} style={styles.image} />
-                ))
-            ) : (
+                <Image key={item.Media[0].id} source={{ uri: item.Media[0].path }} style={styles.image} />
+                ) : (
                 <PlaceholderImage />
-            )}
+                )}
               <View key={item.Categories.id}></View>
               <TouchableOpacity
                 style={styles.Button}
