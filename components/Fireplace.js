@@ -110,7 +110,7 @@ export default Park = ({ mode }) => {
                 <Image key={media.id} source={{ uri: media.path }} style={styles.image} />
                 ))
             ) : (
-                <PlaceholderImage />
+              <Image style={styles.image}source={require('../pictures/fireplace_placeholder.jpg')}></Image>
             )}
               <View key={item.Categories.id}></View>
               <TouchableOpacity
