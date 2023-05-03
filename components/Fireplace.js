@@ -87,12 +87,12 @@ export default Park = ({ mode }) => {
 
           const PlaceholderImage = () => (
             <View style={styles.imagePlaceholder}>
-              <Image style={styles.image}source={require('../pictures/fireplace_placeholder.jpg')}></Image>
+              <Image style={styles.image}source={require('../pictures/nuotiopaikat_place.png')}></Image>
             </View>
           );
           const PlaceholderImageDetails = () => (
             <View style={styles.imagePlaceholder}>
-              <Image style={styles.imageDetails}source={require('../pictures/fireplace_placeholder.jpg')}></Image>
+              <Image style={styles.imageDetails}source={require('../pictures/nuotiopaikat_place.png')}></Image>
             </View>
           );
   
@@ -108,7 +108,7 @@ export default Park = ({ mode }) => {
               {item.Media.length > 0 ? (
                 <Image key={item.Media[0].id} source={{ uri: item.Media[0].path }} style={styles.image} />
                 ) : (
-                  <Image style={styles.image}source={require('../pictures/fireplace_placeholder.jpg')}></Image>
+                  <Image style={styles.image}source={require('../pictures/nuotiopaikat_place.png')}></Image>
                 )}
               
               <View key={item.Categories.id}></View>

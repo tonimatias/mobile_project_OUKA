@@ -87,12 +87,12 @@ export default Histories = ({ mode }) => {
 
           const PlaceholderImage = () => (
             <View style={styles.imagePlaceholder}>
-              <Image style={styles.image}source={require('../pictures/placeholder.png')}></Image>
+              <Image style={styles.image}source={require('../pictures/historiallisetkohteet_placeholder.png')}></Image>
             </View>
           );
           const PlaceholderImageDetails = () => (
             <View style={styles.imagePlaceholder}>
-              <Image style={styles.imageDetails}source={require('../pictures/placeholder.png')}></Image>
+              <Image style={styles.imageDetails}source={require('../pictures/historiallisetkohteet_placeholder.png')}></Image>
             </View>
           );
   
@@ -108,7 +108,7 @@ export default Histories = ({ mode }) => {
               {item.Media.length > 0 ? (
                 <Image key={item.Media[0].id} source={{ uri: item.Media[0].path }} style={styles.image} />
                 ) : (
-                <PlaceholderImage />
+                  <Image style={styles.image}source={require('../pictures/historiallisetkohteet_placeholder.png')}></Image>
                 )}
               <View key={item.Categories.id}></View>
               <TouchableOpacity
