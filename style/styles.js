@@ -99,7 +99,7 @@ export default StyleSheet.create({
     titleDetails: {
       flex: 1,
       fontSize: 26,
-      textAlign: 'left',
+      textAlign: 'center',
       marginTop: 20,
       marginBottom:10,
       marginLeft:5,
@@ -146,7 +146,6 @@ export default StyleSheet.create({
     margin: 10,
     resizeMode: 'stretch',
     aspectRatio: 1.10,
-   
     padding: 15
 
     },
@@ -156,7 +155,7 @@ export default StyleSheet.create({
       alignSelf: 'center',
       width: '100%',
       height: 250,
-     
+
     },
     OuluSeal: {
       marginTop: 10,
@@ -181,7 +180,6 @@ export default StyleSheet.create({
       width: 150,
       height: 40,
       borderRadius: 10,
-      
       
     },
     buttonText: {
@@ -253,7 +251,7 @@ export default StyleSheet.create({
       fontFamily: 'ManropeRegular',
     },
     contentDetails: {
-      textAlign: 'left',
+      textAlign: 'center',
       fontFamily: 'ManropeRegular',
       fontSize:16,
       marginBottom:10,
