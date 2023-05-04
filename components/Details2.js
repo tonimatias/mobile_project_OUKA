@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Text, ScrollView, Image, BackHandler, Button, Touchable, Pressable, View, TouchableOpacity, Linking } from 'react-native';
+import { Text, ScrollView, Image, View, TouchableOpacity, Linking } from 'react-native';
 import styles from '../style/styles';
-import Header from './Header';
 import MapView, { Marker } from 'react-native-maps';
 import { Ionicons } from '@expo/vector-icons';
 

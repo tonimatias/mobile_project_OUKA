@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { View, Text, ImageBackground } from 'react-native';
 import styles from '../style/styles';
-import Header from './Header';
-import Statue from '../components/Statue';
 
 export default Frontpage = (props) =>  {
   const { isDarkmode} = props

@@ -35,7 +35,6 @@ export default function Search({mode}) {
   }, []);
 
   useEffect(() =>{
-    //console.log("isDarkmode: " + mode);
   },[mode]);
 
   const searchFilterFunction = (text) => {

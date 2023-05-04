@@ -4,9 +4,8 @@ import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, Button, Toucha
 import styles from './style/styles'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator, DrawerToggleButton } from '@react-navigation/drawer';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
-import Details from './components/Details';
 import Header from './components/Header'
 import Statue from './components/Statue';
 import Histories from './components/History';
@@ -17,7 +16,6 @@ import Architecture from './components/Architecture';
 import Search from './components/Search';
 import { useFonts } from 'expo-font';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { FA5Style } from '@expo/vector-icons/build/FontAwesome5';
 import AboutUs from './components/AboutUs';
 import Fireplace from './components/Fireplace';
 
@@ -34,9 +32,6 @@ export default function App() {
     return (
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Frontpage} options={{headerShown: false}}/>
-        {/* <Stack.Screen name="Lisätiedot"  mode={isDarkmode} options={{headerShown: false}}>
-        {(props) => <Details {...props} isDarkmode={isDarkmode} />} 
-        </Stack.Screen>*/}
       </Stack.Navigator>
     );
   }
