@@ -281,7 +281,7 @@ export default StyleSheet.create({
   buttonMapsDark: {
     fontFamily: 'ManropeRegular',
     fontSize:20,
-    color:'#ffff',
+    color:'#9600AE',
     marginLeft:40,
     marginTop:-26,
     
