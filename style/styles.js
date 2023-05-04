@@ -1,8 +1,5 @@
 import { StyleSheet } from 'react-native';
 
-
-
-
 export default StyleSheet.create({
     container: {
       flexDirection: 'row',
@@ -286,7 +283,7 @@ export default StyleSheet.create({
   buttonMapsDark: {
     fontFamily: 'ManropeRegular',
     fontSize:20,
-    color:'#b248d2',
+    color:'#ffff',
     marginLeft:40,
     marginTop:-26,
     

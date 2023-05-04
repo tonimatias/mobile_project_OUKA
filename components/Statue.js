@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, ScrollView, Image, FlatList, SafeAreaView, TouchableOpacity, Modal, Button, Pressable } from 'react-native';
+import { View, Text, Image, FlatList, SafeAreaView, TouchableOpacity, Modal, Pressable } from 'react-native';
 import styles from '../style/styles';
-import Header from './Header';
-import { useNavigation } from '@react-navigation/native';
 import { Details2 } from './Details2';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -13,8 +11,6 @@ export default Statue = ({ mode }) => {
 
   const [showModal, setShowModal] = useState(false);
   const [selectedObject, setSelectedObject] = useState(null);
-  
-  //const navigation = useNavigation();
 
   const scrollViewRef = useRef();
 

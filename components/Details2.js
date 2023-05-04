@@ -15,7 +15,6 @@ export function Details2 ({ object, mode, PlaceholderImage }) {
 
       const trimmedContent = object.content.replace(/[#\*]/g, '').trim();
 
-      
 
     return (
         <ScrollView>
@@ -40,7 +39,7 @@ export function Details2 ({ object, mode, PlaceholderImage }) {
       console.error('Coordinates not found');
     }
   }}>
-    <Ionicons style={styles.iconDetails} name='map-outline' size={30} color='#9600AE' /><Text style={styles.buttonMapsDark} >Avaa Mapsissa</Text>
+    <Ionicons style={styles.iconDetails} name='map-outline' size={30} color='#9600AE' /><Text style={{...styles.buttonMapsDark, color: mode ? styles.darkColor.color : styles.lightColor.color}} >Avaa Mapsissa</Text>
 </TouchableOpacity>
 </View>
         {coordinates ?
