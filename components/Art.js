@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, ScrollView, Image, Pressable, SafeAreaView, TouchableOpacity, Modal, FlatList } from 'react-native';
+import { View, Text, Image, Pressable, SafeAreaView, TouchableOpacity, Modal, FlatList } from 'react-native';
 import styles from '../style/styles';
-import Header from './Header';
 import { useNavigation } from '@react-navigation/native';
 import { Details2 } from './Details2';
 import { Ionicons } from '@expo/vector-icons';
@@ -38,7 +37,6 @@ export default Art = ({mode}) => {
   }, []);
 
   useEffect(() =>{
-   console.log("isDarkmode: " + mode);
   },[mode]);
 
   const handleScroll = ({ nativeEvent }) => {

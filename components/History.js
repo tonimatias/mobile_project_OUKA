@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, TouchableOpacity, FlatList, Modal, Button, Pressable } from 'react-native';
+import { View, Text, Image, SafeAreaView, TouchableOpacity, FlatList, Modal, Pressable } from 'react-native';
 import styles from '../style/styles';
 import { useNavigation } from '@react-navigation/native';
 import { Details2 } from './Details2';
-import { object } from 'prop-types';
 import { Ionicons } from '@expo/vector-icons';
 
 export default Histories = ({ mode }) => {

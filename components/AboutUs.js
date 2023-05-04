@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, ScrollView} from 'react-native';
 import styles from '../style/styles';
-import Oulunvaakuna from '../pictures/Oulunvaakuna.png';
-
 
 export default AboutUs = ({mode}) =>  {
 

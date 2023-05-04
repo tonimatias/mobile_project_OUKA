@@ -37,7 +37,6 @@ export default Park = ({ mode }) => {
   }, []);
 
   useEffect(() => {
-    console.log('isDarkmode: ' + mode);
   }, [mode]);
 
   const handleScroll = ({ nativeEvent }) => {

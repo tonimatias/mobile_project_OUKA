@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, Image, StyleSheet, SafeAreaView, ImageBackground } from 'react-native';
+import { View, Text, ImageBackground } from 'react-native';
 import styles from '../style/styles';
 import Header from './Header';
 import Statue from '../components/Statue';

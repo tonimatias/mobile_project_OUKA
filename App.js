@@ -25,7 +25,6 @@ import Fireplace from './components/Fireplace';
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
-//const isDarkMode = true;
 
 
 export default function App() {

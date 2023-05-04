@@ -4,7 +4,6 @@ import styles from '../style/styles';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { Searchbar } from 'react-native-paper';
-import { ScrollView } from 'react-native-gesture-handler';
 import { Details2 } from './Details2';
 
 
@@ -44,7 +43,6 @@ export default function Search({mode}) {
  
     // Check if searched text is not blank
     if (text) {
-
       setIsSearching(true);
       // Inserted text is not blank
       // Filter the masterDataSource and update FilteredDataSource
@@ -92,7 +90,7 @@ export default function Search({mode}) {
         {item.Media.length > 0 ? (
           <Image key={item.Media[0].id} source={{ uri: item.Media[0].path }} style={styles.image} />
           ) : (
-          <PlaceholderImage />
+          <PlaceholderImageDetails />
         )}
   </View>
   <TouchableOpacity
