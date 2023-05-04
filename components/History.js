@@ -128,7 +128,6 @@ export default Histories = ({ mode }) => {
                 {selectedObject && (
                   <Details2 object={selectedObject} mode={mode} PlaceholderImage={PlaceholderImageDetails}/>
                 )}
-                
                 </SafeAreaView>
               </Modal>
             </View>

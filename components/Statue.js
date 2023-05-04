@@ -32,9 +32,9 @@ export default Statue = ({ mode }) => {
       .catch((error) => console.error(error));
   }, []);
 
-  useEffect(() =>{
+  useEffect(() => {
     console.log("isDarkmode: " + mode);
-  },[mode]);
+  }, [mode]);
 
   const handleScroll = ({ nativeEvent }) => {
     if (isCloseToBottom(nativeEvent)) {
@@ -68,8 +68,9 @@ export default Statue = ({ mode }) => {
   return (
     <View style={{ flex: 1 }}>
       <FlatList
-        style={{ backgroundColor: mode ? styles.backgroundDark.backgroundColor : styles.backgroundLight.backgroundColor
- }}
+        style={{
+          backgroundColor: mode ? styles.backgroundDark.backgroundColor : styles.backgroundLight.backgroundColor
+        }}
         ref={scrollViewRef}
         data={data}
         renderItem={({ item }) => {
@@ -82,49 +83,49 @@ export default Statue = ({ mode }) => {
 
           const PlaceholderImage = () => (
             <View style={styles.imagePlaceholder}>
-              <Image style={styles.image}source={require('../pictures/placeholder.png')}></Image>
+              <Image style={styles.image} source={require('../pictures/placeholder.png')}></Image>
             </View>
           );
           const PlaceholderImageDetails = () => (
             <View style={styles.imagePlaceholder}>
-              <Image style={styles.imageDetails}source={require('../pictures/placeholder.png')}></Image>
+              <Image style={styles.imageDetails} source={require('../pictures/placeholder.png')}></Image>
             </View>
           );
-  
+
           return (
             <View key={item.id} style={[{
-              borderBottomColor: mode ? styles.bgDark.borderBottomColor   : styles.bgLight.borderBottomColor,
+              borderBottomColor: mode ? styles.bgDark.borderBottomColor : styles.bgLight.borderBottomColor,
               borderBottomWidth: mode ? styles.bgDark.borderBottomWidth : styles.bgLight.borderBottomWidth,
-              backgroundColor: mode? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor,
-              padding: mode ? styles.bgDark.padding : styles.bgLight.padding }]}>
-              <Text style={{...styles.category_title, color: mode ? styles.darkColor.color : styles.lightColor.color}}>
+              backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor,
+              padding: mode ? styles.bgDark.padding : styles.bgLight.padding
+            }]}>
+              <Text style={{ ...styles.category_title, color: mode ? styles.darkColor.color : styles.lightColor.color }}>
                 {item.title.toUpperCase()}
               </Text>
               {item.Media.length > 0 ? (
                 <Image key={item.Media[0].id} source={{ uri: item.Media[0].path }} style={styles.image} />
-                ) : (
+              ) : (
                 <PlaceholderImage />
-                )}
+              )}
               <View key={item.Categories.id}></View>
               <TouchableOpacity
                 style={styles.Button}
                 title='lisätietoa'
                 onPress={() => {
-                setSelectedObject(item);
-                toggleModal();
+                  setSelectedObject(item);
+                  toggleModal();
                 }}>
                 <Text style={styles.buttonText}>Lisätietoja</Text>
               </TouchableOpacity>
 
               <Modal visible={showModal} animationType="none">
-                <SafeAreaView style={[styles.bg, {backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}]}>
-                <Pressable style={{...styles.returnButton, backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor}} onPress={toggleModal}>
-                <Ionicons style={styles.arrowIcon} size={35} color='#9600AE' name="arrow-back-outline"/>
-                </Pressable>
-                {selectedObject && (
-                  <Details2 object={selectedObject} mode={mode} PlaceholderImage={PlaceholderImageDetails}/>
-                )}
-                
+                <SafeAreaView style={[styles.bg, { backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor }]}>
+                  <Pressable style={{ ...styles.returnButton, backgroundColor: mode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor }} onPress={toggleModal}>
+                    <Ionicons style={styles.arrowIcon} size={35} color='#9600AE' name="arrow-back-outline" />
+                  </Pressable>
+                  {selectedObject && (
+                    <Details2 object={selectedObject} mode={mode} PlaceholderImage={PlaceholderImageDetails} />
+                  )}
                 </SafeAreaView>
               </Modal>
             </View>
@@ -137,5 +138,6 @@ export default Statue = ({ mode }) => {
         maxToRenderPerBatch={itemsPerPage}
         windowSize={10}
       />
-    </View>   
-)};
+    </View>
+  )
+};

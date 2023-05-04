@@ -6,7 +6,6 @@ export default Frontpage = (props) =>  {
   const { isDarkmode} = props
   return (
   
-  
     <View style={{ ...styles.frontpage_container, backgroundColor: isDarkmode ? styles.contentBackgroundDark.backgroundColor : styles.contentBackgroundLight.backgroundColor }}>
      <ImageBackground source={require('../pictures/frontpage_img_2.jpg')} resizeMode="cover" style={styles.imagefrontpage}>
        <View style={styles.container1}>
@@ -16,7 +15,5 @@ export default Frontpage = (props) =>  {
       </View>
       </ImageBackground> 
     </View>
-   
-  
   );
 }
